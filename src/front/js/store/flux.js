@@ -13,9 +13,49 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			token: null,
+			url: "https://3001-amaranth-coyote-jyeao9hl.ws-us03.gitpod.io/api" // change this! do NOT add slash '/' at the end
+			// remeber to append 'api' at the end
 		},
 		actions: {
+			login: async (email, password) => {
+				const store = getStore();
+
+				const URL = `${store.url}/token`;
+				const CONFIG = {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						email: email,
+						password: password
+					})
+				};
+
+				try {
+					const resp = await fetch(URL, CONFIG);
+					if (resp.status !== 200) {
+						alert("There was an error during authentication");
+						return false;
+					}
+
+					const data = await resp.json();
+					console.log("Token created from back-end", data);
+					sessionStorage.setItem("token", data.access_token);
+					setStore({ token: data.access_token });
+					return true;
+				} catch (error) {
+					console.error("CREATE Token error: ", error);
+				}
+			},
+
+			storeSessionToken: () => {
+				const token = sessionStorage.getItem("token");
+				if (token && token != "" && token != undefined) setStore({ token: token });
+			},
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

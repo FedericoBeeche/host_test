@@ -17,15 +17,11 @@ export const Login = () => {
 		});
 	};
 
-	if (store.token && store.token != "" && store.token != undefined) {
-		history.push("/"); // redirect to "/" = home once logged in
-	}
-
 	return (
 		<div className="container-fluid text-center">
 			<h1>Login</h1>
 			{store.token && store.token != "" && store.token != undefined ? (
-				"You are logged in with this token" + store.token
+				history.push("/")
 			) : (
 				<div className="d-flex justify-content-center">
 					<form>
