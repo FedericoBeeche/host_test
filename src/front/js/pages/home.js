@@ -10,8 +10,11 @@ export const Home = () => {
 	return (
 		<div className="container">
 			<h1>Menú de guías</h1>
-			<h4 className="mb-5">Aquí podrás encontrar las guías con la información más actualizada.</h4>
-
+			<h4 className="mb-3">Aquí podrás encontrar las guías con la información más actualizada.</h4>
+			<div className="d-flex justify-content-center mb-3">
+				<input type="text" placeholder="Buscar guía" />
+				<button className="btn btn-primary ml-2">Buscar</button>
+			</div>
 			<div className="card-deck">
 				<div className="card">
 					<img
@@ -40,6 +43,7 @@ export const Home = () => {
 					<div className="card-body">
 						<h5 className="card-title">Mi primera videollamada en Zoom (para celular)</h5>
 						<p className="card-text">Como invitar a amigos, familia, y hasta mis mascotas.</p>
+						<br />
 						<button className="btn btn-primary">Ver guía</button>
 						<p className="card-text">
 							<small className="text-muted">Actualizado hace 4 días</small>
@@ -55,6 +59,8 @@ export const Home = () => {
 					<div className="card-body">
 						<h5 className="card-title">Videollamadas por WhatsApp</h5>
 						<p className="card-text">¿Para qué bajar Zoom si puedo usar el mismo WhatsApp?</p>
+						<br />
+						<br />
 						<button className="btn btn-primary">Ver guía</button>
 						<p className="card-text">
 							<small className="text-muted">Actualizado hace 1 semana</small>
@@ -63,13 +69,9 @@ export const Home = () => {
 				</div>
 			</div>
 			{/* Este icono todavia no lo pongo porque no le he agregado estilos y el original es enorme, mas adelante le pongo style */}
-			{/* <div className="d-flex justify-content-center">
-				<img
-					src="https://www.flaticon.es/svg/vstatic/svg/3612/3612081.svg?token=exp=1618980923~hmac=7d94bbc2bf299883028004000216ebb5"
-					className="leerSVG text-center"
-					alt="..."
-				/>
-			</div> */}
+			<div className="d-flex justify-content-center">
+				<img src="https://svgshare.com/i/WVA.svg" className="leerSVG text-center" />
+			</div>
 		</div>
 	);
 };
