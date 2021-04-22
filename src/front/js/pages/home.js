@@ -28,7 +28,9 @@ export const Home = () => {
 							Todo mundo está hablando de transferencias SINPE móvil pero... ¿qué son realmente estas
 							transferencias?
 						</p>
-						<button className="btn btn-primary">Ver guía</button>
+						<Link to="/guide_BACSINPEMovil">
+							<button className="btn btn-primary">Ver guía</button>
+						</Link>
 						<p className="card-text">
 							<small className="text-muted">Actualizado hace 1 día</small>
 						</p>
