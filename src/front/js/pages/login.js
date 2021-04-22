@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom"; // hook used to redirect to another route
+import { Link } from "react-router-dom";
 
 import "../../styles/home.scss";
 
@@ -18,37 +19,58 @@ export const Login = () => {
 	};
 
 	return (
-		<div className="container-fluid text-center">
-			<h1>Login</h1>
+		<div className="container-fluid bg-light">
+			<h2 className="text-center">Iniciar sesión</h2>
 			{store.token && store.token != "" && store.token != undefined ? (
 				history.push("/")
 			) : (
-				<div className="d-flex justify-content-center">
+				<div className="m-auto col-8 col-sm-3">
 					<form>
-						<div className="row mb-3">
+						<div className="row mb-3 d-block">
+							<label htmlFor="email_input" className="form-label">
+								Correo electrónico
+							</label>
 							<input
-								type="text"
-								placeholder="email"
+								className="d-block w-100"
+								type="email"
+								id="email_input"
+								placeholder="correo@ejemplo.com"
 								value={email}
 								onChange={e => setEmail(e.target.value)}
 							/>
 						</div>
 
-						<div className="row mb-3">
+						<div className="row mb-0 d-block">
+							<label htmlFor="password_input" className="form-label">
+								Contraseña
+							</label>
 							<input
+								className="d-block w-100"
 								type="password"
-								placeholder="password"
+								id="password_input"
+								placeholder="contraseña"
 								value={password}
 								onChange={e => setPassword(e.target.value)}
 							/>
 						</div>
-
-						<div className="row mb-3">
-							<button type="button" className="btn btn-info" onClick={handleClick}>
-								Login
-							</button>
-						</div>
 					</form>
+					<div className="d-flex justify-content-end">
+						<Link to={"/password/reset"}>
+							<small className="text-info float-right m-0">¿Has olvidado tu contraseña?</small>
+						</Link>
+					</div>
+
+					<div className="row my-3">
+						<button type="button" className="btn btn-success" onClick={handleClick}>
+							Ingresar
+						</button>
+					</div>
+					<div className="text-center">
+						<small>¿No tienes una cuenta aún? </small>
+						<Link to={"/register"}>
+							<small className="text-info">Regístrate</small>
+						</Link>
+					</div>
 				</div>
 			)}
 		</div>
