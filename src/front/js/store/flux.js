@@ -16,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			token: null,
 			url: "https://3001-gray-pinniped-zlw2j4qj.ws-us03.gitpod.io/api" // change this! do NOT add slash '/' at the end
+
 			// remeber to append 'api' at the end
 		},
 		actions: {
