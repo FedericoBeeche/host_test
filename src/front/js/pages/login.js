@@ -19,8 +19,8 @@ export const Login = () => {
 	};
 
 	return (
-		<div className="container-fluid bg-light">
-			<h2 className="text-center">Iniciar sesión</h2>
+		<div className="container-fluid">
+			<h2 className="text-center m-5">Iniciar sesión</h2>
 			{store.token && store.token != "" && store.token != undefined ? (
 				history.push("/")
 			) : (
@@ -31,7 +31,7 @@ export const Login = () => {
 								Correo electrónico
 							</label>
 							<input
-								className="d-block w-100"
+								className="d-block w-100 p-2"
 								type="email"
 								id="email_input"
 								placeholder="correo@ejemplo.com"
@@ -45,10 +45,10 @@ export const Login = () => {
 								Contraseña
 							</label>
 							<input
-								className="d-block w-100"
+								className="d-block w-100 p-2"
 								type="password"
 								id="password_input"
-								placeholder="contraseña"
+								placeholder="Digita tu contraseña"
 								value={password}
 								onChange={e => setPassword(e.target.value)}
 							/>
