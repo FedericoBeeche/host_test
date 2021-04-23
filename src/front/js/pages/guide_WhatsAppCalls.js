@@ -2,35 +2,23 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
-import BACfirstImg from "../../img/img_BACSINPEMovil/1..jpg";
-import BACsecondImg from "../../img/img_BACSINPEMovil/2.jpg";
-import BACthirdImg from "../../img/img_BACSINPEMovil/3.png";
-import BACfourthImg from "../../img/img_BACSINPEMovil/4.png";
-import BACfifthImg from "../../img/img_BACSINPEMovil/5.png";
-import BACsixthImg from "../../img/img_BACSINPEMovil/6.png";
-import BACseventhImg from "../../img/img_BACSINPEMovil/7.png";
-import BACeigthImg from "../../img/img_BACSINPEMovil/8.png";
-import BACninthImg from "../../img/img_BACSINPEMovil/9.png";
-import BACtenthImg from "../../img/img_BACSINPEMovil/10.png";
-import BACeleventhImg from "../../img/img_BACSINPEMovil/11.png";
-import BACStwelfthImg from "../../img/img_BACSINPEMovil/12.png";
 import "../../styles/home.scss";
 
-export const BAC_SINPE = () => {
+export const WhatsAppCalls = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<>
 			<div className="container mb-5">
-				<h1>MI PRIMERA TRANSFERENCIA</h1>
-				<h1>SINPE MÓVIL</h1>
-				<h5>EN BANCA MÓVIL DEL BAC</h5>
+				<h1>MI PRIMERA VIDEO LLAMDA</h1>
+				<h1>POR WHATSAPP</h1>
+				<h5>¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</h5>
 
 				{/* video tutorial */}
 				<iframe
 					width="560"
 					height="315"
-					src="https://www.youtube.com/embed/IDNkk-jHe7c"
+					src="https://www.youtube.com/embed/l6Ee84FPT68"
 					title="YouTube video player"
 					frameBorder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

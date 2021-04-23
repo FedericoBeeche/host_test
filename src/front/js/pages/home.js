@@ -46,7 +46,9 @@ export const Home = () => {
 						<h5 className="card-title">Mi primera videollamada en Zoom (para celular)</h5>
 						<p className="card-text">Como invitar a amigos, familia, y hasta mis mascotas.</p>
 						<br />
-						<button className="btn btn-primary">Ver guía</button>
+						<Link to="/guide_ZoomCalls">
+							<button className="btn btn-primary">Ver guía</button>
+						</Link>
 						<p className="card-text">
 							<small className="text-muted">Actualizado hace 4 días</small>
 						</p>
@@ -63,14 +65,15 @@ export const Home = () => {
 						<p className="card-text">¿Para qué bajar Zoom si puedo usar el mismo WhatsApp?</p>
 						<br />
 						<br />
-						<button className="btn btn-primary">Ver guía</button>
+						<Link to="/guide_WhatsAppCalls">
+							<button className="btn btn-primary">Ver guía</button>
+						</Link>
 						<p className="card-text">
 							<small className="text-muted">Actualizado hace 1 semana</small>
 						</p>
 					</div>
 				</div>
 			</div>
-			{/* Este icono todavia no lo pongo porque no le he agregado estilos y el original es enorme, mas adelante le pongo style */}
 			<div className="d-flex justify-content-center">
 				<img src="https://svgshare.com/i/WVA.svg" className="leerSVG text-center" />
 			</div>
