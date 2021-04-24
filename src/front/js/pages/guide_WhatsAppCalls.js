@@ -13,10 +13,18 @@ export const WhatsAppCalls = () => {
 	return (
 		<>
 			<div className="container mb-5">
-				<h1>MI PRIMERA VIDEO LLAMDA</h1>
-				<h1>POR WHATSAPP</h1>
-				<h5>¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</h5>
+				<div className="row justify-content-center">
+					<h1>MI PRIMERA VIDEO LLAMDA</h1>
+				</div>
+				<div className="row justify-content-center">
+					<h1>POR WHATSAPP</h1>
+				</div>
+				<div className="row justify-content-center">
+					<h5>¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</h5>
+				</div>
+			</div>
 
+			<div className="container mb-5">
 				{/* video tutorial */}
 				<iframe
 					width="560"
@@ -28,14 +36,14 @@ export const WhatsAppCalls = () => {
 					allowFullScreen
 				/>
 
-				<h3>Paso 1</h3>
+				<h3 className="h3GuidesStep">Paso 1</h3>
 				<p>
 					Primero necesitamos abrir la aplicación en nuestro celular, entonces tienen que buscar el icono de
 					WhatsApp en su celular y presionar con su dedo sobre la aplicación para que se abra.
 				</p>
 				<img src="WA1.jpg" className="imgGuia WATutorialImg1" />
 
-				<h3>Paso 2</h3>
+				<h3 className="h3GuidesStep">Paso 2</h3>
 				<p>
 					Una vez que abrimos la aplicación, vamos a poder ver los chats que tenemos abiertos, donde tendremos
 					que seleccionar presionando con el dedo sobre la persona con la que se quiere realizar la video
@@ -43,14 +51,14 @@ export const WhatsAppCalls = () => {
 				</p>
 				<img src="WA2.png" className="imgGuia WATutorialImg" />
 
-				<h3>Paso 3</h3>
+				<h3 className="h3GuidesStep">Paso 3</h3>
 				<p>
 					Cuando abrimos el chat correspondiente, tendrá que presionar con el dedo sobre el icono que parece
 					un video cámara, y esta hará que la aplicación genere la video llamada.
 				</p>
 				<img src="WA3.jpg" className="imgGuia WATutorialImg" />
 
-				<h3>Paso 4</h3>
+				<h3 className="h3GuidesStep">Paso 4</h3>
 				<p>
 					Una vez generada la llamada podremos agregar otra persona a la llamada, presionando con el dedo
 					sobre el icono señalado en la imagen abajo, después de presionarlo la aplicación va solicitar que

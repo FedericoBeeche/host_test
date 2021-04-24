@@ -2,10 +2,6 @@
     General Styles
 */
 
-.text-coral {
-    color: #f28181;
-}
-
 // BODY STYLES //
 
 body {
@@ -13,12 +9,19 @@ body {
     background-color: #fcfff8;
 }
 
+.text-coral {
+    color: #f28181;
+}
+
+// GENERAL STYLES // 
+
 .divisionGuiaYBotones {
     border-bottom: 1px solid #f28181;
 }
 
 .card {
-    border: 5px solid black;
+    border: 5px solid #2b2d4a;
+    transition: 0.2s;
     border-radius: 5px;
 }
 
@@ -27,16 +30,50 @@ body {
     transform: scale(1.05);
 }
 
-.imgGuia {
-    border: 3.5px solid black;
-    border-radius: 5px;
-}
-
 .buscador {
     border: #f28181 solid 2px;
     border-radius: 5px;
     color: #f28181;
     opacity: 0.5;
+    width: 200px;
+    transition: 0.7s;
+}
+
+.buscador:focus {
+    transition: 0.7s;
+    width: 300px;
+    pointer-events: none;
+}
+
+// GENERAL GUIDE STYLES //
+
+.Toph1Guide {
+    font-size: 100px;
+    font-weight: 900;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.Bottomh1Guide {
+    font-weight: 900;
+    font-size: 53px;
+    margin-top: 0;
+}
+
+.h5Guide {
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 11.5px;
+}
+
+.imgGuia {
+    border: 3.5px solid #2b2d4a;
+    border-radius: 5px;
+}
+
+.h3GuidesStep {
+    font-weight: 700;
+    font-size: 35px;
 }
 
 // NAVBAR STYLES //
@@ -59,6 +96,7 @@ body {
 .logoClass {
     width: 153.6px;
     height: 86.4px;
+    transition: 0.2s;
 }
 
 .logoClass:hover {

@@ -18,10 +18,18 @@ export const ZoomCalls = () => {
 	return (
 		<>
 			<div className="container mb-2">
-				<h1>MI PRIMERA VIDEO LLAMDA</h1>
-				<h1>EN ZOOM</h1>
-				<h5>EN EL APP DE TU TELÉFONO</h5>
+				<div className="row justify-content-center">
+					<h1 className="Toph1Guide">MI PRIMER</h1>
+				</div>
+				<div className="row justify-content-center">
+					<h1 className="Bottomh1Guide">LLAMADA EN ZOOM</h1>
+				</div>
+				<div className="row justify-content-center">
+					<h5 className="h5Guide">EN EL APP DE TU TELÉFONO</h5>
+				</div>
+			</div>
 
+			<div className="container mb-2">
 				{/* video tutorial */}
 				<iframe
 					width="560"
@@ -33,7 +41,7 @@ export const ZoomCalls = () => {
 					allowFullScreen
 				/>
 
-				<h3>Paso 1</h3>
+				<h3 className="h3GuidesStep">Paso 1</h3>
 				<p>
 					Para poder seguir los pasos de esta guía, necesita tener una cuenta de Zoom, si no tiene cuenta
 					favor crear una en{" "}
@@ -43,12 +51,14 @@ export const ZoomCalls = () => {
 					Y luego regrese a esta guía. Si ya tiene cuenta favor seguir al paso <a href="#paso2">número 2</a>.
 				</p>
 
-				<h3 id="paso2">Paso 2</h3>
+				<h3 className="h3GuidesStep" id="paso2">
+					Paso 2
+				</h3>
 				<p>Abrimos la aplicación en nuestro celular, presionando con nuestro dedo sobre el icono de Zoom.</p>
 				{/* esta clase es la unica diferente porque tiene tamano diferente al resto */}
 				<img src="zoom1.png" className="imgGuia zoomTutorialImg1" />
 
-				<h3>Paso 3</h3>
+				<h3 className="h3GuidesStep">Paso 3</h3>
 				<p>
 					Cuando termine de abrir la aplicación vamos a poder ver la pantalla inicio de Zoom, donde podremos
 					ver las diferentes opciones disponibles de la app, para crear la video llamada necesita presionar
@@ -60,7 +70,7 @@ export const ZoomCalls = () => {
 				</p>
 				<img src="zoom2.png" className="imgGuia zoomTutorialImg" />
 
-				<h3>Paso 4</h3>
+				<h3 className="h3GuidesStep">Paso 4</h3>
 				<p>
 					La siguiente pantalla, presione el botón{" "}
 					<strong>
@@ -70,7 +80,7 @@ export const ZoomCalls = () => {
 				</p>
 				<img src="zoom3.png" className="imgGuia zoomTutorialImg4" />
 
-				<h3>Paso 5</h3>
+				<h3 className="h3GuidesStep">Paso 5</h3>
 				<p>
 					Cuando inicie la video llamada, nos va mostrar un panel donde podremos activar o desactivar
 					presionando sobre el icono audio y video, para invitar a personas a la reunión, tendremos que
@@ -82,7 +92,7 @@ export const ZoomCalls = () => {
 				</p>
 				<img src="zoom4.png" className="imgGuia zoomTutorialImg" />
 
-				<h3>Paso 6</h3>
+				<h3 className="h3GuidesStep">Paso 6</h3>
 				<p>
 					En la ventanilla de{" "}
 					<strong>
@@ -102,7 +112,7 @@ export const ZoomCalls = () => {
 				<br />
 				<img src="zoom6.png" className="imgGuia zoomTutorialImg" />
 
-				<h3>Paso 7</h3>
+				<h3 className="h3GuidesStep">Paso 7</h3>
 				<p>
 					Esta opción nos permite compartir en link o url de acceso en cualquier aplicación, para este ejemplo
 					utilizaremos{" "}
