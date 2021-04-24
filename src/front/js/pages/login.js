@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom"; // hook used to redirect to anoth
 import { Link } from "react-router-dom";
 
 import "../../styles/home.scss";
+import { SignUp } from "./signup";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
@@ -67,7 +68,7 @@ export const Login = () => {
 					</div>
 					<div className="text-center">
 						<small>¿No tienes una cuenta aún? </small>
-						<Link to={"/register"}>
+						<Link to={"/signup"}>
 							<small className="text-info">Regístrate</small>
 						</Link>
 					</div>

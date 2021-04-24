@@ -6,6 +6,7 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { Login } from "./pages/login";
+import { SignUp } from "./pages/signup";
 import { BAC_SINPE } from "./pages/guide_BACSINPEMovil";
 import injectContext from "./store/appContext";
 
@@ -29,6 +30,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/login">
 							<Login />
+						</Route>
+						<Route exact path="/signup">
+							<SignUp />
 						</Route>
 						<Route exact path="/guide_BACSINPEMovil">
 							<BAC_SINPE />
