@@ -8,6 +8,8 @@ import { Single } from "./pages/single";
 import { Login } from "./pages/login";
 import { SignUp } from "./pages/signup";
 import { BAC_SINPE } from "./pages/guide_BACSINPEMovil";
+import { ZoomCalls } from "./pages/guide_ZoomCalls";
+import { WhatsAppCalls } from "./pages/guide_WhatsAppCalls";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -36,6 +38,12 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/guide_BACSINPEMovil">
 							<BAC_SINPE />
+						</Route>
+						<Route exact path="/guide_ZoomCalls">
+							<ZoomCalls />
+						</Route>
+						<Route exact path="/guide_WhatsAppCalls">
+							<WhatsAppCalls />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />

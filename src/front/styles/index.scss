@@ -10,19 +10,62 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #fcfff8;
+}
+
+.divisionGuiaYBotones {
+    border-bottom: 1px solid #f28181;
+}
+
+.card {
+    border: 5px solid black;
+    border-radius: 5px;
+}
+
+.card:hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+
+.imgGuia {
+    border: 3.5px solid black;
+    border-radius: 5px;
+}
+
+.buscador {
+    border: #f28181 solid 2px;
+    border-radius: 5px;
+    color: #f28181;
+    opacity: 0.5;
 }
 
 // NAVBAR STYLES //
 
+.navbar {
+    padding: 0rem 1rem;
+}
+
 .navbarStyle {
     border-bottom: #f28181 3px solid;
     color: #f28181;
+    background-color: #fcfff8;
 }
 
 .userProfileIcon {
     font-size: 30px;
     color: #f28181;
 }
+
+.logoClass {
+    width: 153.6px;
+    height: 86.4px;
+}
+
+.logoClass:hover {
+    transform: scale(0.90);
+    transition: 0.2s;
+}
+
 // BODY STYLES //
 .leerSVG {
     width: 75px;
@@ -36,9 +79,41 @@ body {
 .footerStyle {
     border-top: #f28181 3px solid;
     font-size: 40px;
+    background-color: #8f3749;
 }
 
 .socialMediaIcon {
     margin: 5px;
     color: #f28181;
+}
+
+// BAC GUIDES STYLES //
+
+.bacTutorialImg1 {
+    height: 100px;
+    width: 100px;
+}
+
+.bacTutorialImg {
+    height: 600px;
+    width: 300px;
+}
+
+// ZOOM GUIDE STYLES // 
+
+.zoomTutorialImg {
+    height: 600px;
+    width: 300px;
+}
+
+.zoomTutorialImg1 {
+    height: 100px;
+    width: 75px;
+}
+
+// WHATSAPP GUIDE STYLES // 
+
+.WATutorialImg {
+    height: 600px;
+    width: 300px;
 }

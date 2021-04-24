@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { LogoPagina } from "../../img/Logo.png";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<nav className="navbar navbar-light bg-light mb-3 navbarStyle">
+		<nav className="navbar navbar-light mb-3 navbarStyle">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">¿Cómo hago?</span>
+				<img className="logoClass p-0 m-0" src="Logo.png" alt="¿Cómo hago?" />
+				{/* <span className="navbar-brand mb-0 h1">¿Cómo hago?</span> */}
 			</Link>
 			<div className="d-flex justify-content-center ml-auto">
 				<i className=" far fa-heart mr-2 userProfileIcon" />
