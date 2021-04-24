@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
-import ZOOMfirstImg from "../../img/img_ZoomCalls/1.png";
-import ZOOMsecondImg from "../../img/img_ZoomCalls/2.png";
-import ZOOMthirdImg from "../../img/img_ZoomCalls/3.png";
-import ZOOMfourthImg from "../../img/img_ZoomCalls/4.png";
-import ZOOMfifthImg from "../../img/img_ZoomCalls/5.png";
-import ZOOMsixthImg from "../../img/img_ZoomCalls/6.png";
-import ZOOMseventhImg from "../../img/img_ZoomCalls/7.jpg";
-import ZOOMeighthImg from "../../img/img_ZoomCalls/8.jpg";
+import ZOOMfirstImg from "../../img/img_ZoomCalls/zoom1.png";
+import ZOOMsecondImg from "../../img/img_ZoomCalls/zoom2.png";
+import ZOOMthirdImg from "../../img/img_ZoomCalls/zoom3.png";
+import ZOOMfourthImg from "../../img/img_ZoomCalls/zoom4.png";
+import ZOOMfifthImg from "../../img/img_ZoomCalls/zoom5.png";
+import ZOOMsixthImg from "../../img/img_ZoomCalls/zoom6.png";
+import ZOOMseventhImg from "../../img/img_ZoomCalls/zoom7.jpg";
+import ZOOMeighthImg from "../../img/img_ZoomCalls/zoom8.jpg";
 import "../../styles/home.scss";
 
 export const ZoomCalls = () => {
@@ -17,7 +17,7 @@ export const ZoomCalls = () => {
 
 	return (
 		<>
-			<div className="container mb-5">
+			<div className="container mb-2">
 				<h1>MI PRIMERA VIDEO LLAMDA</h1>
 				<h1>EN ZOOM</h1>
 				<h5>EN EL APP DE TU TELÉFONO</h5>
@@ -46,7 +46,7 @@ export const ZoomCalls = () => {
 				<h3 id="paso2">Paso 2</h3>
 				<p>Abrimos la aplicación en nuestro celular, presionando con nuestro dedo sobre el icono de Zoom.</p>
 				{/* esta clase es la unica diferente porque tiene tamano diferente al resto */}
-				<img src="1.png" className="zoomTutorialImg1" />
+				<img src="zoom1.png" className="imgGuia zoomTutorialImg1" />
 
 				<h3>Paso 3</h3>
 				<p>
@@ -58,8 +58,7 @@ export const ZoomCalls = () => {
 					</strong>
 					.
 				</p>
-				<img src="2.png" className="zoomTutorialImg" />
-				{/* <img src="2.jpg" className="zoomTutorialImg" /> */}
+				<img src="zoom2.png" className="imgGuia zoomTutorialImg" />
 
 				<h3>Paso 4</h3>
 				<p>
@@ -69,7 +68,7 @@ export const ZoomCalls = () => {
 					</strong>
 					.
 				</p>
-				<img src="3.png" className="zoomTutorialImg4" />
+				<img src="zoom3.png" className="imgGuia zoomTutorialImg4" />
 
 				<h3>Paso 5</h3>
 				<p>
@@ -81,7 +80,7 @@ export const ZoomCalls = () => {
 					</strong>
 					.
 				</p>
-				<img src="4.png" className="zoomTutorialImg" />
+				<img src="zoom4.png" className="imgGuia zoomTutorialImg" />
 
 				<h3>Paso 6</h3>
 				<p>
@@ -99,9 +98,9 @@ export const ZoomCalls = () => {
 					</strong>
 					.
 				</p>
-				<img src="5.png" className="zoomTutorialImg" />
+				<img src="zoom5.png" className="imgGuia zoomTutorialImg mb-2" />
 				<br />
-				<img src="6.png" className="zoomTutorialImg" />
+				<img src="zoom6.png" className="imgGuia zoomTutorialImg" />
 
 				<h3>Paso 7</h3>
 				<p>
@@ -118,9 +117,10 @@ export const ZoomCalls = () => {
 					, esto mostrara el vínculo de la reunión, y presionamos el icono de enviar para compartir el
 					vínculo. Con esto ya habremos compartido la reunión con la persona que queríamos.
 				</p>
-				<img src="7.jpg" className="zoomTutorialImg" />
+				<img src="zoom7.jpg" className="imgGuia zoomTutorialImg mb-2" />
 				<br />
-				<img src="8.jpg" className="zoomTutorialImg" />
+				<img src="zoom8.jpg" className="imgGuia zoomTutorialImg" />
+				<div className="divisionGuiaYBotones mb-2 mt-3" />
 			</div>
 
 			<div className="container">
@@ -141,7 +141,7 @@ export const ZoomCalls = () => {
 					</a>
 				</div> */}
 				<Link to="/">
-					<button className="btn btn-primary mb-2">Volver al menú principal</button>
+					<button className="btn btn-dark mb-2">Volver al menú principal</button>
 				</Link>
 			</div>
 		</>
