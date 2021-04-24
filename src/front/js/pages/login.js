@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import "../../styles/home.scss";
 import { SignUp } from "./signup";
+import { RestorePass } from "./restorepass";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
@@ -56,7 +57,7 @@ export const Login = () => {
 						</div>
 					</form>
 					<div className="d-flex justify-content-end">
-						<Link to={"/password/reset"}>
+						<Link to={"/restorepass"}>
 							<small className="text-info float-right m-0">¿Has olvidado tu contraseña?</small>
 						</Link>
 					</div>
