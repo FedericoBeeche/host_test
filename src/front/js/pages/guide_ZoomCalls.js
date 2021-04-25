@@ -19,13 +19,13 @@ export const ZoomCalls = () => {
 		<>
 			<div className="container mb-2">
 				<div className="row justify-content-center">
-					<h1 className="Toph1Guide">MI PRIMER</h1>
+					<h1 className="Zoom_Toph1Guide">MI PRIMER</h1>
 				</div>
 				<div className="row justify-content-center">
-					<h1 className="Bottomh1Guide">LLAMADA EN ZOOM</h1>
+					<h1 className="Zoom_Bottomh1Guide">LLAMADA EN ZOOM</h1>
 				</div>
 				<div className="row justify-content-center">
-					<h5 className="h5Guide">EN EL APP DE TU TELÉFONO</h5>
+					<h5 className="Zoom_h5Guide">EN EL APP DE TU TELÉFONO</h5>
 				</div>
 			</div>
 

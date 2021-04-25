@@ -22,18 +22,18 @@ export const Login = () => {
 
 	return (
 		<div className="container-fluid">
-			<h2 className="text-center m-5">Iniciar sesión</h2>
+			<h2 className="text-center m-5 loginH2">Iniciar sesión</h2>
 			{store.token && store.token != "" && store.token != undefined ? (
 				history.push("/")
 			) : (
-				<div className="m-auto col-8 col-sm-3">
+				<div className="m-auto col-8 col-sm-3 loginBox">
 					<form>
 						<div className="row mb-3 d-block">
-							<label htmlFor="email_input" className="form-label">
+							<label htmlFor="email_input" className="form-label loginText">
 								Correo electrónico
 							</label>
 							<input
-								className="d-block w-100 p-2"
+								className="d-block w-100 p-2 infoBox"
 								type="email"
 								id="email_input"
 								placeholder="correo@ejemplo.com"
@@ -43,11 +43,11 @@ export const Login = () => {
 						</div>
 
 						<div className="row mb-0 d-block">
-							<label htmlFor="password_input" className="form-label">
+							<label htmlFor="password_input" className="form-label loginText">
 								Contraseña
 							</label>
 							<input
-								className="d-block w-100 p-2"
+								className="d-block w-100 p-2 infoBox"
 								type="password"
 								id="password_input"
 								placeholder="Digita tu contraseña"
@@ -58,12 +58,12 @@ export const Login = () => {
 					</form>
 					<div className="d-flex justify-content-end">
 						<Link to={"/restorepass"}>
-							<small className="text-info float-right m-0">¿Has olvidado tu contraseña?</small>
+							<small className="text-info float-right mt-1">¿Has olvidado tu contraseña?</small>
 						</Link>
 					</div>
 
 					<div className="row my-3">
-						<button type="button" className="btn btn-success" onClick={handleClick}>
+						<button type="button" className="btn btn-dark" onClick={handleClick}>
 							Ingresar
 						</button>
 					</div>

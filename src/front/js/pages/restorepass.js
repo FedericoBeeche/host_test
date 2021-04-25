@@ -11,7 +11,8 @@ import "../../styles/demo.scss";
 export const RestorePass = () => {
 	return (
 		<div className="container-fluid">
-			<h2 className="text-center m-5">Restablezca su Contraseña</h2>
+			<h2 className="text-center pwResetTopH2">Restablezca su</h2>
+			<h2 className="text-center m-5 pwResetBottomH2">contraseña</h2>
 			<div className="m-auto col-8 col-sm-3">
 				<form>
 					<div className="row mb-3 d-block">
@@ -19,7 +20,7 @@ export const RestorePass = () => {
 							Ingrese su correo electronico *
 						</label>
 						<input
-							className="d-block w-100 p-2"
+							className="d-block w-100 p-2 infoBox"
 							type="email"
 							id="email_input"
 							placeholder="correo@ejemplo.com"
@@ -33,7 +34,7 @@ export const RestorePass = () => {
 						</button>
 					</Link>
 					<Link to={"/login"}>
-						<button type="button" className="btn btn-outline-danger ml-2">
+						<button type="button" id="pwResetBtn" className="btn btn-outline-danger ml-2">
 							Cancelar
 						</button>
 					</Link>

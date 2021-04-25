@@ -9,9 +9,9 @@ export const Home = () => {
 
 	return (
 		<div className="container">
-			<h1>Menú de guías</h1>
-			<h4 className="mb-3">Aquí podrás encontrar las guías con la información más actualizada.</h4>
-			<div className="d-flex justify-content-center mb-3">
+			<h1 className="home_menuH1">Menú de guías</h1>
+			<h4 className="mb-4 home_menuH4">Aquí podrás encontrar las guías con la información más actualizada.</h4>
+			<div className="d-flex justify-content-center mb-4">
 				<input className="buscador" type="text" placeholder="Buscar guía" />
 				<button className="btn btn-dark ml-2">Buscar</button>
 			</div>
@@ -25,7 +25,7 @@ export const Home = () => {
 						/>
 					</div>
 				</Link>
-				<h5>Transferencias SINPE BAC</h5>
+				<h5 className="menu_h5GuideTitle">Transferencias SINPE BAC</h5>
 				<p>
 					Todo mundo está hablando de transferencias SINPE móvil pero... ¿qué son realmente estas
 					transferencias?
@@ -39,7 +39,7 @@ export const Home = () => {
 						/>
 					</div>
 				</Link>
-				<h5>Mi primera videollamada en Zoom (para celular)</h5>
+				<h5 className="menu_h5GuideTitle">Mi primer videollamada en Zoom (para celular)</h5>
 				<p>Como invitar a amigos, familia, y hasta mis mascotas.</p>
 				<Link to="/guide_WhatsAppCalls">
 					<div className="card">
@@ -50,7 +50,7 @@ export const Home = () => {
 						/>
 					</div>
 				</Link>
-				<h5>Videollamadas por WhatsApp</h5>
+				<h5 className="menu_h5GuideTitle">Videollamadas por WhatsApp</h5>
 				<p>¿Para qué bajar Zoom si puedo usar el mismo WhatsApp?</p>
 			</div>
 			<div className="d-flex justify-content-center">

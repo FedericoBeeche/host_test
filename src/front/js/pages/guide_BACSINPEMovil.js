@@ -23,13 +23,16 @@ export const BAC_SINPE = () => {
 		<>
 			<div className="container mb-2">
 				<div className="row justify-content-center">
-					<h1>MI PRIMERA TRANSFERENCIA</h1>
+					<h1 className="BAC_Toph1Guide">MI PRIMER</h1>
 				</div>
 				<div className="row justify-content-center">
-					<h1>SINPE MÓVIL</h1>
+					<h1 className="BAC_Middleh1Guide">TRANSFERENCIA</h1>
 				</div>
 				<div className="row justify-content-center">
-					<h5>EN BANCA MÓVIL DEL BAC</h5>
+					<h1 className="BAC_Bottomh1Guide">SINPE MÓVIL</h1>
+				</div>
+				<div className="row justify-content-center">
+					<h5 className="BAC_h5Guide">EN BANCA MÓVIL DEL BAC</h5>
 				</div>
 			</div>
 			<div className="container mb-2">

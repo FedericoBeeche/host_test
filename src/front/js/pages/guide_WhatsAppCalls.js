@@ -14,13 +14,16 @@ export const WhatsAppCalls = () => {
 		<>
 			<div className="container mb-5">
 				<div className="row justify-content-center">
-					<h1>MI PRIMERA VIDEO LLAMDA</h1>
+					<h1 className="WA_Toph1Guide">MI PRIMER</h1>
 				</div>
 				<div className="row justify-content-center">
-					<h1>POR WHATSAPP</h1>
+					<h1 className="WA_Middleh1Guide">VIDEO LLAMADA</h1>
 				</div>
 				<div className="row justify-content-center">
-					<h5>¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</h5>
+					<h1 className="WA_Bottomh1Guide">POR WHATSAPP</h1>
+				</div>
+				<div className="row justify-content-center">
+					<h5 className="WA_h5Guide">¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</h5>
 				</div>
 			</div>
 

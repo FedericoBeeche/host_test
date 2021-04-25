@@ -7,6 +7,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #fcfff8;
+    color: #2b2d4a;
 }
 
 .text-coral {
@@ -23,18 +24,19 @@ body {
     border: 5px solid #2b2d4a;
     transition: 0.2s;
     border-radius: 5px;
+        
 }
 
 .card:hover {
     transition: 0.2s;
     transform: scale(1.05);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .buscador {
     border: #f28181 solid 2px;
     border-radius: 5px;
     color: #f28181;
-    opacity: 0.5;
     width: 200px;
     transition: 0.7s;
 }
@@ -42,38 +44,229 @@ body {
 .buscador:focus {
     transition: 0.7s;
     width: 300px;
-    pointer-events: none;
 }
 
-// GENERAL GUIDE STYLES //
+.botonRegistro {
+    cursor: pointer;
+}
 
-.Toph1Guide {
-    font-size: 100px;
+input[type=button], .btn {
+    color: #fcfff8;
+}
+
+.leerSVG {
+    width: 75px;
+    height: 75px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.home_menuH1 {
     font-weight: 900;
+    font-size: 75px;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
-.Bottomh1Guide {
-    font-weight: 900;
-    font-size: 53px;
-    margin-top: 0;
+.home_menuH4 {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 30px;
 }
 
-.h5Guide {
-    font-style: italic;
-    font-weight: lighter;
-    letter-spacing: 11.5px;
+.menu_h5GuideTitle {
+    font-weight: 700;
 }
+
+// GENERAL GUIDE STYLES //
 
 .imgGuia {
     border: 3.5px solid #2b2d4a;
     border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .h3GuidesStep {
     font-weight: 700;
     font-size: 35px;
+}
+
+// LOGIN STYLE //
+
+.loginH2 {
+    font-size: 66px;
+    font-weight: 900;
+}
+
+.infoBox {
+    border: #f28181 solid 2px;
+    border-radius: 5px;
+    color: #f28181;
+    transition: 0.7s;
+}
+
+.infoBox:focus {
+    transition: 0.7s;
+    border: #2b2d4a solid 2px;
+    color: #2b2d4a;
+}
+
+// PASSWORD RESET STYLES // 
+
+#pwResetBtn {
+    color: #dc3545;
+}
+
+#pwResetBtn:hover {
+    color: #fcfff8;
+}
+
+#pwResetBtn:focus {
+    color: #fcfff8;
+}
+
+.pwResetTopH2 {
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 100px;
+    padding-bottom: 0;
+    line-height: 5%;
+}
+
+.pwResetBottomH2 {
+    font-weight: 900;
+    font-size: 66.5px;
+    margin-top: 0;
+    padding-bottom: 0;
+    line-height: 10%;
+}
+
+.infoBox {
+    border: #f28181 solid 2px;
+    border-radius: 5px;
+    color: #f28181;
+    transition: 0.7s;
+}
+
+.infoBox:focus {
+    transition: 0.7s;
+    border: #2b2d4a solid 2px;
+    color: #2b2d4a;
+}
+
+// SIGN UP STYLES //
+
+.signUpBox {
+    border: #f28181 solid 2px;
+    border-radius: 5px;
+    color: #f28181;
+    transition: 0.7s;    
+}
+
+.signUpBox:focus {
+    transition: 0.7s;
+    border: #2b2d4a solid 2px;
+    color: #2b2d4a;
+}
+
+.signUpH2 {
+    font-size: 60px;
+    font-weight: 900;
+}
+
+// ZOOM GUIDE STYLES //
+
+.Zoom_Toph1Guide {
+    font-size: 100px;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 30px;
+    padding-bottom: 0;
+    line-height: 65%;
+}
+
+.Zoom_Bottomh1Guide {
+    font-weight: 900;
+    font-size: 53px;
+    margin-top: 0;
+    padding-bottom: 0;
+    line-height: 100%;
+}
+
+.Zoom_h5Guide {
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 11.5px;
+    line-height: 20%;
+}
+
+// BAC GUIDE STYLES //
+
+.BAC_Toph1Guide {
+    font-size: 120px;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 30px;
+    padding-bottom: 0;
+    line-height: 50%;
+}
+
+.BAC_Middleh1Guide {
+    font-size: 75px;
+    font-weight: 900;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    
+}
+
+.BAC_Bottomh1Guide {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 50%;
+}
+
+.BAC_h5Guide {
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 11.5px;
+    margin-top: 10px;
+}
+
+// WHATSAPP GUIDE STYLES //
+
+.WA_Toph1Guide {
+    font-size: 120px;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 30px;
+    padding-bottom: 0;
+    line-height: 50%;
+}
+
+.WA_Middleh1Guide {
+    font-size: 74px;
+    font-weight: 900;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    
+}
+
+.WA_Bottomh1Guide {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 50%;
+}
+
+.WA_h5Guide {
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 2.7px;
+    margin-top: 10px;
 }
 
 // NAVBAR STYLES //
@@ -104,13 +297,6 @@ body {
     transition: 0.2s;
 }
 
-// BODY STYLES //
-.leerSVG {
-    width: 75px;
-    height: 75px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
 
 // FOOTER STYLES //
 
@@ -123,6 +309,12 @@ body {
 .socialMediaIcon {
     margin: 5px;
     color: #f28181;
+    transition: 0.7s;
+}
+
+.socialMediaIcon:hover {
+    text-shadow: 0 0 6px rgb(0, 0, 0);
+    transition: 0.7s;
 }
 
 // BAC GUIDES STYLES //

@@ -20,28 +20,38 @@ export const SignUp = () => {
 
 	return (
 		<div className="container-fluid">
-			<h2 className="text-center m-5">Crear cuenta</h2>
+			<h2 className="text-center m-5 signUpH2">Crear cuenta</h2>
 			<div className="m-auto col-8 col-sm-3">
 				<form>
 					<div className="row mb-3 d-block">
 						<label htmlFor="firstname_input" className="form-label">
 							Nombre
 						</label>
-						<input className="d-block w-100 p-2" type="text" id="firstname_input" placeholder="Nombre" />
+						<input
+							className="d-block w-100 p-2 signUpBox"
+							type="text"
+							id="firstname_input"
+							placeholder="Nombre"
+						/>
 					</div>
 
 					<div className="row mb-3 d-block">
 						<label htmlFor="lastname_input" className="form-label">
 							Apellidos
 						</label>
-						<input className="d-block w-100 p-2" type="text" id="lastname_input" placeholder="Apellidos" />
+						<input
+							className="d-block w-100 p-2 signUpBox"
+							type="text"
+							id="lastname_input"
+							placeholder="Apellidos"
+						/>
 					</div>
 					<div className="row mb-3 d-block">
 						<label htmlFor="email_input" className="form-label">
 							Correo electrónico
 						</label>
 						<input
-							className="d-block w-100 p-2"
+							className="d-block w-100 p-2 signUpBox"
 							type="email"
 							id="email_input"
 							placeholder="correo@ejemplo.com"
@@ -53,7 +63,7 @@ export const SignUp = () => {
 							Contraseña
 						</label>
 						<input
-							className="d-block w-100 p-2"
+							className="d-block w-100 p-2 signUpBox"
 							type="password"
 							id="password_input"
 							placeholder="Digita tu contraseña"
@@ -65,10 +75,10 @@ export const SignUp = () => {
 								<input type="checkbox" id="agree" onChange={checkboxHandler} />
 								<label htmlFor="agree">
 									{" "}
-									<small> Acepto </small>
+									<small className="ml-1"> Acepto </small>
 								</label>
 								<a href="#terms" data-toggle="modal">
-									<small>Terminos y Condiciones</small>
+									<small> Terminos y Condiciones</small>
 								</a>
 								<div
 									className="modal fade"
@@ -166,7 +176,7 @@ export const SignUp = () => {
 						</p>
 					</div>
 					<div className="row my-3 d-flex justify-content-center">
-						<button type="button" disabled={!agree} className="btn btn-success">
+						<button type="button" disabled={!agree} className="btn btn-success botonRegistro">
 							Registrate
 						</button>
 					</div>
