@@ -15,15 +15,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			token: null,
-			url: "https://3001-gray-pinniped-zlw2j4qj.ws-us03.gitpod.io/api" // change this! do NOT add slash '/' at the end
-
-			// remeber to append 'api' at the end
+			url: "https://3001-bronze-wallaby-1k5wp580.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
 				const store = getStore();
 
-				const URL = `${store.url}/token`;
+				const URL = `${store.url}/api/token`;
 				const CONFIG = {
 					method: "POST",
 					headers: {

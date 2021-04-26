@@ -53,14 +53,23 @@ def get_single_user(id):
     print("GET single user: ", user)
     return jsonify(user.serialize()), 200
 
-@api.route('/user', methods=['POST']) # to Sing Up
+@api.route('/register', methods=['POST']) # to Sing Up/Register
 def create_user():
     request_body = request.get_json()
+
+    if request_body["name"]=='' or request_body["lastname"]=='' or request_body["email"]=='' or request_body["password"]=='':
+        raise APIException('Pending required fields', status_code=412)
+
+    user_exists = User.query.filter_by(email=request_body["email"]).first()
+    if user_exists:
+        raise APIException('Email already registered', status_code=409)
+
     user = User(name=request_body["name"], lastname=request_body["lastname"], email=request_body["email"], password=request_body["password"])
     db.session.add(user)
     db.session.commit()
     print("User created: ", request_body)
     return jsonify(request_body), 200
+     
 
 @api.route('/user/<int:user_id>', methods=['PUT']) # to update password
 def update_user(user_id):
