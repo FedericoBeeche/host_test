@@ -11,6 +11,8 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from flask_jwt_extended import JWTManager
+from flask_mail import Mail, Message
+from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 
 ENV = os.getenv("FLASK_ENV")
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
@@ -29,6 +31,18 @@ else:
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 MIGRATE = Migrate(app, db)
 db.init_app(app)
+
+# mail confirguration
+app.config['MAIL_SERVER'] = 'smtp.office365.com'
+app.config['MAIL_PORT'] = 587 # port of email server
+app.config['MAIL_USE_TLS'] = True # test both TLS and SSL
+app.config['MAIL_USE_SSL'] = False # test False vs True
+app.config['MAIL_USERNAME'] = os.environ.get('MY_EMAIL')
+app.config['MAIL_PASSWORD'] = os.environ.get('MY_EMAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = ('comohago.cr', os.environ.get('MY_EMAIL'))
+
+mail = Mail(app)
+s = URLSafeTimedSerializer('Thisisasecret!') # serializer
 
 # Allow CORS requests to this API
 CORS(app)
@@ -50,6 +64,41 @@ def sitemap():
     if ENV == "development":
         return generate_sitemap(app)
     return send_from_directory(static_file_dir, 'index.html')
+
+# flask-mail route
+@app.route('/mail')
+def send_mail():
+    msg = Message(subject='Email Title', recipients=['cotigi1063@hype68.com']) 
+    msg.body = 'This is the email body' 
+    msg.html = '<b>We can also use HTML</b>' # When both msg.body and msg.html, just msg.html shows
+    mail.send(msg)
+
+    return "This is the GET response" # This is the body of GET METHOD
+
+
+@app.route('/forgotmail/<email>')
+def forgot_mail(email):
+    
+    token = s.dumps(email, salt='email-reset')
+
+    msg = Message('Reset Password', recipients=[email])
+
+    link = url_for('reset_password', token=token, _external=True) # External true because it is a link outside of my application
+
+    msg.body = 'Resetear su contraseña en el siguiente link {}'.format(link)
+
+    mail.send(msg)
+
+    return 'The email you entered is {} The token is {}'.format('email', token)
+
+@app.route('/resetpassword/<token>')
+def reset_password(token):
+    try:
+        email = s.loads(token, salt='email-reset', max_age=60)
+    except SignatureExpired:
+        return 'The token is expired'
+    return 'The token works'
+
 
 # any other endpoint will try to serve it like a static file
 @app.route('/<path:path>', methods=['GET'])

@@ -9,6 +9,30 @@ import { Login } from "./login";
 import "../../styles/demo.scss";
 
 export const RestorePass = () => {
+	const { store, actions } = useContext(Context);
+	const [email, setEmail] = useState("");
+
+	const forgotPasswordHandler = () => {
+		const URL = `${store.url}/forgotmail/${email}`;
+		const CONFIG = {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json"
+			}
+		};
+
+		fetch(URL, CONFIG)
+			.then(resp => {
+				console.log("Send email request: ", resp.ok);
+				resp.status >= 200 && resp.status < 300
+					? console.log("Send email successful, status: ", resp.status)
+					: console.error("Send email failed, status: ", resp.status);
+				return resp.json();
+			})
+			.then(() => {})
+			.catch(error => console.error("Send email error error: ", error));
+	};
+
 	return (
 		<div className="container-fluid">
 			<h2 className="text-center pwResetTopH2">Restablezca su</h2>
@@ -24,12 +48,14 @@ export const RestorePass = () => {
 							type="email"
 							id="email_input"
 							placeholder="correo@ejemplo.com"
+							value={email}
+							onChange={e => setEmail(e.target.value)}
 						/>
 					</div>
 				</form>
 				<div className="row my-3 d-flex justify-content">
 					<Link to={"/login"}>
-						<button type="button" className="btn btn-success">
+						<button type="button" className="btn btn-success" onClick={forgotPasswordHandler}>
 							Enviar
 						</button>
 					</Link>
