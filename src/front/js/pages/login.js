@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 import { SignUp } from "./signup";
 import { RestorePass } from "./restorepass";
+import { ChangePass } from "./changepass";
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
@@ -71,6 +72,11 @@ export const Login = () => {
 						<small>¿No tienes una cuenta aún? </small>
 						<Link to={"/signup"}>
 							<small className="text-info">Regístrate</small>
+						</Link>
+					</div>
+					<div className="text-center">
+						<Link to={"/changepass"}>
+							<small className="text-info"> Cambio de contraseña</small>
 						</Link>
 					</div>
 				</div>
