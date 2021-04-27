@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 
 import "../../styles/demo.scss";
+import { ChangePass } from "./changepass";
 
 export const SignUp = () => {
 	const { store, actions } = useContext(Context);
