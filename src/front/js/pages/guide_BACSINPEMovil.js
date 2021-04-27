@@ -46,14 +46,15 @@ export const BAC_SINPE = () => {
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowFullScreen
 				/>
-
-				<h3 className="h3GuidesStep">Paso 1</h3>
-				<p>
-					Primero, buscaremos la aplicación de Banca Móvil en nuestro teléfono y abriremos la aplicación
-					presionando con nuestro dedo encima de la aplicación
-				</p>
-				{/* la clase de esta img es la unica diferente porque es la unica con dimensiones diferentes al resto */}
-				<img src="BAC1..jpg" className="imgGuia bacTutorialImg1" />
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 1</h3>
+					<p>
+						Primero, buscaremos la aplicación de Banca Móvil en nuestro teléfono y abriremos la aplicación
+						presionando con nuestro dedo encima de la aplicación
+					</p>
+					{/* la clase de esta img es la unica diferente porque es la unica con dimensiones diferentes al resto */}
+					<img src="BAC1..jpg" className="imgGuia bacTutorialImg1" />
+				</div>
 				<h3 className="h3GuidesStep">Paso 2</h3>
 				<p>
 					Una vez que abre la aplicación, la misma nos va solicitar un usuario y contraseña, esta información
