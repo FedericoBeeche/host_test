@@ -37,7 +37,7 @@ app.config['MAIL_SERVER'] = 'smtp.office365.com'
 app.config['MAIL_PORT'] = 587 # port of email server
 app.config['MAIL_USE_TLS'] = True # test both TLS and SSL
 app.config['MAIL_USE_SSL'] = False # test False vs True
-app.config['MAIL_USERNAME'] = os.environ.get('MY_EMAIL')
+app.config['MAIL_USERNAME'] = os.environ.get('MY_EMAIL') 
 app.config['MAIL_PASSWORD'] = os.environ.get('MY_EMAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = ('comohago.cr', os.environ.get('MY_EMAIL'))
 
