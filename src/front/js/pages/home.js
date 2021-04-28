@@ -17,49 +17,21 @@ export const Home = () => {
 			</div>
 			<div className="container guideContainer">
 				<div className="card-columns row justify-content-center">
-					<div className="col-sm-3">
-						<Link to="/guide_BACSINPEMovil">
-							<div className="card">
-								<img
-									src="https://i.ytimg.com/vi/gY4BdVdRF_s/maxresdefault.jpg"
-									className="card-img"
-									alt="..."
-								/>
+					{store.tutorials.map((tutorial, index) => {
+						return (
+							<div className="col-sm-3" key={index}>
+								<Link to={tutorial.link}>
+									<div className="card">
+										<img src={tutorial.img} className="card-img" alt="..." />
+									</div>
+								</Link>
+								<h5 className="menu_h5GuideTitle">{tutorial.title}</h5>
+								<p>{tutorial.description}</p>
 							</div>
-						</Link>
-						<h5 className="menu_h5GuideTitle">Transferencias SINPE BAC</h5>
-						<p>
-							Todo mundo está hablando de transferencias SINPE móvil pero... ¿qué son realmente estas
-							transferencias?
-						</p>
-					</div>
-					<div className="col-sm-3">
-						<Link to="/guide_ZoomCalls">
-							<div className="card">
-								<img
-									src="https://ichef.bbci.co.uk/news/976/cpsprodpb/AA1D/production/_116094534_46bd3031-50b2-492b-9505-6c270c0fbf45.jpg"
-									className="card-img-top"
-									alt="..."
-								/>
-							</div>
-						</Link>
-						<h5 className="menu_h5GuideTitle">Mi primer videollamada en Zoom (para celular)</h5>
-						<p>Como invitar a amigos, familia, y hasta mis mascotas.</p>
-					</div>
-					<div className="col-sm-3">
-						<Link to="/guide_WhatsAppCalls">
-							<div className="card">
-								<img
-									src="https://www.dignited.com/wp-content/uploads/2020/03/fix-WhatsApp-call-not-working.jpg"
-									className="card-img-top"
-									alt="..."
-								/>
-							</div>
-						</Link>
-						<h5 className="menu_h5GuideTitle">Videollamadas por WhatsApp</h5>
-						<p>¿Para qué bajar Zoom si puedo usar el mismo WhatsApp?</p>
-					</div>
+						);
+					})}
 				</div>
+
 				<div className="d-flex justify-content-center">
 					<img src="https://svgshare.com/i/WVA.svg" className="leerSVG text-center" />
 				</div>
