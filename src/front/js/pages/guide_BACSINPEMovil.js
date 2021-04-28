@@ -37,15 +37,17 @@ export const BAC_SINPE = () => {
 			</div>
 			<div className="container mb-2">
 				{/* video tutorial */}
-				<iframe
-					width="560"
-					height="315"
-					src="https://www.youtube.com/embed/IDNkk-jHe7c"
-					title="YouTube video player"
-					frameBorder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowFullScreen
-				/>
+				<div className="row justify-content-center">
+					<iframe
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/IDNkk-jHe7c"
+						title="YouTube video player"
+						frameBorder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowFullScreen
+					/>
+				</div>
 				<div className="row">
 					<h3 className="h3GuidesStep">Paso 1</h3>
 					<p>
@@ -53,22 +55,31 @@ export const BAC_SINPE = () => {
 						presionando con nuestro dedo encima de la aplicación
 					</p>
 					{/* la clase de esta img es la unica diferente porque es la unica con dimensiones diferentes al resto */}
-					<img src="BAC1..jpg" className="imgGuia bacTutorialImg1" />
+					<div className="row col-12 justify-content-center">
+						<img src="BAC1..jpg" className="imgGuia bacTutorialImg1" />
+					</div>
 				</div>
-				<h3 className="h3GuidesStep">Paso 2</h3>
-				<p>
-					Una vez que abre la aplicación, la misma nos va solicitar un usuario y contraseña, esta información
-					debió haber sido brindada por el asesor del BAC. Si no tiene esta información tendrá que ir
-					personalmente a una sucursal y solicitarla.
-				</p>
-				<img src="BAC2.jpg" className="imgGuia bacTutorialImg" />
-				<h3 className="h3GuidesStep">Paso 3</h3>
-				<p>
-					Después de agregar la información de usuario y contraseña, se presiona con el dedo el botón de
-					ingresar.
-				</p>
-				<img src="BAC3.png" className="imgGuia bacTutorialImg" />
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 2</h3>
+					<p>
+						Una vez que abre la aplicación, la misma nos va solicitar un usuario y contraseña, esta
+						información debió haber sido brindada por el asesor del BAC. Si no tiene esta información tendrá
+						que ir personalmente a una sucursal y solicitarla.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC2.jpg" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 3</h3>
+					<p>
+						Después de agregar la información de usuario y contraseña, se presiona con el dedo el botón de
+						ingresar.
+					</p>
+					<img src="BAC3.png" className="imgGuia bacTutorialImg" />
+				</div>
 				<h3 className="h3GuidesStep">Paso 4</h3>
+
 				<p>
 					Después de presionar el botón de ingresar, la aplicación nos va dirigir al inicio, en donde
 					mostraran las cuentas, tarjetas y prestamos que estén a registradas a su nombre.

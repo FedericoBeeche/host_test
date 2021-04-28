@@ -15,8 +15,8 @@ export const Home = () => {
 				<input className="buscador" type="text" placeholder="Buscar guía" />
 				<button className="btn btn-dark ml-2">Buscar</button>
 			</div>
-			<div className="container">
-				<div className="card-columns row">
+			<div className="container guideContainer">
+				<div className="card-columns row justify-content-center">
 					<div className="col-sm-3">
 						<Link to="/guide_BACSINPEMovil">
 							<div className="card">
