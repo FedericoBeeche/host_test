@@ -76,15 +76,20 @@ export const BAC_SINPE = () => {
 						Después de agregar la información de usuario y contraseña, se presiona con el dedo el botón de
 						ingresar.
 					</p>
-					<img src="BAC3.png" className="imgGuia bacTutorialImg" />
+					<div className="row col-12 justify-content-center">
+						<img src="BAC3.png" className="imgGuia bacTutorialImg" />
+					</div>
 				</div>
-				<h3 className="h3GuidesStep">Paso 4</h3>
-
-				<p>
-					Después de presionar el botón de ingresar, la aplicación nos va dirigir al inicio, en donde
-					mostraran las cuentas, tarjetas y prestamos que estén a registradas a su nombre.
-				</p>
-				<img src="BAC4.png" className="imgGuia bacTutorialImg" />
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 4</h3>
+					<p>
+						Después de presionar el botón de ingresar, la aplicación nos va dirigir al inicio, en donde
+						mostraran las cuentas, tarjetas y prestamos que estén a registradas a su nombre.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC4.png" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
 				<h3 className="h3GuidesStep">Paso 5</h3>
 				<p>
 					Luego, seleccione con el dedo en el menú inferior la opción de <i>“Transferencias”</i>.
