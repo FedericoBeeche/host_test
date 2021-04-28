@@ -21,3 +21,22 @@ class User(db.Model):
             "lastname": self.lastname
             # do not serialize the password, its a security breach
         }
+    
+class Tutorial(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(120), unique=True, nullable=False)
+    description = db.Column(db.String(200), unique=False, nullable=False)
+    link = db.Column(db.String(200), unique=False, nullable=False)
+    img = db.Column(db.String(200), unique=False, nullable=False)
+
+    def __repr__(self):
+        return '<Tutorial %r>' % self.title
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "description": self.description,
+            "link": self.link,
+            "img": self.img
+        }

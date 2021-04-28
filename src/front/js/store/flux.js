@@ -14,6 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
+			tutorials: [],
 			token: null,
 			url: "https://3001-bronze-wallaby-1k5wp580.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
@@ -60,6 +61,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//sessionStorage.removeItem("current_username");
 				//setStore({ token: null, favorites: [], current_username: "" });
 				setStore({ token: null });
+			},
+
+			getTutorials: () => {
+				const store = getStore();
+
+				fetch(`${store.url}/api/tutorial`)
+					.then(resp => {
+						console.log("GET tutorials request: ", resp.ok);
+						resp.status >= 200 && resp.status < 300
+							? console.log("GET tutorials successful, status: ", resp.status)
+							: console.error("GET tutorials failed, status: ", resp.status);
+						return resp.json();
+					})
+					.then(data => {
+						setStore({ tutorials: data, loading: false });
+						console.log("Tutorials array: ", data);
+					})
+					.catch(error => console.error("GET tutorials error: ", error));
 			},
 
 			// Use getActions to call a function within a fuction
