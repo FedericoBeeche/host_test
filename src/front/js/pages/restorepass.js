@@ -36,7 +36,7 @@ export const RestorePass = () => {
 	return (
 		<div className="container-fluid">
 			<h2 className="text-center pwResetTopH2">Restablezca su</h2>
-			<h2 className="text-center m-5 pwResetBottomH2">contraseña</h2>
+			<h2 className="text-center mb-5 ml-5 mr-5 mt-3 pwResetBottomH2">contraseña</h2>
 			<div className="m-auto col-8 col-sm-3">
 				<form>
 					<div className="row mb-3 d-block">

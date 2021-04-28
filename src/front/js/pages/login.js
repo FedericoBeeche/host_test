@@ -22,8 +22,11 @@ export const Login = () => {
 	};
 
 	return (
-		<div className="container-fluid">
-			<h2 className="text-center m-5 loginH2">Iniciar sesión</h2>
+		<div className="container">
+			<div className="row justify-content-center">
+				<h2 className="justify-content-center m-5 loginH2">Iniciar sesión</h2>
+			</div>
+
 			{store.token && store.token != "" && store.token != undefined ? (
 				history.push("/")
 			) : (

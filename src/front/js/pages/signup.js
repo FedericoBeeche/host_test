@@ -148,12 +148,9 @@ export const SignUp = () => {
 													<h5 className="modal-title" id="staticBackdropLabel">
 														Términos y Condiciones
 													</h5>
-													<button
-														type="button"
-														className="btn-close"
-														data-bs-dismiss="modal"
-														aria-label="Close"
-													/>
+													<button type="button" className="close" aria-label="Close">
+														<span aria-hidden="true">X</span>
+													</button>
 												</div>
 												<div className="modal-body">
 													<h2>
