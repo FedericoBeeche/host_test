@@ -99,3 +99,23 @@ def delete_user(id):
          "msg": "User delete successful",
     }
     return jsonify(response_body), 200
+
+@app.route('/tutorial', methods=['GET'])
+def get_all_tutorial():
+    all_tutorial = Tutorial.query.all()
+    all_tutorial = list(map(lambda x: x.serialize(), all_tutorial)) 
+    return jsonify(all_tutorial), 200
+
+# Populate DB
+@app.route('/populate', methods=['GET'])
+def populate():
+    u1 = User(name='User01', lastname='User01', email='test.user_01@outlook.com', password="TestPass01")
+
+    t1 = Tutorial(title='Transferencias SINPE BAC', description='Todo mundo está hablando de transferencias SINPE móvil pero... ¿qué son realmente estas transferencias?', link='/guide_BACSINPEMovil', img='https://i.ytimg.com/vi/gY4BdVdRF_s/maxresdefault.jpg')
+    t2 = Tutorial(title='Mi primer videollamada en Zoom (para celular)', description='Como invitar a amigos, familia, y hasta mis mascotas.', link='/guide_ZoomCalls', img='https://ichef.bbci.co.uk/news/976/cpsprodpb/AA1D/production/_116094534_46bd3031-50b2-492b-9505-6c270c0fbf45.jpg')
+    t3 = Tutorial(title='Videollamadas por WhatsApp', description='¿Para qué bajar Zoom si puedo usar el mismo WhatsApp?', link='/guide_WhatsAppCalls', img='https://www.dignited.com/wp-content/uploads/2020/03/fix-WhatsApp-call-not-working.jpg')
+
+    db.session.add_all([u1, t1, t2, t3])
+    db.session.commit()
+
+    return('Data populated')
