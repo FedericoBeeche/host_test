@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Tutorial
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -100,14 +100,14 @@ def delete_user(id):
     }
     return jsonify(response_body), 200
 
-@app.route('/tutorial', methods=['GET'])
+@api.route('/tutorial', methods=['GET'])
 def get_all_tutorial():
     all_tutorial = Tutorial.query.all()
     all_tutorial = list(map(lambda x: x.serialize(), all_tutorial)) 
     return jsonify(all_tutorial), 200
 
 # Populate DB
-@app.route('/populate', methods=['GET'])
+@api.route('/populate', methods=['GET'])
 def populate():
     u1 = User(name='User01', lastname='User01', email='test.user_01@outlook.com', password="TestPass01")
 

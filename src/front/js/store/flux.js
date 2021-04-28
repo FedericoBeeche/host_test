@@ -13,13 +13,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-            ],
-            tutorials: [],
+			],
+			tutorials: [],
 			token: null,
 			url: "https://3001-bronze-wallaby-1k5wp580.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
-
 			login: async (email, password) => {
 				const store = getStore();
 
@@ -62,9 +61,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//sessionStorage.removeItem("current_username");
 				//setStore({ token: null, favorites: [], current_username: "" });
 				setStore({ token: null });
-            },
-            
-            getTutorials: () => {
+			},
+
+			getTutorials: () => {
 				const store = getStore();
 
 				fetch(`${store.url}/api/tutorial`)
