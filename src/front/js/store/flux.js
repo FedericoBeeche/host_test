@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			tutorials: [],
 			token: null,
-			url: "https://3001-bronze-wallaby-1k5wp580.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
+			url: "https://3001-maroon-locust-czihev89.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
