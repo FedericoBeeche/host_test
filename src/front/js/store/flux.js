@@ -1,3 +1,5 @@
+import { lightTheme, darkTheme } from "../component/darkmode/theme";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -16,7 +18,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			tutorials: [],
 			token: null,
-			url: "https://3001-maroon-locust-czihev89.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
+			theme: "light",
+			url: "https://3001-amaranth-chickadee-p9sexi52.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
@@ -49,6 +52,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.error("CREATE Token error: ", error);
 				}
+			},
+
+			themeToggler: () => {
+				const store = getStore();
+				store.theme === "light" ? setStore({ theme: "dark" }) : setStore({ theme: "light" });
+				//store.theme === "light" ? setTheme("dark") : setTheme("light");
+				console.log(store.theme);
 			},
 
 			storeSessionToken: () => {
