@@ -56,22 +56,17 @@ export const ZoomCalls = () => {
 						<a href="#paso2">número 2</a>.
 					</p>
 				</div>
-				<div className="row">
-					<div className="row">
-						<h3 className="h3GuidesStep" id="paso2">
-							Paso 2
-						</h3>
-					</div>
-					<div>
-						<p>
-							Abrimos la aplicación en nuestro celular, presionando con nuestro dedo sobre el icono de
-							Zoom.
-						</p>
-					</div>
-					<div className="row col-12 justify-content-center">
-						{/* esta clase es la unica diferente porque tiene tamano diferente al resto */}
-						<img src="zoom1.png" className="imgGuia zoomTutorialImg1" />
-					</div>
+				<h3 className="h3GuidesStep" id="paso2">
+					Paso 2
+				</h3>
+				<div>
+					<p>
+						Abrimos la aplicación en nuestro celular, presionando con nuestro dedo sobre el icono de Zoom.
+					</p>
+				</div>
+				<div className="row col-12 justify-content-center">
+					{/* esta clase es la unica diferente porque tiene tamano diferente al resto */}
+					<img src="zoom1.png" className="imgGuia zoomTutorialImg1" />
 				</div>
 				<h3 className="h3GuidesStep">Paso 3</h3>
 				<p>
