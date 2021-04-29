@@ -9,7 +9,7 @@ import { Single } from "./pages/single";
 import { Login } from "./pages/login";
 import { SignUp } from "./pages/signup";
 import { ChangePass } from "./pages/changepass";
-import { RestorePass } from "./pages/restorepass";
+import { ForgotPass } from "./pages/forgotpass";
 import { BAC_SINPE } from "./pages/guide_BACSINPEMovil";
 import { ZoomCalls } from "./pages/guide_ZoomCalls";
 import { WhatsAppCalls } from "./pages/guide_WhatsAppCalls";
@@ -56,8 +56,8 @@ const Layout = () => {
 								<Route exact path="/changepass">
 									<ChangePass />
 								</Route>
-								<Route exact path="/restorepass">
-									<RestorePass />
+								<Route exact path="/forgotpass">
+									<ForgotPass />
 								</Route>
 								<Route exact path="/guide_BACSINPEMovil">
 									<BAC_SINPE />
