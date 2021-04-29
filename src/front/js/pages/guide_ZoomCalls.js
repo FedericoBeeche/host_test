@@ -31,33 +31,48 @@ export const ZoomCalls = () => {
 
 			<div className="container mb-2">
 				{/* video tutorial */}
-				<iframe
-					width="560"
-					height="315"
-					src="https://www.youtube.com/embed/l6Ee84FPT68"
-					title="YouTube video player"
-					frameBorder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowFullScreen
-				/>
-
-				<h3 className="h3GuidesStep">Paso 1</h3>
-				<p>
-					Para poder seguir los pasos de esta guía, necesita tener una cuenta de Zoom, si no tiene cuenta
-					favor crear una en{" "}
-					<a href="https://zoom.us/signin" target="_blank" rel="noopener noreferrer">
-						<i>este enlace</i>
-					</a>
-					Y luego regrese a esta guía. Si ya tiene cuenta favor seguir al paso <a href="#paso2">número 2</a>.
-				</p>
-
-				<h3 className="h3GuidesStep" id="paso2">
-					Paso 2
-				</h3>
-				<p>Abrimos la aplicación en nuestro celular, presionando con nuestro dedo sobre el icono de Zoom.</p>
-				{/* esta clase es la unica diferente porque tiene tamano diferente al resto */}
-				<img src="zoom1.png" className="imgGuia zoomTutorialImg1" />
-
+				<div className="row justify-content-center">
+					<iframe
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/l6Ee84FPT68"
+						title="YouTube video player"
+						frameBorder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowFullScreen
+					/>
+				</div>
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 1</h3>
+				</div>
+				<div>
+					<p>
+						Para poder seguir los pasos de esta guía, necesita tener una cuenta de Zoom, si no tiene cuenta
+						favor crear una en{" "}
+						<a href="https://zoom.us/signin" target="_blank" rel="noopener noreferrer">
+							<i>este enlace</i>
+						</a>
+						Y luego regrese a esta guía. Si ya tiene cuenta favor seguir al paso{" "}
+						<a href="#paso2">número 2</a>.
+					</p>
+				</div>
+				<div className="row">
+					<div className="row">
+						<h3 className="h3GuidesStep" id="paso2">
+							Paso 2
+						</h3>
+					</div>
+					<div>
+						<p>
+							Abrimos la aplicación en nuestro celular, presionando con nuestro dedo sobre el icono de
+							Zoom.
+						</p>
+					</div>
+					<div className="row col-12 justify-content-center">
+						{/* esta clase es la unica diferente porque tiene tamano diferente al resto */}
+						<img src="zoom1.png" className="imgGuia zoomTutorialImg1" />
+					</div>
+				</div>
 				<h3 className="h3GuidesStep">Paso 3</h3>
 				<p>
 					Cuando termine de abrir la aplicación vamos a poder ver la pantalla inicio de Zoom, donde podremos
@@ -134,22 +149,6 @@ export const ZoomCalls = () => {
 			</div>
 
 			<div className="container">
-				{/* Aqui va a ir la parte de likes y share a redes sociales - Work in progress */}
-				{/* <i className=" far fa-heart mr-2 userProfileIcon" /> */}
-				{/* vvv boton de share en Facebook pero todavia no se ve bien el boton, pero si funciona vvv */}
-				{/* <div
-					className="fb-share-button"
-					data-href="https://developers.facebook.com/docs/plugins/"
-					data-layout="button"
-					data-size="large">
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-						className="fb-xfbml-parse-ignore">
-						Compartir
-					</a>
-				</div> */}
 				<Link to="/">
 					<button className="btn btn-dark mb-2">Volver al menú principal</button>
 				</Link>
