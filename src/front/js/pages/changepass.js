@@ -11,7 +11,7 @@ import "../../styles/demo.scss";
 export const ChangePass = () => {
 	const { store, actions } = useContext(Context);
 	const { token } = useParams();
-	const [email, setEmail] = useState("");
+	const [email, setEmail] = useState("default");
 	const [password, setPassword] = useState("");
 
 	useEffect(() => {
@@ -63,8 +63,7 @@ export const ChangePass = () => {
 
 	return (
 		<div className="container-fluid">
-
-			{email !== "expired" ? (
+			{email !== "expired" && email !== "" ? (
 				<>
 					{" "}
 					<h2 className="text-center pwResetTopH2">Restablezca su</h2>
