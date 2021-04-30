@@ -50,14 +50,14 @@ export const BAC_SINPE = () => {
 				</div>
 				<div className="row">
 					<h3 className="h3GuidesStep">Paso 1</h3>
-					<p>
-						Primero, buscaremos la aplicación de Banca Móvil en nuestro teléfono y abriremos la aplicación
-						presionando con nuestro dedo encima de la aplicación
-					</p>
-					{/* la clase de esta img es la unica diferente porque es la unica con dimensiones diferentes al resto */}
-					<div className="row col-12 justify-content-center">
-						<img src="BAC1..jpg" className="imgGuia bacTutorialImg1" />
-					</div>
+				</div>
+				<p>
+					Primero, buscaremos la aplicación de Banca Móvil en nuestro teléfono y abriremos la aplicación
+					presionando con nuestro dedo encima de la aplicación
+				</p>
+				{/* la clase de esta img es la unica diferente porque es la unica con dimensiones diferentes al resto */}
+				<div className="row col-12 justify-content-center">
+					<img src="BAC1..jpg" className="imgGuia bacTutorialImg1" />
 				</div>
 				<div className="row">
 					<h3 className="h3GuidesStep">Paso 2</h3>
