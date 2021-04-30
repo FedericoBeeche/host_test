@@ -13,7 +13,9 @@ export const Navbar = () => {
 				{/* <span className="navbar-brand mb-0 h1">¿Cómo hago?</span> */}
 			</Link>
 			<div className="d-flex justify-content-center ml-auto">
-				<button onClick={() => actions.themeToggler()}>Modo Oscuro</button>
+				<button className="darkModeBtn" onClick={() => actions.themeToggler()}>
+					Modo Oscuro
+				</button>
 				<i className=" far fa-heart mr-2 userProfileIcon" />
 				{store.token ? (
 					<Link to="/">

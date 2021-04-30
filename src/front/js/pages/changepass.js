@@ -63,6 +63,7 @@ export const ChangePass = () => {
 
 	return (
 		<div className="container-fluid">
+
 			{email !== "expired" ? (
 				<>
 					{" "}

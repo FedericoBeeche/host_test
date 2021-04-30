@@ -91,6 +91,15 @@ input[type=button], .btn {
     font-size: 35px;
 }
 
+.container {
+    max-width: 1500px;
+}
+
+// test class to check container size
+// .guideContainer {
+//     border: 2px red solid;
+// }
+
 // LOGIN STYLE //
 
 .loginH2 {
@@ -204,7 +213,7 @@ input[type=button], .btn {
 // BAC GUIDE STYLES //
 
 .BAC_Toph1Guide {
-    font-size: 120px;
+    font-size: 120px; //60px o crear imagen de los 3 juntos
     font-weight: 900;
     margin-bottom: 0;
     margin-top: 30px;
@@ -213,7 +222,7 @@ input[type=button], .btn {
 }
 
 .BAC_Middleh1Guide {
-    font-size: 75px;
+    font-size: 75px; //37.5px o crear imagen de los 3 juntos
     font-weight: 900;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -221,7 +230,7 @@ input[type=button], .btn {
 }
 
 .BAC_Bottomh1Guide {
-    font-size: 50px;
+    font-size: 50px; //25px o crear imagen de los 3 juntos
     font-weight: 700;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -297,6 +306,13 @@ input[type=button], .btn {
     transition: 0.2s;
 }
 
+.darkModeBtn {
+    border: #f28181 2px solid;
+    border-radius: 5px;
+    background-color: #fcfff8;
+    color: #f28181;
+    margin-right: 10px;
+}
 
 // FOOTER STYLES //
 

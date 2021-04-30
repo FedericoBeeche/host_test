@@ -20,8 +20,8 @@ export const BAC_SINPE = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<>
-			<div className="container mb-2">
+		<div className="container">
+			<div className="mb-2 w-100 guideContainer">
 				<div className="row justify-content-center">
 					<h1 className="BAC_Toph1Guide">MI PRIMER</h1>
 				</div>
@@ -50,14 +50,14 @@ export const BAC_SINPE = () => {
 				</div>
 				<div className="row">
 					<h3 className="h3GuidesStep">Paso 1</h3>
-					<p>
-						Primero, buscaremos la aplicación de Banca Móvil en nuestro teléfono y abriremos la aplicación
-						presionando con nuestro dedo encima de la aplicación
-					</p>
-					{/* la clase de esta img es la unica diferente porque es la unica con dimensiones diferentes al resto */}
-					<div className="row col-12 justify-content-center">
-						<img src="BAC1..jpg" className="imgGuia bacTutorialImg1" />
-					</div>
+				</div>
+				<p>
+					Primero, buscaremos la aplicación de Banca Móvil en nuestro teléfono y abriremos la aplicación
+					presionando con nuestro dedo encima de la aplicación
+				</p>
+				{/* la clase de esta img es la unica diferente porque es la unica con dimensiones diferentes al resto */}
+				<div className="row col-12 justify-content-center">
+					<img src="BAC1..jpg" className="imgGuia bacTutorialImg1" />
 				</div>
 				<div className="row">
 					<h3 className="h3GuidesStep">Paso 2</h3>
@@ -72,105 +72,134 @@ export const BAC_SINPE = () => {
 				</div>
 				<div className="row">
 					<h3 className="h3GuidesStep">Paso 3</h3>
+				</div>
+				<div className="row">
 					<p>
 						Después de agregar la información de usuario y contraseña, se presiona con el dedo el botón de
 						ingresar.
 					</p>
-					<img src="BAC3.png" className="imgGuia bacTutorialImg" />
+					<div className="row col-12 justify-content-center">
+						<img src="BAC3.png" className="imgGuia bacTutorialImg" />
+					</div>
 				</div>
-				<h3 className="h3GuidesStep">Paso 4</h3>
-
-				<p>
-					Después de presionar el botón de ingresar, la aplicación nos va dirigir al inicio, en donde
-					mostraran las cuentas, tarjetas y prestamos que estén a registradas a su nombre.
-				</p>
-				<img src="BAC4.png" className="imgGuia bacTutorialImg" />
-				<h3 className="h3GuidesStep">Paso 5</h3>
-				<p>
-					Luego, seleccione con el dedo en el menú inferior la opción de <i>“Transferencias”</i>.
-				</p>
-				<img src="BAC5.png" className="imgGuia bacTutorialImg" />
-				<h3 className="h3GuidesStep">Paso 6</h3>
-				<p>
-					La aplicación nos redirigirá a la sección de transferencias, donde se muestran las diferentes
-					opciones que tiene el banco para realizar una transferencia. En este ejemplo vamos a seleccionar{" "}
-					<i>“A SINPE Móvil”</i>, presione con su dedo sobre la opción <strong>A SINPE Móvil</strong>.
-				</p>
-				<img src="BAC6.png" className="imgGuia bacTutorialImg" />
-				<h3 className="h3GuidesStep">Paso 7</h3>
-				<p>
-					Luego, la aplicación nos va a mostrar las cuentas que se pueden utilizar para la transferencia, y se
-					tendrá que seleccionar la que se quiere usar para la transferencia, presione con su dedo sobre la
-					cuenta que quiere utilizar.
-				</p>
-				<img src="BAC7.png" className="imgGuia bacTutorialImg" />
-				<h3 className="h3GuidesStep">Paso 8</h3>
-				<p>
-					Una vez que seleccionamos la cuenta, la aplicación nos va mostrar el siguiente paso, el cual es
-					digitar el número de celular de la persona o institución a la que vamos a enviar la Transferencia
-					SINPE Móvil. Presionamos sobre el espacio donde dice <i>“Digite el numero”</i>, e ingresamos el
-					numero correspondiente. También se puede guardar el numero en favoritos solo presionando en el
-					cuadrado a la par de <i>“Guardar como favorito”</i>, esto para evitar que cuando se vaya a hacer la
-					transferencia el sistema le pida el código BAC o Token, esto es Opcional.
-				</p>
-				<img src="BAC8.png" className="imgGuia bacTutorialImg" />
-				<h3 className="h3GuidesStep">Paso 9</h3>
-				<p>
-					Una vez la información es ingresada, podremos ver el nombre de la persona o institución a la que se
-					le va a enviar el dinero, por medio de esto podemos confirmar si se le esta enviando a la persona o
-					institución correcta. Una vez confirmada la información, presionamos el botón de <i>“Continuar”</i>{" "}
-					para ir al siguiente paso.
-				</p>
-				<img src="BAC9.png" className="imgGuia bacTutorialImg" />
-				<h3 className="h3GuidesStep">Paso 10</h3>
-				<p>
-					Después de presionar <i>“Continuar”</i>, la aplicación nos va solicitar el <i>“Monto”</i> que vamos
-					a enviar y la
-					<i>“Descripción”</i> (es opcional) donde escribimos la razón de la transferencia, una vez
-					seleccionado todo, presionamos <i>“Continuar”</i>.
-				</p>
-				<img src="BAC10.png" className="imgGuia bacTutorialImg" />
-				<p>
-					<strong>IMPORTANTE:</strong>{" "}
-					<i>Recuerde que el monto a transferir debe ser indicado en la moneda de la cuenta destino.</i>
-				</p>
-				<h3 className="h3GuidesStep">Paso 11</h3>
-				<p>
-					Luego veremos el resumen de la transferencia, y el sistema solicitando el código BAC o Token (App
-					del celular) para completar la transferencia. Ingresamos el token, presionamos <i>“Transferir”</i>.
-				</p>
-				<img src="BAC11.png" className="imgGuia bacTutorialImg" />
-				<h3 className="h3GuidesStep">Paso 12</h3>
-				<p>
-					Una vez que presionamos transferir el sistema realizara la transferencia, y luego nos mostrara el
-					resumen con el comprobante de la transferencia. Y lo logramos nuestra primera transferencia con
-					SINPE Móvil.
-				</p>
-				<img src="BAC12.png" className="imgGuia bacTutorialImg" />
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 4</h3>
+					<p>
+						Después de presionar el botón de ingresar, la aplicación nos va dirigir al inicio, en donde
+						mostraran las cuentas, tarjetas y prestamos que estén a registradas a su nombre.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC4.png" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 5</h3>
+				</div>
+				<div className="row">
+					<p>
+						Luego, seleccione con el dedo en el menú inferior la opción de <i>“Transferencias”</i>.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC5.png" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 6</h3>
+					<p>
+						La aplicación nos redirigirá a la sección de transferencias, donde se muestran las diferentes
+						opciones que tiene el banco para realizar una transferencia. En este ejemplo vamos a seleccionar{" "}
+						<i>“A SINPE Móvil”</i>, presione con su dedo sobre la opción <strong>A SINPE Móvil</strong>.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC6.png" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 7</h3>
+					<p>
+						Luego, la aplicación nos va a mostrar las cuentas que se pueden utilizar para la transferencia,
+						y se tendrá que seleccionar la que se quiere usar para la transferencia, presione con su dedo
+						sobre la cuenta que quiere utilizar.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC7.png" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 8</h3>
+					<p>
+						Una vez que seleccionamos la cuenta, la aplicación nos va mostrar el siguiente paso, el cual es
+						digitar el número de celular de la persona o institución a la que vamos a enviar la
+						Transferencia SINPE Móvil. Presionamos sobre el espacio donde dice <i>“Digite el numero”</i>, e
+						ingresamos el numero correspondiente. También se puede guardar el numero en favoritos solo
+						presionando en el cuadrado a la par de <i>“Guardar como favorito”</i>, esto para evitar que
+						cuando se vaya a hacer la transferencia el sistema le pida el código BAC o Token, esto es
+						Opcional.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC8.png" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 9</h3>
+					<p>
+						Una vez la información es ingresada, podremos ver el nombre de la persona o institución a la que
+						se le va a enviar el dinero, por medio de esto podemos confirmar si se le esta enviando a la
+						persona o institución correcta. Una vez confirmada la información, presionamos el botón de{" "}
+						<i>“Continuar”</i> para ir al siguiente paso.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC9.png" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 10</h3>
+					<p>
+						Después de presionar <i>“Continuar”</i>, la aplicación nos va solicitar el <i>“Monto”</i> que
+						vamos a enviar y la
+						<i>“Descripción”</i> (es opcional) donde escribimos la razón de la transferencia, una vez
+						seleccionado todo, presionamos <i>“Continuar”</i>.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC10.png" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
+				<div className="row col-12 justify-content-center">
+					<p>
+						<strong>IMPORTANTE:</strong>{" "}
+						<i>Recuerde que el monto a transferir debe ser indicado en la moneda de la cuenta destino.</i>
+					</p>
+				</div>
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 11</h3>
+					<p>
+						Luego veremos el resumen de la transferencia, y el sistema solicitando el código BAC o Token
+						(App del celular) para completar la transferencia. Ingresamos el token, presionamos{" "}
+						<i>“Transferir”</i>.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC11.png" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
+				<div className="row">
+					<h3 className="h3GuidesStep">Paso 12</h3>
+					<p>
+						Una vez que presionamos transferir el sistema realizara la transferencia, y luego nos mostrara
+						el resumen con el comprobante de la transferencia. Y lo logramos nuestra primera transferencia
+						con SINPE Móvil.
+					</p>
+					<div className="row col-12 justify-content-center">
+						<img src="BAC12.png" className="imgGuia bacTutorialImg" />
+					</div>
+				</div>
 				<div className="divisionGuiaYBotones mb-2 mt-3" />
 			</div>
 
 			<div className="container">
-				{/* Aqui va a ir la parte de likes y share a redes sociales - Work in progress */}
-				{/* <i className=" far fa-heart mr-2 userProfileIcon" /> */}
-				{/* vvv boton de share en Facebook pero todavia no se ve bien el boton, pero si funciona vvv */}
-				{/* <div
-					className="fb-share-button"
-					data-href="https://developers.facebook.com/docs/plugins/"
-					data-layout="button"
-					data-size="large">
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-						className="fb-xfbml-parse-ignore">
-						Compartir
-					</a>
-				</div> */}
 				<Link to="/">
 					<button className="btn btn-dark mb-2">Volver al menú principal</button>
 				</Link>
 			</div>
-		</>
+		</div>
 	);
 };
