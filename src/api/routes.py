@@ -71,10 +71,10 @@ def create_user():
     return jsonify(request_body), 200
      
 
-@api.route('/user/<int:user_id>', methods=['PUT']) # to update password
-def update_user(user_id):
+@api.route('/user/<email>', methods=['PUT']) # to reset password
+def update_user(email):
     request_body = request.get_json()
-    user = User.query.get(user_id)
+    user = User.query.filter_by(email=email).first()
 
     if user is None:
         raise APIException('User not found', status_code=404)

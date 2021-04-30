@@ -19,7 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			tutorials: [],
 			token: null,
 			theme: "light",
-			url: "https://3001-tan-barnacle-jrmz5kue.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
+			url: "https://3001-amaranth-crab-eik3u2z1.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
@@ -98,7 +98,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getMessage: () => {
 				// fetching data from the backend
-				fetch(process.env.BACKEND_URL + "/api/hello")
+				//fetch(process.env.BACKEND_URL + "/api/hello") // global variable process.env.BACKEND_URL is not working
+				const store = getStore();
+				fetch(`${store.url}/api/hello`)
 					.then(resp => resp.json())
 					.then(data => setStore({ message: data.message }))
 					.catch(error => console.log("Error loading message from backend", error));
