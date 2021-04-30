@@ -24,6 +24,7 @@ class User(db.Model):
     
 class Tutorial(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), unique=False, nullable=False)
     title = db.Column(db.String(120), unique=True, nullable=False)
     description = db.Column(db.String(200), unique=False, nullable=False)
     link = db.Column(db.String(200), unique=False, nullable=False)
@@ -35,6 +36,7 @@ class Tutorial(db.Model):
     def serialize(self):
         return {
             "id": self.id,
+            "name": self.name,
             "title": self.title,
             "description": self.description,
             "link": self.link,

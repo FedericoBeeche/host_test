@@ -91,6 +91,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.error("GET tutorials error: ", error));
 			},
 
+			handleOnSelectTutorial: item => {
+				console.log("Selected tutorial on search", item);
+				setStore({ tutorials: [item] });
+			},
+
+			handleOnFocusTutorial: () => {
+				console.log("Focused");
+				getActions().getTutorials();
+			},
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
