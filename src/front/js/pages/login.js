@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import "../../styles/home.scss";
 import { SignUp } from "./signup";
-import { RestorePass } from "./restorepass";
+import { ForgotPass } from "./forgotpass";
 import { ChangePass } from "./changepass";
 
 export const Login = () => {
@@ -61,7 +61,7 @@ export const Login = () => {
 						</div>
 					</form>
 					<div className="d-flex justify-content-end">
-						<Link to={"/restorepass"}>
+						<Link to={"/forgotpass"}>
 							<small className="text-info float-right mt-1">¿Has olvidado tu contraseña?</small>
 						</Link>
 					</div>

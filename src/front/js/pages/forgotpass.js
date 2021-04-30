@@ -8,7 +8,7 @@ import { Login } from "./login";
 
 import "../../styles/demo.scss";
 
-export const RestorePass = () => {
+export const ForgotPass = () => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
 
