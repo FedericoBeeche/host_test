@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { LogoPagina } from "../../img/Logo.png";
+import { Favorites } from "./favorites";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
@@ -14,6 +15,7 @@ export const Navbar = () => {
 			</Link>
 			<div className="d-flex justify-content-center ml-auto">
 				<button onClick={() => actions.themeToggler()}>Modo Oscuro</button>
+				<Favorites />
 				<i className=" far fa-heart mr-2 userProfileIcon" />
 				{store.token ? (
 					<Link to="/">
