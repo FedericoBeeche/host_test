@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const lightTheme = {
 	body: "#fcfff8",
-	fontColor: "#000"
+	fontColor: "#2b2d4a"
 };
 
 export const darkTheme = {
@@ -16,6 +16,6 @@ export const GlobalStyles = createGlobalStyle`
 
 		background-color: ${props => props.theme.body};
 
-	}
+    }
 
 `;

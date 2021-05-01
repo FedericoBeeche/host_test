@@ -8,7 +8,7 @@ import { Login } from "./login";
 
 import "../../styles/demo.scss";
 
-export const RestorePass = () => {
+export const ForgotPass = () => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
 
@@ -30,7 +30,7 @@ export const RestorePass = () => {
 				return resp.json();
 			})
 			.then(() => {})
-			.catch(error => console.error("Send email error error: ", error));
+			.catch(error => console.error("Send email error: ", error));
 	};
 
 	return (

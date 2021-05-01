@@ -18,9 +18,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			tutorials: [],
 			token: null,
-			theme: "light",
-			favorites: [],
-			url: "https://3001-amaranth-chickadee-p9sexi52.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
+            theme: "light",
+            favorites: [],
+			url: "https://3001-amaranth-crab-eik3u2z1.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
@@ -92,6 +92,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.error("GET tutorials error: ", error));
 			},
 
+			handleOnSelectTutorial: item => {
+				console.log("Selected tutorial on search", item);
+				setStore({ tutorials: [item] });
+			},
+
+			handleOnFocusTutorial: () => {
+				console.log("Focused");
+				getActions().getTutorials();
+			},
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -99,7 +109,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getMessage: () => {
 				// fetching data from the backend
-				fetch(process.env.BACKEND_URL + "/api/hello")
+				//fetch(process.env.BACKEND_URL + "/api/hello") // global variable process.env.BACKEND_URL is not working
+				const store = getStore();
+				fetch(`${store.url}/api/hello`)
 					.then(resp => resp.json())
 					.then(data => setStore({ message: data.message }))
 					.catch(error => console.log("Error loading message from backend", error));

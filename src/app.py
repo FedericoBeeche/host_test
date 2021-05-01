@@ -66,9 +66,9 @@ def sitemap():
     return send_from_directory(static_file_dir, 'index.html')
 
 # flask-mail route
-@app.route('/mail')
+@app.route('/mail') # route for testing sendind emails, not actually called in the application
 def send_mail():
-    msg = Message(subject='Email Title', recipients=['cotigi1063@hype68.com']) 
+    msg = Message(subject='Email Title', recipients=['test.user_01@outlook.com']) 
     msg.body = 'This is the email body' 
     msg.html = '<b>We can also use HTML</b>' # When both msg.body and msg.html, just msg.html shows
     mail.send(msg)
@@ -81,23 +81,27 @@ def forgot_mail(email):
     
     token = s.dumps(email, salt='email-reset')
 
-    msg = Message('Reset Password', recipients=[email])
+    msg = Message('Resetear contraseña', recipients=[email])
 
-    link = url_for('reset_password', token=token, _external=True) # External true because it is a link outside of my application
+    # link = url_for('reset_password', token=token, _external=True) # External true because it is a link outside of my application
+    link = 'https://3000-amaranth-crab-eik3u2z1.ws-us04.gitpod.io/changepass/'+token
 
-    msg.body = 'Resetear su contraseña en el siguiente link {}'.format(link)
+    # msg.body = 'Resetear su contraseña en el siguiente link {}'.format(link)
+    msg.html = '<p>Hola,</p><p>Resetea tu contraseña haciendo click en este <a href={}>link</a></>'.format(link)
 
     mail.send(msg)
 
-    return 'The email you entered is {} The token is {}'.format('email', token)
+    return 'The email you entered is {} The token is {}'.format(email, token)
 
 @app.route('/resetpassword/<token>')
 def reset_password(token):
+    # email = s.loads(token, salt='email-reset', max_age=300)
+    # return jsonify(email), 200
     try:
-        email = s.loads(token, salt='email-reset', max_age=60)
+        email = s.loads(token, salt='email-reset', max_age=300)
     except SignatureExpired:
-        return 'The token is expired'
-    return 'The token works'
+        return jsonify('expired')
+    return jsonify(email)
 
 
 # any other endpoint will try to serve it like a static file
