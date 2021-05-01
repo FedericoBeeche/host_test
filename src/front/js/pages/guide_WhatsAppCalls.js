@@ -28,24 +28,31 @@ export const WhatsAppCalls = () => {
 			</div>
 
 			<div className="container mb-5">
-				{/* video tutorial */}
-				<div className="row justify-content-center">
-					<iframe
-						width="560"
-						height="315"
-						src="https://www.youtube.com/embed/86bJe6qZ6HY"
-						title="YouTube video player"
-						frameBorder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowFullScreen
-					/>
-				</div>
 				<div className="row">
 					<h3 className="h3GuidesStep">Paso 1</h3>
 					<p>
 						Primero necesitamos abrir la aplicación en nuestro celular, entonces tienen que buscar el icono
 						de WhatsApp en su celular y presionar con su dedo sobre la aplicación para que se abra.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"Primero necesitamos abrir la aplicación en nuestro celular, entonces tienen que buscar el icono de WhatsApp en su celular y presionar con su dedo sobre la aplicación para que se abra.",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 					<div className="row col-12 justify-content-center">
 						<img src="WA1.jpg" className="imgGuia WATutorialImg1" />
 					</div>
@@ -57,6 +64,25 @@ export const WhatsAppCalls = () => {
 						tendremos que seleccionar presionando con el dedo sobre la persona con la que se quiere realizar
 						la video llamada.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"Una vez que abrimos la aplicación, vamos a poder ver los chats que tenemos abiertos, donde tendremos que seleccionar presionando con el dedo sobre la persona con la que se quiere realizar la video llamada.",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 					<div className="row col-12 justify-content-center">
 						<img src="WA2.png" className="imgGuia WATutorialImg" />
 					</div>
@@ -65,8 +91,27 @@ export const WhatsAppCalls = () => {
 					<h3 className="h3GuidesStep">Paso 3</h3>
 					<p>
 						Cuando abrimos el chat correspondiente, tendrá que presionar con el dedo sobre el icono que
-						parece un video cámara, y esta hará que la aplicación genere la video llamada.
+						parece una video cámara, y esta hará que la aplicación genere la video llamada.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"Cuando abrimos el chat correspondiente, tendrá que presionar con el dedo sobre el icono que parece una video cámara, y esta hará que la aplicación genere la video llamada.",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 					<div className="row col-12 justify-content-center">
 						<img src="WA3.jpg" className="imgGuia WATutorialImg" />
 					</div>
@@ -78,6 +123,25 @@ export const WhatsAppCalls = () => {
 						sobre el icono señalado en la imagen abajo, después de presionarlo la aplicación va solicitar
 						que seleccione a la persona que quiere agregar a la llamada.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"Una vez generada la llamada podremos agregar otra persona a la llamada, presionando con el dedo sobre el icono señalado en la imagen abajo, después de presionarlo la aplicación va solicitar que seleccione a la persona que quiere agregar a la llamada.",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 				</div>
 
 				<div className="divisionGuiaYBotones mb-2 mt-3" />

@@ -30,18 +30,6 @@ export const ZoomCalls = () => {
 			</div>
 
 			<div className="container mb-2">
-				{/* video tutorial */}
-				<div className="row justify-content-center">
-					<iframe
-						width="560"
-						height="315"
-						src="https://www.youtube.com/embed/l6Ee84FPT68"
-						title="YouTube video player"
-						frameBorder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowFullScreen
-					/>
-				</div>
 				<div className="row">
 					<h3 className="h3GuidesStep">Paso 1</h3>
 				</div>
@@ -50,11 +38,30 @@ export const ZoomCalls = () => {
 						Para poder seguir los pasos de esta guía, necesita tener una cuenta de Zoom, si no tiene cuenta
 						favor crear una en{" "}
 						<a href="https://zoom.us/signin" target="_blank" rel="noopener noreferrer">
-							<i>este enlace</i>
+							<i>este enlace</i>.
 						</a>
 						Y luego regrese a esta guía. Si ya tiene cuenta favor seguir al paso{" "}
 						<a href="#paso2">número 2</a>.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"Para poder seguir los pasos de esta guía, necesita tener una cuenta de Zoom, si no tiene cuenta favor crear una en este enlace. Y luego regrese a esta guía. Si ya tiene cuenta favor seguir al paso numero dos.",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 				</div>
 				<h3 className="h3GuidesStep" id="paso2">
 					Paso 2
@@ -63,6 +70,25 @@ export const ZoomCalls = () => {
 					<p>
 						Abrimos la aplicación en nuestro celular, presionando con nuestro dedo sobre el icono de Zoom.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"Abrimos la aplicación en nuestro celular, presionando con nuestro dedo sobre el icono de Zoom.",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 				</div>
 				<div className="row col-12 justify-content-center">
 					{/* esta clase es la unica diferente porque tiene tamano diferente al resto */}
@@ -81,6 +107,25 @@ export const ZoomCalls = () => {
 						</strong>
 						.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"Cuando termine de abrir la aplicación vamos a poder ver la pantalla inicio de Zoom, donde podremos ver las diferentes opciones disponibles de la app, para crear la video llamada necesita presionar con su dedo nueva reunión",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 				</div>
 				<div className="row col-12 justify-content-center">
 					<img src="zoom2.png" className="imgGuia zoomTutorialImg" />
@@ -96,6 +141,25 @@ export const ZoomCalls = () => {
 						</strong>
 						.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"La siguiente pantalla, presione el botón iniciar una reunión”",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 				</div>
 				<div className="row col-12 justify-content-center">
 					<img src="zoom3.png" className="imgGuia zoomTutorialImg4" />
@@ -113,6 +177,25 @@ export const ZoomCalls = () => {
 						</strong>
 						.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"Cuando inicie la video llamada, nos va mostrar un panel donde podremos activar o desactivar presionando sobre el icono audio y video, para invitar a personas a la reunión, tendremos que presionar sobre",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 				</div>
 				<div className="row col-12 justify-content-center">
 					<img src="zoom4.png" className="imgGuia zoomTutorialImg" />
@@ -136,6 +219,25 @@ export const ZoomCalls = () => {
 						</strong>
 						.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"En la ventanilla de participantes, vamos a presionar sobre la opción invitar, nos mostrara las opciones para compartir la invitación, en este ejemplo vamos a utilizar copiar vinculo”",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 				</div>
 				<div className="row col-12 justify-content-center">
 					<img src="zoom5.png" className="imgGuia zoomTutorialImg mb-2" />
@@ -162,6 +264,25 @@ export const ZoomCalls = () => {
 						, esto mostrara el vínculo de la reunión, y presionamos el icono de enviar para compartir el
 						vínculo. Con esto ya habremos compartido la reunión con la persona que queríamos.
 					</p>
+					<button
+						onClick={() =>
+							responsiveVoice.speak(
+								"Esta opción nos permite compartir en link o url de acceso en cualquier aplicación, para este ejemplo utilizaremos WhatsApp, al ingresar en un chat, mantenemos presionado nuestro dedo sobre la sección donde se escribe el mensaje, y elegimos la opción de pegar, esto mostrara el vínculo de la reunión, y presionamos el icono de enviar para compartir el vínculo. Con esto ya habremos compartido la reunión con la persona que queríamos.",
+								"Spanish Female"
+							)
+						}
+						type="button"
+						value="Play"
+						className="btn btn-dark">
+						Leer
+					</button>
+					<button
+						onClick={() => responsiveVoice.cancel()}
+						type="button"
+						value="Detener"
+						className="btn btn-dark ml-2">
+						Detener lectura
+					</button>
 				</div>
 				<div className="row col-12 justify-content-center">
 					<img src="zoom7.jpg" className="imgGuia zoomTutorialImg mb-2" />
