@@ -18,9 +18,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			tutorials: [],
 			token: null,
-            theme: "light",
-            favorites: [],
-			url: "https://3001-amaranth-crab-eik3u2z1.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
+			theme: "light",
+			favorites: [],
+			url: "https://3001-azure-haddock-6v1daxtn.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
