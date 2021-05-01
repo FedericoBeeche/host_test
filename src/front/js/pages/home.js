@@ -45,7 +45,12 @@ export const Home = () => {
 							<div className="col-sm-3" key={index}>
 								<Link to={tutorial.link}>
 									<div className="card">
-										<img src={tutorial.img} className="card-img" alt="..." />
+										<img
+											src={tutorial.img}
+											className="card-img"
+											alt="..."
+											onClick={() => actions.getTutorials()}
+										/>
 									</div>
 								</Link>
 								<h5 className="menu_h5GuideTitle">{tutorial.title}</h5>
