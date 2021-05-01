@@ -18,8 +18,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			tutorials: [],
 			token: null,
-            theme: "light",
-            favorites: [],
+			theme: "light",
+			favorites: [],
 			url: "https://3001-amaranth-crab-eik3u2z1.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {

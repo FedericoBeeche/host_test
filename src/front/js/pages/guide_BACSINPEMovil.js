@@ -15,7 +15,6 @@ import BACtenthImg from "../../img/img_BACSINPEMovil/BAC10.png";
 import BACeleventhImg from "../../img/img_BACSINPEMovil/BAC11.png";
 import BACStwelfthImg from "../../img/img_BACSINPEMovil/BAC12.png";
 import "../../styles/home.scss";
-import Speech from "react-speech";
 
 export const BAC_SINPE = () => {
 	const { store, actions } = useContext(Context);
