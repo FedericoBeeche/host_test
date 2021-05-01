@@ -14,8 +14,14 @@ export const Home = () => {
 
 	return (
 		<div className="container">
-			<h1 className="home_menuH1">Menú de guías</h1>
-			<h4 className="mb-4 home_menuH4">Aquí podrás encontrar las guías con la información más actualizada.</h4>
+			<div className="d-flex justify-content-center">
+				<div className="col-sm-10 col-12">
+					<h1 className="home_menuH1">Menú de guías</h1>
+					<h4 className="mb-4 home_menuH4">
+						Aquí podrás encontrar las guías con la información más actualizada.
+					</h4>
+				</div>
+			</div>
 
 			<div className="d-flex justify-content-center mb-4">
 				{/* <input className="buscador" type="text" placeholder="Buscar guía" />
@@ -26,6 +32,7 @@ export const Home = () => {
 						onSearch={handleOnSearch}
 						onSelect={actions.handleOnSelectTutorial}
 						onFocus={actions.handleOnFocusTutorial}
+						placeholder={"Buscador"}
 						styling={{
 							zIndex: 2,
 							borderRadius: "5px",
@@ -38,31 +45,29 @@ export const Home = () => {
 				</div>
 			</div>
 
-			<div className="container guideContainer">
-				<div className="card-columns row justify-content-center">
-					{store.tutorials.map((tutorial, index) => {
-						return (
-							<div className="col-sm-3" key={index}>
-								<Link to={tutorial.link}>
-									<div className="card">
-										<img
-											src={tutorial.img}
-											className="card-img"
-											alt="..."
-											onClick={() => actions.getTutorials()}
-										/>
-									</div>
-								</Link>
-								<h5 className="menu_h5GuideTitle">{tutorial.title}</h5>
-								<p>{tutorial.description}</p>
-							</div>
-						);
-					})}
-				</div>
+			<div className="card-columns row justify-content-center">
+				{store.tutorials.map((tutorial, index) => {
+					return (
+						<div className="col-sm-3 m-3" key={index}>
+							<Link to={tutorial.link}>
+								<div className="card">
+									<img
+										src={tutorial.img}
+										className="card-img"
+										alt="..."
+										onClick={() => actions.getTutorials()}
+									/>
+								</div>
+							</Link>
+							<h5 className="menu_h5GuideTitle">{tutorial.title}</h5>
+							<p>{tutorial.description}</p>
+						</div>
+					);
+				})}
+			</div>
 
-				<div className="d-flex justify-content-center">
-					<img src="https://svgshare.com/i/WVA.svg" className="leerSVG text-center" />
-				</div>
+			<div className="d-flex justify-content-center">
+				<img src="https://svgshare.com/i/WVA.svg" className="leerSVG text-center" />
 			</div>
 		</div>
 	);

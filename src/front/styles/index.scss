@@ -21,7 +21,7 @@ body {
 }
 
 .card {
-    border: 5px solid #2b2d4a;
+    border: 3.5px solid #2b2d4a;
     transition: 0.2s;
     border-radius: 5px;
         
@@ -63,15 +63,15 @@ input[type=button], .btn {
 
 .home_menuH1 {
     font-weight: 900;
-    font-size: 75px;
-    margin-bottom: 0;
+    font-size: 67px;
+    margin-bottom: 10px;
     padding-bottom: 0;
 }
 
 .home_menuH4 {
     font-weight: 300;
     font-style: italic;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .menu_h5GuideTitle {
