@@ -53,7 +53,7 @@ const Layout = () => {
 								<Route exact path="/signup">
 									<SignUp />
 								</Route>
-								<Route exact path="/changepass">
+								<Route exact path="/changepass/:token">
 									<ChangePass />
 								</Route>
 								<Route exact path="/forgotpass">

@@ -30,7 +30,7 @@ export const ForgotPass = () => {
 				return resp.json();
 			})
 			.then(() => {})
-			.catch(error => console.error("Send email error error: ", error));
+			.catch(error => console.error("Send email error: ", error));
 	};
 
 	return (
