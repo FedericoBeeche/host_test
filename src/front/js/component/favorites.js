@@ -8,16 +8,18 @@ export const Favorites = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="dropdown pr-5 ml-auto">
+		<div className="dropdown">
 			<a
-				className="btn btn-outline-warning dropdown-toggle"
+				// className="btn dropdown-toggle" remove classes to prevent default behaviour
+				className=""
 				href="#"
 				role="button"
 				id="dropdownMenuLink"
 				data-toggle="dropdown"
 				aria-haspopup="true"
 				aria-expanded="false">
-				Favorites <span className="badge badge-secondary">{store.favorites.length}</span>
+				<i className=" far fa-heart userProfileIcon" />{" "}
+				{/* <span className="badge badge-secondary">{store.favorites.length}</span> */}
 			</a>
 
 			<div className="dropdown-menu">

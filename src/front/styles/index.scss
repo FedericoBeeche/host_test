@@ -335,6 +335,14 @@ input[type=button], .btn {
     //background-color: #fcfff8;
 }
 
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline-color: #f28181;
+    //box-shadow: none;
+}
+
 .userProfileIcon {
     font-size: 30px;
     color: #f28181;
@@ -356,7 +364,7 @@ input[type=button], .btn {
     border-radius: 5px;
     background-color: #fcfff8;
     color: #f28181;
-    margin-right: 10px;
+    //margin-right: 10px;
 }
 
 // FOOTER STYLES //

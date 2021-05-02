@@ -32,7 +32,7 @@ export const Home = () => {
 						onSearch={handleOnSearch}
 						onSelect={actions.handleOnSelectTutorial}
 						onFocus={actions.handleOnFocusTutorial}
-						placeholder={"Buscador"}
+						placeholder={"Buscar guía..."}
 						styling={{
 							zIndex: 2, // To display it on top of the search box below
 							borderRadius: "5px",
@@ -40,7 +40,8 @@ export const Home = () => {
 							border: "#f28181 solid 2px",
 							fontFamily: "Montserrat, sans-serif",
 							fontSize: "18px",
-							height: "40px"
+							height: "40px",
+							placeholderColor: "grey"
 						}}
 					/>
 				</div>
