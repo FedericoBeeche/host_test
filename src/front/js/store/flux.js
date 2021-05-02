@@ -20,11 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null,
 			theme: "light",
 			favorites: [],
-<<<<<<< HEAD
-			url: "https://3001-amaranth-crab-eik3u2z1.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
-=======
 			url: "https://3001-olive-penguin-2l2gqn3j.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
->>>>>>> 08773578be54a62024f9d2766c4e932e593dfd17
 		},
 		actions: {
 			login: async (email, password) => {
