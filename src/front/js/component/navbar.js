@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { LogoPagina } from "../../img/Logo.png";
 import { Favorites } from "./favorites";
+import { FavoritesSmall } from "./favoritessmall";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
@@ -20,24 +21,50 @@ export const Navbar = () => {
 			</button>
 			<div className="navbar-collapse collapse text-right" id="collapsingNavbarSm">
 				<ul className="navbar-nav w-100 justify-content-end">
-					<li className="nav-item">
+					{/*Responsive DARKMODE button*/}
+					<li className="nav-item d-none d-md-block">
 						<button className="darkModeBtn" onClick={() => actions.themeToggler()}>
 							Modo Oscuro
 						</button>
 					</li>
-					<li className="nav-item ml-3">
+					<li className="nav-item d-block d-sm-none m-1">
+						<div className="text-coral p-0" onClick={() => actions.themeToggler()}>
+							Modo Oscuro
+						</div>
+					</li>
+
+					{/*Responsive FAVORITES button*/}
+					<li className="nav-item ml-3 d-none d-md-block">
 						<Favorites />
 					</li>
-					<li className="nav-item ml-3">
+					<li className="nav-item ml-3 d-block d-sm-none m-1">
+						<FavoritesSmall />
+					</li>
+
+					{/*Responsive LOGIN/LOGOUT button*/}
+					<li className="nav-item ml-3 d-none d-md-block">
 						{store.token ? (
 							<Link to="/">
-								<button onClick={() => actions.logout()} className="btn text-coral">
-									Cerrar sesión
+								<button onClick={() => actions.logout()} className="text-coral">
+									Cerrar Sesión
 								</button>
 							</Link>
 						) : (
 							<Link to="/login">
 								<i className=" far fa-user-circle userProfileIcon" />
+							</Link>
+						)}
+					</li>
+					<li className="nav-item ml-3 d-block d-sm-none m-1">
+						{store.token ? (
+							<Link to="/">
+								<button onClick={() => actions.logout()} className="text-coral">
+									Cerrar Sesión
+								</button>
+							</Link>
+						) : (
+							<Link to="/login">
+								<div className="text-coral">Iniciar Sesión</div>
 							</Link>
 						)}
 					</li>
