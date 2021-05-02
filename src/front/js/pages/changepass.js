@@ -62,12 +62,16 @@ export const ChangePass = () => {
 	};
 
 	return (
-		<div className="container-fluid">
+		<div className="container">
 			{email !== "expired" && email !== "" ? (
 				<>
 					{" "}
-					<h2 className="text-center pwResetTopH2">Restablezca su</h2>
-					<h2 className="text-center mb-5 ml-5 mr-5 mt-3 pwResetBottomH2">contraseña</h2>
+					<div className="row justify-content-center mt-5 ">
+						<h2 className="text-center form-title m-0">Restablezca su</h2>
+					</div>
+					<div className="row justify-content-center mb-5 ">
+						<h2 className="text-center form-title">contraseña</h2>
+					</div>
 					<div className="m-auto col-8 col-sm-3">
 						<form>
 							<div className="row mb-3 d-block">
@@ -85,22 +89,23 @@ export const ChangePass = () => {
 								/>
 							</div>
 						</form>
-						<div className="row my-3 d-flex justify-content">
+						<div className="row my-4 d-flex justify-content">
 							<Link to={"/login"}>
-								<button type="button" className="btn btn-success" onClick={resetPasswordHandler}>
+								<button
+									type="button"
+									className="btn btn-info buttonhover"
+									onClick={resetPasswordHandler}>
 									Confirmar
 								</button>
 							</Link>
 							<Link to={"/login"}>
-								<button type="button" className="btn btn-danger ml-2">
+								<button type="button" className="btn btn-dark buttonhover ml-3 mb-5">
 									Cancelar
 								</button>
 							</Link>
 						</div>
 					</div>
 				</>
-			) : email !== "expired" ? (
-				<h2 className="text-center m-5">El token para reestablecer contraseña no es válido</h2>
 			) : (
 				<h2 className="text-center m-5">El link para reestablecer su contraseña ha expirado</h2>
 			)}
