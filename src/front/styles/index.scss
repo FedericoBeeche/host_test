@@ -10,8 +10,32 @@ body {
     color: #2b2d4a;
 }
 
+p {
+    font-size: 19px;
+}
+
+.text-darkblue {
+    color: #2b2d4a;
+}
+
 .text-coral {
     color: #f28181;
+}
+
+.bg-lightcoral {
+    background-color: #fcdada;
+}
+
+.bg-lightgrey {
+    background-color: #eeeeee;
+}
+
+.bg-coral {
+    background-color: #f28181;
+}
+
+.bg-darkcoral {
+    background-color: #8f3749;
 }
 
 // GENERAL STYLES // 
@@ -21,9 +45,10 @@ body {
 }
 
 .card {
-    border: 5px solid #2b2d4a;
+    //border: 3.5px solid #2b2d4a;
     transition: 0.2s;
     border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         
 }
 
@@ -63,15 +88,15 @@ input[type=button], .btn {
 
 .home_menuH1 {
     font-weight: 900;
-    font-size: 75px;
-    margin-bottom: 0;
+    font-size: 9.5vmin;
+    margin-bottom: 10px;
     padding-bottom: 0;
 }
 
 .home_menuH4 {
     font-weight: 300;
     font-style: italic;
-    font-size: 30px;
+    font-size: 3vh;
 }
 
 .menu_h5GuideTitle {
@@ -79,6 +104,59 @@ input[type=button], .btn {
 }
 
 // GENERAL GUIDE STYLES //
+
+.logotext { // propiedades tomadas de la clase .BAC_Middleh1Guide de Fede
+    font-size: 30px; 
+    font-weight: 900;
+    text-align: center;
+    margin: 6px 0;
+    line-height: 100%;
+    color: #f28181;
+    transition: 0.2s;
+}
+
+.logotext:hover { // propiedades tomadas de la clase .BAC_Middleh1Guide de Fede
+    font-size: 30px; 
+    font-weight: 900;
+    text-align: center;
+    margin: 6px 0;
+    line-height: 100%;
+    color: #f28181;
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+
+.title { // propiedades tomadas de la clase .BAC_Middleh1Guide de Fede
+    font-size: 5.3vH; 
+    font-weight: 900;
+    text-align: center;
+    margin: 3vh 0 1vh;
+    line-height: 120%;
+}
+
+.subtitle { // propiedades tomadas de la clase .BAC_h5Guide de Fede
+    font-size: 2.5vh;
+    font-weight: lighter; 
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 0.3vh;
+    padding-bottom: 0;
+    line-height: 120%;
+}
+
+.image {
+    //border: 3.5px solid #2b2d4a;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 300px;
+    height: 600px;
+    margin: 3vh;
+}
+
+.imageIcon {
+    height: 100px;
+    width: 100px;
+}
 
 .imgGuia {
     border: 3.5px solid #2b2d4a;
@@ -226,7 +304,6 @@ input[type=button], .btn {
     font-weight: 900;
     margin-bottom: 0;
     padding-bottom: 0;
-    
 }
 
 .BAC_Bottomh1Guide {
@@ -284,10 +361,12 @@ input[type=button], .btn {
     padding: 0rem 1rem;
 }
 
-.navbarStyle {
-    border-bottom: #f28181 3px solid;
-    color: #f28181;
-    //background-color: #fcfff8;
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline-color: #f28181;
+    //box-shadow: none;
 }
 
 .userProfileIcon {
@@ -311,7 +390,7 @@ input[type=button], .btn {
     border-radius: 5px;
     background-color: #fcfff8;
     color: #f28181;
-    margin-right: 10px;
+    //margin-right: 10px;
 }
 
 // FOOTER STYLES //
@@ -360,9 +439,21 @@ input[type=button], .btn {
     width: 75px;
 }
 
+.zoomTutorialImg4 {
+    height: 150px;
+    width: 300px;
+}
+
 // WHATSAPP GUIDE STYLES // 
 
 .WATutorialImg {
     height: 600px;
     width: 300px;
+}
+
+.navbarStyle {
+    border-bottom: #f28181 3px solid;
+    color: #f28181;
+    //background-color: #fcfff8;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1500' height='180' preserveAspectRatio='none' viewBox='0 0 1500 180'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1063%26quot%3b)' fill='none'%3e%3crect width='1500' height='180' x='0' y='0' fill='rgba(143%2c 55%2c 73%2c 1)'%3e%3c/rect%3e%3cpath d='M34 180L214 0L283 0L103 180z' fill='url(%23SvgjsLinearGradient1064)'%3e%3c/path%3e%3cpath d='M252.5 180L432.5 0L746 0L566 180z' fill='url(%23SvgjsLinearGradient1064)'%3e%3c/path%3e%3cpath d='M510 180L690 0L843 0L663 180z' fill='url(%23SvgjsLinearGradient1064)'%3e%3c/path%3e%3cpath d='M770.5 180L950.5 0L1316.5 0L1136.5 180z' fill='url(%23SvgjsLinearGradient1064)'%3e%3c/path%3e%3cpath d='M1474 180L1294 0L1148.5 0L1328.5 180z' fill='url(%23SvgjsLinearGradient1065)'%3e%3c/path%3e%3cpath d='M1212.5 180L1032.5 0L701 0L881 180z' fill='url(%23SvgjsLinearGradient1065)'%3e%3c/path%3e%3cpath d='M961 180L781 0L664 0L844 180z' fill='url(%23SvgjsLinearGradient1065)'%3e%3c/path%3e%3cpath d='M721.5 180L541.5 0L466.5 0L646.5 180z' fill='url(%23SvgjsLinearGradient1065)'%3e%3c/path%3e%3cpath d='M1408.139515904428 180L1500 88.13951590442794L1500 180z' fill='url(%23SvgjsLinearGradient1064)'%3e%3c/path%3e%3cpath d='M0 180L91.86048409557206 180L 0 88.13951590442794z' fill='url(%23SvgjsLinearGradient1065)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1063'%3e%3crect width='1500' height='180' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient1064'%3e%3cstop stop-color='rgba(188%2c 89%2c 108%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(188%2c 89%2c 108%2c 1)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient1065'%3e%3cstop stop-color='rgba(188%2c 89%2c 108%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(188%2c 89%2c 108%2c 1)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
 }

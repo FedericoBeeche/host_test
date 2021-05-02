@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 
 import "../../styles/demo.scss";
 
-export const Favorites = () => {
+export const FavoritesSmall = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="dropdown">
+		<div className="text-coral">
 			<a
 				// className="btn dropdown-toggle" remove classes to prevent default behaviour
-				className=""
+				className="text-coral p-0"
 				href="#"
 				role="button"
 				id="dropdownMenuLink"
 				data-toggle="dropdown"
 				aria-haspopup="true"
 				aria-expanded="false">
-				<i className=" far fa-heart userProfileIcon" />{" "}
+				Mis Favoritos
 				{/* <span className="badge badge-secondary">{store.favorites.length}</span> */}
 			</a>
 
