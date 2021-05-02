@@ -34,13 +34,14 @@ export const Home = () => {
 						onFocus={actions.handleOnFocusTutorial}
 						placeholder={"Buscador"}
 						styling={{
-							zIndex: 2,
+							zIndex: 2, // To display it on top of the search box below
 							borderRadius: "5px",
 							color: "#f28181",
 							border: "#f28181 solid 2px",
 							fontFamily: "Montserrat, sans-serif",
+							fontSize: "18px",
 							height: "40px"
-						}} // To display it on top of the search box below
+						}}
 					/>
 				</div>
 			</div>
@@ -48,7 +49,7 @@ export const Home = () => {
 			<div className="card-columns row justify-content-center">
 				{store.tutorials.map((tutorial, index) => {
 					return (
-						<div className="col-sm-3 m-3" key={index}>
+						<div className="col-sm-3 m-4" key={index}>
 							<Link to={tutorial.link}>
 								<div className="card">
 									<img

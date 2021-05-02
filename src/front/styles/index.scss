@@ -10,6 +10,11 @@ body {
     color: #2b2d4a;
 }
 
+p {
+    font-size: 19px;
+    font-weight: 400;
+}
+
 .text-coral {
     color: #f28181;
 }
@@ -29,9 +34,10 @@ body {
 }
 
 .card {
-    border: 3.5px solid #2b2d4a;
+    //border: 3.5px solid #2b2d4a;
     transition: 0.2s;
     border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         
 }
 
@@ -71,7 +77,7 @@ input[type=button], .btn {
 
 .home_menuH1 {
     font-weight: 900;
-    font-size: 67px;
+    font-size: 9.5vmin;
     margin-bottom: 10px;
     padding-bottom: 0;
 }
@@ -79,7 +85,7 @@ input[type=button], .btn {
 .home_menuH4 {
     font-weight: 300;
     font-style: italic;
-    font-size: 25px;
+    font-size: 3vh;
 }
 
 .menu_h5GuideTitle {
@@ -87,6 +93,38 @@ input[type=button], .btn {
 }
 
 // GENERAL GUIDE STYLES //
+
+.title { // propiedades tomadas de la clase .BAC_Middleh1Guide de Fede
+    font-size: 5.3vH; 
+    font-weight: 900;
+    text-align: center;
+    margin: 3vh 0 1vh;
+    line-height: 120%;
+}
+
+.subtitle { // propiedades tomadas de la clase .BAC_h5Guide de Fede
+    font-size: 2.5vh;
+    font-weight: lighter; 
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 0.3vh;
+    padding-bottom: 0;
+    line-height: 120%;
+}
+
+.image {
+    //border: 3.5px solid #2b2d4a;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 300px;
+    height: 600px;
+    margin: 3vh;
+}
+
+.imageIcon {
+    height: 100px;
+    width: 100px;
+}
 
 .imgGuia {
     border: 3.5px solid #2b2d4a;
@@ -234,7 +272,6 @@ input[type=button], .btn {
     font-weight: 900;
     margin-bottom: 0;
     padding-bottom: 0;
-    
 }
 
 .BAC_Bottomh1Guide {
@@ -366,6 +403,11 @@ input[type=button], .btn {
 .zoomTutorialImg1 {
     height: 100px;
     width: 75px;
+}
+
+.zoomTutorialImg4 {
+    height: 150px;
+    width: 300px;
 }
 
 // WHATSAPP GUIDE STYLES // 
