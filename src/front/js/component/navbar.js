@@ -9,11 +9,15 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<nav className="navbar navbar-light navbar-expand-md mb-3 navbarStyle d-flex align-items-center">
+		<nav className="navbar navbar-light navbar-expand-md mb-3 navbarStyle d-flex align-items-center bg-darkcoral px-sm-5">
 			<div className="navbar-brand m-0 p-0" href="#">
-				<Link to="/">
-					<img className="logoClass p-0 m-0" src="Logo.png" alt="¿Cómo hago?" />
+				<Link style={{ textDecoration: "none" }} to="/">
+					{/* <img className="logoClass p-0 m-0" src="Logo.png" alt="¿Cómo hago?" /> */}
 					{/* <span className="navbar-brand mb-0 h1">¿Cómo hago?</span> */}
+					<div className="logotext">
+						<div>¿CÓMO</div>
+						<div>HAGO?</div>
+					</div>
 				</Link>
 			</div>
 			<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbarSm">
@@ -45,9 +49,9 @@ export const Navbar = () => {
 					<li className="nav-item ml-3 d-none d-md-block">
 						{store.token ? (
 							<Link to="/">
-								<button onClick={() => actions.logout()} className="text-coral">
+								<div onClick={() => actions.logout()} className="text-coral">
 									Cerrar Sesión
-								</button>
+								</div>
 							</Link>
 						) : (
 							<Link to="/login">
@@ -57,13 +61,13 @@ export const Navbar = () => {
 					</li>
 					<li className="nav-item ml-3 d-block d-sm-none m-1">
 						{store.token ? (
-							<Link to="/">
-								<button onClick={() => actions.logout()} className="text-coral">
+							<Link style={{ textDecoration: "none" }} to="/">
+								<div onClick={() => actions.logout()} className="text-coral">
 									Cerrar Sesión
-								</button>
+								</div>
 							</Link>
 						) : (
-							<Link to="/login">
+							<Link style={{ textDecoration: "none" }} to="/login">
 								<div className="text-coral">Iniciar Sesión</div>
 							</Link>
 						)}
