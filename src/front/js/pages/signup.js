@@ -62,7 +62,9 @@ export const SignUp = () => {
 
 	return (
 		<div className="container-fluid">
-			<h2 className="text-center m-5 signUpH2">Crear cuenta</h2>
+			<div className="row justify-content-center my-5">
+				<h2 className="text-center form-title">Crear cuenta</h2>
+			</div>
 
 			{store.token && store.token != "" && store.token != undefined ? (
 				history.push("/")
@@ -283,18 +285,18 @@ export const SignUp = () => {
 								</div>
 							</p>
 						</div>
-						<div className="row my-3 d-flex justify-content-center">
+						<div className="row my-4">
 							<button
 								type="button"
 								disabled={!agree}
-								className="btn btn-success botonRegistro"
+								className="btn btn-info botonhover"
 								onClick={registrationHandler}>
 								Regístrate
 							</button>
 						</div>
 					</form>
 
-					<div className="text-center">
+					<div className="text-center mb-5">
 						<small>¿Ya tienes cuenta?</small>
 						<Link to={"/login"}>
 							<small className="text-info"> Regresa, e inicia sesion</small>

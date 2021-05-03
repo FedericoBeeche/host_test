@@ -58,6 +58,15 @@ p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.buttonhover {
+    transition: 0.2s;
+}
+
+.buttonhover:hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+
 .buscador {
     border: #f28181 solid 2px;
     border-radius: 5px;
@@ -180,7 +189,7 @@ input[type=button], .btn {
 
 // LOGIN STYLE //
 
-.loginH2 {
+.form-title { // .loginH2 Change name for good practices, we need to use general styling (Atte: Litzy)
     font-size: 35px;
     font-weight: 900;
 }
