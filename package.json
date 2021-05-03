@@ -78,6 +78,7 @@
 	"dependencies": {
 		"bootstrap": "^4.6.0",
 		"jquery": "^3.6.0",
+		"jwt-decode": "^3.1.2",
 		"popper.js": "^1.16.1",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
@@ -87,6 +88,7 @@
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^5.2.0",
 		"react-search-autocomplete": "^5.0.8",
-		"styled-components": "^5.2.3"
+		"styled-components": "^5.2.3",
+		"sweetalert": "^2.1.2"
 	}
 }
