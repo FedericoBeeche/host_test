@@ -21,9 +21,8 @@ export const BAC_SINPE = () => {
 
 	return (
 		<div className="container">
-		
-
-
+			<div className="d-flex justify-content-center">
+				<div className="col-sm-7 col-12">
 					<div className="row justify-content-center">
 						<div className="title">
 							<div className="">MI PRIMER TRASNFERENCIA</div>
@@ -32,14 +31,14 @@ export const BAC_SINPE = () => {
 						<div className="row justify-content-center ml-1 mr-1">
 							<div className="subtitle">EN BANCA MÓVIL DEL BAC</div>
 						</div>
-                        <div className="row justify-content-center">
-                            <button
-                                onClick={() => {
-                                    actions.addFavorite(store.title1);
-                                }}>
-                                <i className="fa fa-heart" />
-                            </button>
-                        </div>
+						<div className="row justify-content-center">
+							<button
+								onClick={() => {
+									actions.addFavorite(store.title2);
+								}}>
+								<i className="fa fa-heart" />
+							</button>
+						</div>
 					</div>
 
 					{/*Cada paso debe estar encerrado en un div*/}

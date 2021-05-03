@@ -37,14 +37,14 @@ export const WhatsAppCalls = () => {
 						<div className="row justify-content-center ml-1 mr-1">
 							<div className="subtitle">¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</div>
 						</div>
-                        <div className="row justify-content-center">
-                            <button
-                                onClick={() => {
-                                    actions.addFavorite(store.title2);
-                                }}>
-                                <i className="fa fa-heart" />
-                            </button>
-                        </div>
+						<div className="row justify-content-center">
+							<button
+								onClick={() => {
+									actions.addFavorite(store.title1);
+								}}>
+								<i className="fa fa-heart" />
+							</button>
+						</div>
 					</div>
 
 					<div className="mt-5 mb-5">

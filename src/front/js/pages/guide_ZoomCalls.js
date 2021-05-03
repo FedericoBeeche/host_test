@@ -39,14 +39,14 @@ export const ZoomCalls = () => {
 						<div className="row justify-content-center ml-1 mr-1">
 							<div className="subtitle">EN EL APP DE TU TELÉFONO</div>
 						</div>
-                        <div className="row justify-content-center">
-                            <button
-                                onClick={() => {
-                                    actions.addFavorite(store.title3);
-                                }}>
-                                <i className="fa fa-heart" />
-                            </button>
-                        </div>
+						<div className="row justify-content-center">
+							<button
+								onClick={() => {
+									actions.addFavorite(store.title3);
+								}}>
+								<i className="fa fa-heart" />
+							</button>
+						</div>
 					</div>
 
 					{/*Cada paso debe estar encerrado en un div*/}
