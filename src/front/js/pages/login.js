@@ -23,17 +23,17 @@ export const Login = () => {
 
 	return (
 		<div className="container">
-			<div className="row justify-content-center">
-				<h2 className="justify-content-center m-5 loginH2">Iniciar sesión</h2>
+			<div className="row justify-content-center my-5">
+				<h2 className="text-center form-title">Iniciar sesión</h2>
 			</div>
 
 			{store.token && store.token != "" && store.token != undefined ? (
 				history.push("/")
 			) : (
-				<div className="m-auto col-8 col-sm-3 loginBox">
+				<div className="m-auto col-8 col-sm-3">
 					<form>
 						<div className="row mb-3 d-block">
-							<label htmlFor="email_input" className="form-label loginText">
+							<label htmlFor="email_input" className="form-label">
 								Correo electrónico
 							</label>
 							<input
@@ -47,7 +47,7 @@ export const Login = () => {
 						</div>
 
 						<div className="row mb-0 d-block">
-							<label htmlFor="password_input" className="form-label loginText">
+							<label htmlFor="password_input" className="form-label">
 								Contraseña
 							</label>
 							<input
@@ -59,27 +59,22 @@ export const Login = () => {
 								onChange={e => setPassword(e.target.value)}
 							/>
 						</div>
+						<div className="row justify-content-end">
+							<Link to={"/forgotpass"}>
+								<small className="text-info">¿Has olvidado tu contraseña?</small>
+							</Link>
+						</div>
 					</form>
-					<div className="d-flex justify-content-end">
-						<Link to={"/forgotpass"}>
-							<small className="text-info float-right mt-1">¿Has olvidado tu contraseña?</small>
-						</Link>
-					</div>
 
-					<div className="row my-3">
-						<button type="button" className="btn btn-dark" onClick={handleClick}>
+					<div className="row my-4">
+						<button type="button" className="btn btn-info buttonhover" onClick={handleClick}>
 							Ingresar
 						</button>
 					</div>
-					<div className="text-center">
+					<div className="text-center mb-5">
 						<small>¿No tienes una cuenta aún? </small>
 						<Link to={"/signup"}>
 							<small className="text-info">Regístrate</small>
-						</Link>
-					</div>
-					<div className="text-center">
-						<Link to={"/changepass"}>
-							<small className="text-info"> Cambio de contraseña</small>
 						</Link>
 					</div>
 				</div>

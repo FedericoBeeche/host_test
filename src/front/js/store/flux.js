@@ -20,10 +20,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null,
 			theme: "light",
 			favorites: [],
+
 			title1: "Transferencias SINPE BAC",
 			title2: "Videollamadas por WhatsApp",
 			title3: "Mi primer videollamada en Zoom (para celular)",
-			url: "https://3001-coral-bear-2qu9ixmh.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
+			url: "https://3001-copper-locust-ag1ttdql.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
