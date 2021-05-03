@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
@@ -15,7 +15,6 @@ import BACtenthImg from "../../img/img_BACSINPEMovil/BAC10.png";
 import BACeleventhImg from "../../img/img_BACSINPEMovil/BAC11.png";
 import BACStwelfthImg from "../../img/img_BACSINPEMovil/BAC12.png";
 import "../../styles/home.scss";
-import Speech from "react-speech";
 
 export const BAC_SINPE = () => {
 	const { store, actions } = useContext(Context);
@@ -34,6 +33,14 @@ export const BAC_SINPE = () => {
 				</div>
 				<div className="row justify-content-center">
 					<h5 className="BAC_h5Guide">EN BANCA MÓVIL DEL BAC</h5>
+				</div>
+				<div className="row justify-content-center">
+					<button
+						onClick={() => {
+							actions.addFavorite(store.title1);
+						}}>
+						<i className="fa fa-heart" />
+					</button>
 				</div>
 			</div>
 

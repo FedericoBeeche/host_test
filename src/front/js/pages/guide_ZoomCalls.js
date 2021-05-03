@@ -27,6 +27,14 @@ export const ZoomCalls = () => {
 				<div className="row justify-content-center">
 					<h5 className="Zoom_h5Guide">EN EL APP DE TU TELÉFONO</h5>
 				</div>
+				<div className="row justify-content-center">
+					<button
+						onClick={() => {
+							actions.addFavorite(store.title3);
+						}}>
+						<i className="fa fa-heart" />
+					</button>
+				</div>
 			</div>
 
 			<div className="container mb-2">

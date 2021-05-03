@@ -59,11 +59,8 @@ class Favorites(db.Model):
     def serialize(self):
 
         return {
-            "id": self.id,            
-            "user_id": self.user_id,
-            "tutorial_id": self.tutorial_id,    
-            "tutorial_title": self.tutorial_title,          
-            "tutorial_link": self.tutorial_link        
+            "id": self.id,
+            "tutorial_title": self.tutorial_title
         }
 
     def getAllFavorites(id):

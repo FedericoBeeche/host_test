@@ -18,9 +18,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			tutorials: [],
 			token: null,
-            theme: "light",
-            favorites: [],
-			url: "https://3001-amaranth-crab-eik3u2z1.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
+			theme: "light",
+			favorites: [],
+			title1: "Transferencias SINPE BAC",
+			title2: "Videollamadas por WhatsApp",
+			title3: "Mi primer videollamada en Zoom (para celular)",
+			url: "https://3001-coral-bear-2qu9ixmh.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
@@ -135,75 +138,94 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 
 				const token = sessionStorage.getItem("token");
-				console.log(token);
-				const tokenPayload = jwt_decode(token).sub; // jwt_decode returns the jwt object payload. Using "jwt debugger" we can see that .sub retuns the id in this case
-				console.log("ID obtained from token with jwt_decode: ", tokenPayload);
-				console.log("Item passed as parameter to addFavorite(): ", item);
 
-				let filteredResults = store.favorites.filter(function(currentElement) {
-					// the current value is an object, so you can check on its properties
-					return currentElement.id == item.id && currentElement.item_type == item.item_type;
-				});
-
-				console.log("Filtered result: ", filteredResults);
-
-				if (filteredResults.length == 0) {
-					const URL = `${store.url}/favorite`;
-					const CONFIG = {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-							Authorization: "Bearer " + store.token
-						},
-						body: JSON.stringify({
-							item_id: item.id,
-							item_type: item.item_type,
-							user_id: tokenPayload
-						})
-					};
-
-					fetch(URL, CONFIG)
-						.then(resp => {
-							if (resp.status === 200) return resp.json();
-							else alert("There was some error while adding the favorite");
-						})
-						.then(data => {
-							console.log("Favorite added to DB: ", data);
-							getActions().getFavorites();
-						})
-						.then(() => getActions().getFavoritesRaw()) // added to allow deletion of items just added, otherwise a Refresh is needed
-						.catch(error => {
-							console.error("CREATE Token error: ", error);
-						});
-				} else alert("Item already added to favorites");
-			},
-			removeFavorite: favoriteId => {
-				const store = getStore();
-
-				const URL = `${store.url}/favorite/${favoriteId}`;
+				const URL = `${store.url}/api/favorites`;
 				const CONFIG = {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + store.token
+					},
+					body: JSON.stringify({
+						title: item,
+						link: " "
+					})
+				};
+
+				fetch(URL, CONFIG)
+					.then(resp => {
+						if (resp.status === 200) return resp.json();
+						else alert("There was some error while adding the favorite");
+					})
+					.then(data => {
+						console.log("Favorite added to DB: ", data);
+					})
+					.catch(error => {
+						console.error("CREATE Token error: ", error);
+					});
+
+				fetch(`${store.url}/api/favorites/`, {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + store.token
+					}
+				})
+					.then(resp => {
+						//console.log("respuesta", resp.json());
+						return resp.json();
+					})
+					.then(data => {
+						setStore({ favorites: data });
+						console.log("dataresult", store);
+					})
+
+					.catch(err => {
+						console.log("error", err);
+					});
+			},
+
+			getFavorites: () => {
+				const store = getStore();
+				const token = sessionStorage.getItem("token");
+
+				fetch(`${store.url}/api/favorites/`, {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + store.token
+					}
+				})
+					.then(resp => {
+						//console.log("respuesta", resp.json());
+						return resp.json();
+					})
+					.then(data => {
+						setStore({ favorites: data });
+						console.log("dataresult", store);
+					})
+
+					.catch(err => {
+						console.log("error", err);
+					});
+			},
+
+			deleteFavorites: index => {
+				const store = getStore();
+				const deleteId = store.favorites[index].id;
+				let token = localStorage.getItem("token");
+				store.favorites.splice(index, 1);
+				setStore({ favorites: store.favorites });
+				fetch(`${store.url}/api/favorites/${deleteId}`, {
 					method: "DELETE",
 					headers: {
 						"Content-Type": "application/json",
 						Authorization: "Bearer " + store.token
 					}
-				};
-
-				fetch(URL, CONFIG)
-					.then(resp => {
-						console.log("DELETE favorites request: ", resp.ok);
-						resp.status >= 200 && resp.status < 300
-							? console.log("DELETE favorites successful, status: ", resp.status)
-							: console.error("DELETE favorites failed, status: ", resp.status);
-						return resp.json();
-					})
-					.then(() => getActions().getFavorites()) // remember to use callback function, otherwise it wont work
-					.then(() => getActions().getFavoritesRaw())
-					.catch(error => console.error("DELETE favorites error: ", error));
-
-				console.log("This is the URL to remove: ", URL);
-
-				console.log("This the fav ID to remove: ", favoriteId);
+				}).then(resp => {
+					//console.log("respuesta", resp.json());
+					return resp.json();
+				});
 			}
 		}
 	};

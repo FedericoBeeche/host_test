@@ -25,6 +25,14 @@ export const WhatsAppCalls = () => {
 				<div className="row justify-content-center">
 					<h5 className="WA_h5Guide">¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</h5>
 				</div>
+				<div className="row justify-content-center">
+					<button
+						onClick={() => {
+							actions.addFavorite(store.title2);
+						}}>
+						<i className="fa fa-heart" />
+					</button>
+				</div>
 			</div>
 
 			<div className="container mb-5">
