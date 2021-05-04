@@ -11,6 +11,7 @@ import "../../styles/demo.scss";
 export const ForgotPass = () => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
+	const history = useHistory();
 
 	const forgotPasswordHandler = () => {
 		const URL = `${store.url}/forgotmail/${email}`;
@@ -24,12 +25,35 @@ export const ForgotPass = () => {
 		fetch(URL, CONFIG)
 			.then(resp => {
 				console.log("Send email request: ", resp.ok);
-				resp.status >= 200 && resp.status < 300
-					? console.log("Send email successful, status: ", resp.status)
-					: console.error("Send email failed, status: ", resp.status);
+				if (resp.ok) {
+					console.log("Send email successful, status: ", resp.status);
+					swal({
+						title: "Correo enviado",
+						text: "Revisa tu correo electrónico para reestablecer tu contraseña",
+						icon: "success",
+						timer: "4500",
+						button: {
+							visible: true,
+							text: "Aceptar"
+						}
+					});
+					history.push("/login");
+				} else {
+					console.error("Send email failed, status: ", resp.status);
+					swal({
+						//title: "Good job!",
+						text: "Hubo un error al enviar el correo",
+						icon: "error",
+						timer: "3500",
+						button: {
+							visible: true,
+							text: "Entendido"
+						}
+					});
+					throw new Error("Hubo un error al enviar el correo");
+				}
 				return resp.json();
 			})
-			.then(() => {})
 			.catch(error => console.error("Send email error: ", error));
 	};
 
@@ -59,11 +83,11 @@ export const ForgotPass = () => {
 					</div>
 				</form>
 				<div className="row my-4 d-flex justify-content">
-					<Link to={"/login"}>
+					<div>
 						<button type="button" className="btn btn-info buttonhover" onClick={forgotPasswordHandler}>
 							Enviar
 						</button>
-					</Link>
+					</div>
 					<Link to={"/login"}>
 						<button type="button" className="btn btn-dark buttonhover ml-3 mb-5">
 							Cancelar

@@ -13,6 +13,8 @@ export const ChangePass = () => {
 	const { token } = useParams();
 	const [email, setEmail] = useState("default");
 	const [password, setPassword] = useState("");
+	const [confirmpassword, setConfirmPassword] = useState("");
+	const history = useHistory();
 
 	useEffect(() => {
 		const URL = `${store.url}/resetpassword/${token}`;
@@ -52,13 +54,64 @@ export const ChangePass = () => {
 		fetch(URL, CONFIG)
 			.then(resp => {
 				console.log("RESET PASSWORD request: ", resp.ok);
-				resp.status >= 200 && resp.status < 300
-					? console.log("Reset password successful, status: ", resp.status)
-					: console.error("Reset password failed, status: ", resp.status);
+				if (password == "") {
+					console.error("RESET PASSWORD failed, status: ", resp.status);
+					swal({
+						//title: "Good job!",
+						text: "Ingresa tu nueva contraseña",
+						icon: "error",
+						timer: "4500",
+						button: {
+							visible: true,
+							text: "Entendido"
+						}
+					});
+					throw new Error("Hubo un error al resetear la contraseña");
+				}
+				if (password !== confirmpassword) {
+					console.error("RESET PASSWORD failed, status: ", resp.status);
+					swal({
+						//title: "Good job!",
+						text: "Verifica que ambas contraseñas sean iguales",
+						icon: "error",
+						timer: "4500",
+						button: {
+							visible: true,
+							text: "Entendido"
+						}
+					});
+					throw new Error("Hubo un error al resetear la contraseña");
+				}
+				if (resp.ok) {
+					console.log("RESET PASSWORD successful, status: ", resp.status);
+					swal({
+						title: "Contraseña actualizada",
+						text: "Inicia sesión con tu contraseña",
+						icon: "success",
+						timer: "4500",
+						button: {
+							visible: true,
+							text: "Aceptar"
+						}
+					});
+					history.push("/login");
+				} else {
+					console.error("RESET PASSWORD failed, status: ", resp.status);
+					swal({
+						//title: "Good job!",
+						text: "Hubo un error al resetear la contraseña",
+						icon: "error",
+						timer: "4500",
+						button: {
+							visible: true,
+							text: "Entendido"
+						}
+					});
+					throw new Error("Hubo un error al resetear la contraseña");
+				}
 				return resp.json();
 			})
-			.then(() => {})
-			.catch(error => console.error("RESET PASSWORD error: ", error));
+			.catch(error => console.error("Send email error: ", error));
 	};
 
 	return (
@@ -88,16 +141,30 @@ export const ChangePass = () => {
 									required
 								/>
 							</div>
+							<div className="row mb-3 d-block">
+								<label htmlFor="password" className="form-label">
+									Confirmar nueva contraseña
+								</label>
+								<input
+									className="d-block w-100 p-2 infoBox"
+									type="password"
+									id="password_input"
+									placeholder="Confirmar contraseña"
+									value={confirmpassword}
+									onChange={e => setConfirmPassword(e.target.value)}
+									required
+								/>
+							</div>
 						</form>
 						<div className="row my-4 d-flex justify-content">
-							<Link to={"/login"}>
+							<div>
 								<button
 									type="button"
 									className="btn btn-info buttonhover"
 									onClick={resetPasswordHandler}>
 									Confirmar
 								</button>
-							</Link>
+							</div>
 							<Link to={"/login"}>
 								<button type="button" className="btn btn-dark buttonhover ml-3 mb-5">
 									Cancelar
