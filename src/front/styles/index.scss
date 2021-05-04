@@ -410,6 +410,22 @@ input[type=button], .btn {
 
 // FOOTER STYLES //
 
+.page-container { // add this class in layout.js to fix at bottom
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap { // add this class in layout.js to fix at bottom
+  padding-bottom: 70px;    /* Footer height */
+}
+
+.footer { // add this class in footer.js to fix at bottom
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;            /* Footer height */
+}
+
 .footerStyle {
     border-top: #f28181 3px solid;
     font-size: 40px;

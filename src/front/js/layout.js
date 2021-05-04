@@ -39,42 +39,44 @@ const Layout = () => {
 		<ThemeProvider theme={store.theme === "light" ? lightTheme : darkTheme}>
 			<GlobalStyles />
 			<StyledApp>
-				<div className="d-flex flex-column h-100">
+				<div className="d-flex flex-column page-container">
 					<BrowserRouter basename={basename}>
 						<ScrollToTop>
 							<Navbar />
-							<Switch>
-								<Route exact path="/">
-									<Home />
-								</Route>
-								<Route exact path="/login">
-									<Login />
-								</Route>
-								<Route exact path="/signup">
-									<SignUp />
-								</Route>
-								<Route exact path="/changepass/:token">
-									<ChangePass />
-								</Route>
-								<Route exact path="/forgotpass">
-									<ForgotPass />
-								</Route>
-								<Route exact path="/guide_BACSINPEMovil">
-									<BAC_SINPE />
-								</Route>
-								<Route exact path="/guide_ZoomCalls">
-									<ZoomCalls />
-								</Route>
-								<Route exact path="/guide_WhatsAppCalls">
-									<WhatsAppCalls />
-								</Route>
-								<Route exact path="/single/:theid">
-									<Single />
-								</Route>
-								<Route>
-									<h1>Not found!</h1>
-								</Route>
-							</Switch>
+							<div className="content-wrap">
+								<Switch>
+									<Route exact path="/">
+										<Home />
+									</Route>
+									<Route exact path="/login">
+										<Login />
+									</Route>
+									<Route exact path="/signup">
+										<SignUp />
+									</Route>
+									<Route exact path="/changepass/:token">
+										<ChangePass />
+									</Route>
+									<Route exact path="/forgotpass">
+										<ForgotPass />
+									</Route>
+									<Route exact path="/guide_BACSINPEMovil">
+										<BAC_SINPE />
+									</Route>
+									<Route exact path="/guide_ZoomCalls">
+										<ZoomCalls />
+									</Route>
+									<Route exact path="/guide_WhatsAppCalls">
+										<WhatsAppCalls />
+									</Route>
+									<Route exact path="/single/:theid">
+										<Single />
+									</Route>
+									<Route>
+										<h1>Not found!</h1>
+									</Route>
+								</Switch>
+							</div>
 							<Footer />
 						</ScrollToTop>
 					</BrowserRouter>
