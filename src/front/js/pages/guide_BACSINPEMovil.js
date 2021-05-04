@@ -39,7 +39,10 @@ export const BAC_SINPE = () => {
 							<button
 								className="darkModeBtn"
 								onClick={() => {
-									actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link);
+									// actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link);
+									store.token
+										? actions.addFavorite(store.tutorials[1].title, store.tutorials[1].link)
+										: actions.alertLoginToFavorite();
 								}}>
 								<span>Agregar a favoritos</span>
 								<i className="far fa-heart ml-2" />

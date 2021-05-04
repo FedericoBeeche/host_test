@@ -43,7 +43,10 @@ export const ZoomCalls = () => {
 							<button
 								className="darkModeBtn"
 								onClick={() => {
-									actions.addFavorite(store.tutorials[2].title, store.tutorials[2].link);
+									//actions.addFavorite(store.tutorials[2].title, store.tutorials[2].link);
+									store.token
+										? actions.addFavorite(store.tutorials[2].title, store.tutorials[2].link)
+										: actions.alertLoginToFavorite();
 								}}>
 								<span>Agregar a favoritos</span>
 								<i className="far fa-heart ml-2" />

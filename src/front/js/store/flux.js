@@ -304,6 +304,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const current_username = sessionStorage.getItem("current_username");
 				if (store.token && store.token != "" && store.token != undefined)
 					setStore({ current_username: current_username });
+			},
+
+			alertLoginToFavorite: () => {
+				swal({
+					//title: "Good job!",
+					text: "Inicia sesión para agregar a tu lista de favoritos",
+					icon: "warning",
+					timer: "3500",
+					button: {
+						visible: true,
+						text: "ok"
+					}
+				});
 			}
 		}
 	};
