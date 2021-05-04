@@ -6,7 +6,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 import "../../styles/demo.scss";
 
-export const FavReact = () => {
+export const FavReactSmall = () => {
 	const { store, actions } = useContext(Context);
 
 	return (

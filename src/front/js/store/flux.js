@@ -169,32 +169,38 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addFavorite: (item, link) => {
 				const store = getStore();
 				const token = sessionStorage.getItem("token");
+				let favoriteTitleArray = store.favorites.map(obj => obj.title); // turn favorites object into name array because includes method only works with arrays
+				let isFavorite = favoriteTitleArray.includes(store.tutorials.title);
 
-				const URL = `${store.url}/api/favorites`;
-				const CONFIG = {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: "Bearer " + store.token
-					},
-					body: JSON.stringify({
-						title: item,
-						link: link
-					})
-				};
+				if (isFavorite) {
+					alert("El item ya fue agregado a Favoritos");
+				} else {
+					const URL = `${store.url}/api/favorites`;
+					const CONFIG = {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+							Authorization: "Bearer " + store.token
+						},
+						body: JSON.stringify({
+							title: item,
+							link: link
+						})
+					};
 
-				fetch(URL, CONFIG)
-					.then(resp => {
-						if (resp.status === 200) return resp.json();
-						else alert("There was some error while adding the favorite");
-					})
-					.then(data => {
-						console.log("Favorite added to DB: ", data);
-						getActions().getFavorites();
-					})
-					.catch(error => {
-						console.error("CREATE Token error: ", error);
-					});
+					fetch(URL, CONFIG)
+						.then(resp => {
+							if (resp.status === 200) return resp.json();
+							else alert("There was some error while adding the favorite");
+						})
+						.then(data => {
+							console.log("Favorite added to DB: ", data);
+							getActions().getFavorites();
+						})
+						.catch(error => {
+							console.error("CREATE Token error: ", error);
+						});
+				}
 			},
 
 			getFavorites: () => {

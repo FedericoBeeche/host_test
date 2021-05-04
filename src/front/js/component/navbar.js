@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { LogoPagina } from "../../img/Logo.png";
-import { Favorites } from "./favorites";
-import { FavoritesSmall } from "./favoritessmall";
 import { FavReact } from "./favreact";
 import { FavReactSmall } from "./favreactsmall";
 
