@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom"; // hook used to redirect to another route
 import { Link } from "react-router-dom";
@@ -16,8 +16,8 @@ export const Login = () => {
 
 	const handleClick = () => {
 		actions.login(email, password).then(() => {
-			// actions.getFavorites();
-			// actions.getCurrentUser();
+			actions.getFavorites();
+			actions.getCurrentUser();
 		});
 	};
 

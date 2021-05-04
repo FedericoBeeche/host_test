@@ -1,4 +1,6 @@
 import { lightTheme, darkTheme } from "../component/darkmode/theme";
+import swal from "sweetalert"; // $ npm i sweetalert (to replace alerts by alerts with styles)
+import jwt_decode from "jwt-decode"; // $ npm install jwt-decode (library to decode jwt)
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -20,7 +22,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null,
 			theme: "light",
 			favorites: [],
-			url: "https://3001-copper-locust-ag1ttdql.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
+			current_username: "",
+
+			url: "https://3001-coral-bear-2qu9ixmh.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
@@ -40,14 +44,45 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				try {
 					const resp = await fetch(URL, CONFIG);
+					if (resp.status == 401) {
+						//alert("Hubo un error al iniciar sesión");
+						swal({
+							//title: "Good job!",
+							text: "Las credenciales no son válidas",
+							icon: "error",
+							timer: "3000",
+							button: {
+								visible: true,
+								text: "ok"
+							}
+						});
+						return false;
+					}
 					if (resp.status !== 200) {
-						alert("There was an error during authentication");
+						//alert("Hubo un error al iniciar sesión");
+						swal({
+							//title: "Good job!",
+							text: "Hubo un error al iniciar sesión",
+							icon: "error",
+							timer: "3000",
+							button: {
+								visible: true,
+								text: "ok"
+							}
+						});
 						return false;
 					}
 
 					const data = await resp.json();
 					console.log("Token created from back-end", data);
 					sessionStorage.setItem("token", data.access_token);
+					//alert("Bienvenido");
+					swal({
+						title: "¡Hola!",
+						text: "Has iniciado sesión",
+						icon: "success",
+						timer: "3000"
+					});
 					setStore({ token: data.access_token });
 					return true;
 				} catch (error) {
@@ -131,79 +166,110 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 			//favorites
-			addFavorite: item => {
+			addFavorite: (item, link) => {
 				const store = getStore();
-
 				const token = sessionStorage.getItem("token");
-				console.log(token);
-				const tokenPayload = jwt_decode(token).sub; // jwt_decode returns the jwt object payload. Using "jwt debugger" we can see that .sub retuns the id in this case
-				console.log("ID obtained from token with jwt_decode: ", tokenPayload);
-				console.log("Item passed as parameter to addFavorite(): ", item);
 
-				let filteredResults = store.favorites.filter(function(currentElement) {
-					// the current value is an object, so you can check on its properties
-					return currentElement.id == item.id && currentElement.item_type == item.item_type;
-				});
+				const URL = `${store.url}/api/favorites`;
+				const CONFIG = {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + store.token
+					},
+					body: JSON.stringify({
+						title: item,
+						link: link
+					})
+				};
 
-				console.log("Filtered result: ", filteredResults);
+				fetch(URL, CONFIG)
+					.then(resp => {
+						if (resp.status === 200) return resp.json();
+						else alert("There was some error while adding the favorite");
+					})
+					.then(data => {
+						console.log("Favorite added to DB: ", data);
+						getActions().getFavorites();
+					})
+					.catch(error => {
+						console.error("CREATE Token error: ", error);
+					});
+			},
 
-				if (filteredResults.length == 0) {
-					const URL = `${store.url}/favorite`;
-					const CONFIG = {
-						method: "POST",
+			getFavorites: () => {
+				const store = getStore();
+				const token = sessionStorage.getItem("token");
+				if (store.token && store.token != "" && store.token != undefined) {
+					fetch(`${store.url}/api/favorites/`, {
+						method: "GET",
 						headers: {
 							"Content-Type": "application/json",
 							Authorization: "Bearer " + store.token
-						},
-						body: JSON.stringify({
-							item_id: item.id,
-							item_type: item.item_type,
-							user_id: tokenPayload
-						})
-					};
-
-					fetch(URL, CONFIG)
+						}
+					})
 						.then(resp => {
-							if (resp.status === 200) return resp.json();
-							else alert("There was some error while adding the favorite");
+							//console.log("respuesta", resp.json());
+							return resp.json();
 						})
 						.then(data => {
-							console.log("Favorite added to DB: ", data);
-							getActions().getFavorites();
+							setStore({ favorites: data });
+							console.log("Get Favorites", store);
 						})
-						.then(() => getActions().getFavoritesRaw()) // added to allow deletion of items just added, otherwise a Refresh is needed
-						.catch(error => {
-							console.error("CREATE Token error: ", error);
+						.catch(err => {
+							console.log("error", err);
 						});
-				} else alert("Item already added to favorites");
+				}
 			},
-			removeFavorite: favoriteId => {
-				const store = getStore();
 
-				const URL = `${store.url}/favorite/${favoriteId}`;
-				const CONFIG = {
+			deleteFavorites: index => {
+				const store = getStore();
+				const deleteId = store.favorites[index].id;
+				let token = localStorage.getItem("token");
+				store.favorites.splice(index, 1);
+				setStore({ favorites: store.favorites });
+				fetch(`${store.url}/api/favorites/${deleteId}`, {
 					method: "DELETE",
 					headers: {
 						"Content-Type": "application/json",
 						Authorization: "Bearer " + store.token
 					}
-				};
+				}).then(resp => {
+					//console.log("respuesta", resp.json());
+					return resp.json();
+				});
+			},
 
-				fetch(URL, CONFIG)
-					.then(resp => {
-						console.log("DELETE favorites request: ", resp.ok);
-						resp.status >= 200 && resp.status < 300
-							? console.log("DELETE favorites successful, status: ", resp.status)
-							: console.error("DELETE favorites failed, status: ", resp.status);
-						return resp.json();
-					})
-					.then(() => getActions().getFavorites()) // remember to use callback function, otherwise it wont work
-					.then(() => getActions().getFavoritesRaw())
-					.catch(error => console.error("DELETE favorites error: ", error));
+			getCurrentUser: () => {
+				// add this function to login.js
+				const store = getStore();
 
-				console.log("This is the URL to remove: ", URL);
+				if (store.token && store.token != "" && store.token != undefined) {
+					const current_user_id = jwt_decode(store.token).sub; // jwt_decode returns the jwt object payload. Using "jwt debugger" we can see that .sub retuns the id in this case
+					console.log("Current user IDs from token with jwt_decode: ", current_user_id);
 
-				console.log("This the fav ID to remove: ", favoriteId);
+					fetch(`${store.url}/api/user/${current_user_id}`)
+						.then(resp => {
+							console.log("GET current user request: ", resp.ok);
+							resp.status >= 200 && resp.status < 300
+								? console.log("GET current user successful, status: ", resp.status)
+								: console.error("GET current user failed, status: ", resp.status);
+							return resp.json();
+						})
+						.then(data => {
+							sessionStorage.setItem("current_username", data.name);
+							setStore({ current_username: data.name, loading: false });
+							console.log("Current user: ", data);
+						})
+						.catch(error => console.error("GET current user error: ", error));
+				}
+			},
+
+			storeSessionUser: () => {
+				const store = getStore();
+				const current_username = sessionStorage.getItem("current_username");
+				if (store.token && store.token != "" && store.token != undefined)
+					setStore({ current_username: current_username });
 			}
 		}
 	};

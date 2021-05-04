@@ -108,15 +108,17 @@ def get_all_tutorial():
 
 # Favorites
 
-@api.route('/favorites', methods=['POST']) 
+@api.route('/favorites', methods=['POST'])
+@jwt_required()
 def create_favorites():
+    current_user = get_jwt_identity()
     request_body = request.get_json()
 
-    favorite = Favorites(user_id=request_body["user_id"],tutorial_id=request_body["tutorial_id"], tutorial_title=request_body["tutorial_title"], tutorial_link=request_body["tutorial_link"])
+    favorite = Favorites(user_id=current_user, tutorial_title=request_body["title"], tutorial_link=request_body["link"])
     db.session.add(favorite)
     db.session.commit()
     print("Favorite created: ", request_body)
-    return jsonify(request_body), 200
+    return jsonify(True), 200
 
 @api.route('/favorites/<int:id>', methods=['DELETE'])
 @jwt_required()

@@ -6,7 +6,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 import "../../styles/demo.scss";
 
-export const FavReactSmall = () => {
+export const FavReact = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -16,8 +16,7 @@ export const FavReactSmall = () => {
 					style={{
 						background: "none",
 						border: "none",
-						boxShadow: "none",
-						color: "#f28181"
+						boxShadow: "none"
 					}}
 					bsPrefix="p-0">
 					Mis Favoritos
@@ -37,23 +36,27 @@ export const FavReactSmall = () => {
 								</Link>
 							</div>
 						</Dropdown.Item>
-					) : (
+					) : store.favorites ? (
 						store.favorites.map((item, index) => {
 							return (
 								<Dropdown.Item key={index}>
 									<div className="d-flex justify-content-between">
-										<Link style={{ textDecoration: "none", color: "#2b2d4a" }} to={item.link}>
-											{item.name}
+										<Link
+											style={{ textDecoration: "none", color: "#2b2d4a" }}
+											to={item.tutorial_link}>
+											{item.tutorial_title}
 										</Link>
 										<span
 											className="float-end ml-3 text-darkblue"
-											onClick={() => actions.removeFavorite()}>
+											onClick={() => actions.deleteFavorites(index)}>
 											<i className="fas fa-trash-alt" />
 										</span>
 									</div>
 								</Dropdown.Item>
 							);
 						})
+					) : (
+						""
 					)}
 				</Dropdown.Menu>
 			</Dropdown>
