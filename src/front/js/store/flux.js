@@ -1,4 +1,6 @@
 import { lightTheme, darkTheme } from "../component/darkmode/theme";
+import swal from "sweetalert"; // $ npm i sweetalert (to replace alerts by alerts with styles)
+import jwt_decode from "jwt-decode"; // $ npm install jwt-decode (library to decode jwt)
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -20,8 +22,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null,
 			theme: "light",
 			favorites: [],
+			current_username: "",
 
+<<<<<<< HEAD
 			url: "https://3001-coral-bear-2qu9ixmh.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
+=======
+			title1: "Videollamadas por WhatsApp",
+			title2: "Transferencias SINPE BAC",
+			title3: "Mi primer videollamada en Zoom (para celular)",
+			url: "https://3001-plum-boar-bfxyg7xw.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
+>>>>>>> 58dffca98db112c6bcdf5153492184c32ca71c84
 		},
 		actions: {
 			login: async (email, password) => {
@@ -41,14 +51,45 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				try {
 					const resp = await fetch(URL, CONFIG);
+					if (resp.status == 401) {
+						//alert("Hubo un error al iniciar sesión");
+						swal({
+							//title: "Good job!",
+							text: "Las credenciales no son válidas",
+							icon: "error",
+							timer: "3000",
+							button: {
+								visible: true,
+								text: "ok"
+							}
+						});
+						return false;
+					}
 					if (resp.status !== 200) {
-						alert("There was an error during authentication");
+						//alert("Hubo un error al iniciar sesión");
+						swal({
+							//title: "Good job!",
+							text: "Hubo un error al iniciar sesión",
+							icon: "error",
+							timer: "3000",
+							button: {
+								visible: true,
+								text: "ok"
+							}
+						});
 						return false;
 					}
 
 					const data = await resp.json();
 					console.log("Token created from back-end", data);
 					sessionStorage.setItem("token", data.access_token);
+					//alert("Bienvenido");
+					swal({
+						title: "¡Hola!",
+						text: "Has iniciado sesión",
+						icon: "success",
+						timer: "3000"
+					});
 					setStore({ token: data.access_token });
 					return true;
 				} catch (error) {
@@ -165,27 +206,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getFavorites: () => {
 				const store = getStore();
-				const token = sessionStorage.getItem("token");
+                const token = sessionStorage.getItem("token");
+                if (store.token && store.token != "" && store.token != undefined) {
 
-				fetch(`${store.url}/api/favorites/`, {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: "Bearer " + store.token
-					}
-				})
-					.then(resp => {
-						//console.log("respuesta", resp.json());
-						return resp.json();
-					})
-					.then(data => {
-						setStore({ favorites: data });
-						console.log("Get Favorites", store);
-					})
-
-					.catch(err => {
-						console.log("error", err);
-					});
+                    fetch(`${store.url}/api/favorites/`, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: "Bearer " + store.token
+                        }
+                    })
+                        .then(resp => {
+                            //console.log("respuesta", resp.json());
+                            return resp.json();
+                        })
+                        .then(data => {
+                            setStore({ favorites: data });
+                            console.log("Get Favorites", store);})
+                        .catch(err => {
+							console.log("error", err);
+						});
+				}		
 			},
 
 			deleteFavorites: index => {
@@ -204,6 +245,38 @@ const getState = ({ getStore, getActions, setStore }) => {
 					//console.log("respuesta", resp.json());
 					return resp.json();
 				});
+			},
+
+			getCurrentUser: () => {
+				// add this function to login.js
+				const store = getStore();
+
+				if (store.token && store.token != "" && store.token != undefined) {
+					const current_user_id = jwt_decode(store.token).sub; // jwt_decode returns the jwt object payload. Using "jwt debugger" we can see that .sub retuns the id in this case
+					console.log("Current user IDs from token with jwt_decode: ", current_user_id);
+
+					fetch(`${store.url}/api/user/${current_user_id}`)
+						.then(resp => {
+							console.log("GET current user request: ", resp.ok);
+							resp.status >= 200 && resp.status < 300
+								? console.log("GET current user successful, status: ", resp.status)
+								: console.error("GET current user failed, status: ", resp.status);
+							return resp.json();
+						})
+						.then(data => {
+							sessionStorage.setItem("current_username", data.name);
+							setStore({ current_username: data.name, loading: false });
+							console.log("Current user: ", data);
+						})
+						.catch(error => console.error("GET current user error: ", error));
+				}
+			},
+
+			storeSessionUser: () => {
+				const store = getStore();
+				const current_username = sessionStorage.getItem("current_username");
+				if (store.token && store.token != "" && store.token != undefined)
+					setStore({ current_username: current_username });
 			}
 		}
 	};

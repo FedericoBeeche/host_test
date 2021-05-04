@@ -17,7 +17,7 @@ export const Login = () => {
 	const handleClick = () => {
 		actions.login(email, password).then(() => {
 			actions.getFavorites();
-			// actions.getCurrentUser();
+			actions.getCurrentUser();
 		});
 	};
 

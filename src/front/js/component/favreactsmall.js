@@ -42,8 +42,8 @@ export const FavReactSmall = () => {
 							return (
 								<Dropdown.Item key={index}>
 									<div className="d-flex justify-content-between">
-										<Link style={{ textDecoration: "none", color: "#2b2d4a" }} to={item.link}>
-											{item.name}
+										<Link style={{ textDecoration: "none", color: "#2b2d4a" }} to="/">
+											{item.tutorial_title}
 										</Link>
 										<a className="dropdown-item" key={index}>
 											{item.tutorial_title}
