@@ -45,11 +45,12 @@ export const FavReactSmall = () => {
 										<Link style={{ textDecoration: "none", color: "#2b2d4a" }} to={item.link}>
 											{item.name}
 										</Link>
-										<span
-											className="float-end ml-3 text-darkblue"
-											onClick={() => actions.removeFavorite()}>
-											<i className="fas fa-trash-alt" />
-										</span>
+										<a className="dropdown-item" key={index}>
+											{item.tutorial_title}
+											<span onClick={() => actions.deleteFavorites(index)}>
+												<i className="fas fa-trash-alt float-right" />
+											</span>
+										</a>
 									</div>
 								</Dropdown.Item>
 							);

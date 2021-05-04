@@ -14,21 +14,6 @@ export const WhatsAppCalls = () => {
 		<div className="container">
 			<div className="d-flex justify-content-center">
 				<div className="col-sm-7 col-12">
-					{/* <div className="container mb-5">
-						<div className="row justify-content-center">
-							<h1 className="WA_Toph1Guide">MI PRIMER</h1>
-						</div>
-						<div className="row justify-content-center">
-							<h1 className="WA_Middleh1Guide">VIDEO LLAMADA</h1>
-						</div>
-						<div className="row justify-content-center">
-							<h1 className="WA_Bottomh1Guide">POR WHATSAPP</h1>
-						</div>
-						<div className="row justify-content-center">
-							<h5 className="WA_h5Guide">¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</h5>
-						</div>
-					</div> */}
-
 					<div className="row justify-content-center">
 						<div className="title">
 							<div className="">VIDEO LLAMADA POR</div>
@@ -37,14 +22,14 @@ export const WhatsAppCalls = () => {
 						<div className="row justify-content-center ml-1 mr-1">
 							<div className="subtitle">¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</div>
 						</div>
-                        <div className="row justify-content-center">
-                            <button
-                                onClick={() => {
-                                    actions.addFavorite(store.title2);
-                                }}>
-                                <i className="fa fa-heart" />
-                            </button>
-                        </div>
+						<div className="row justify-content-center">
+							<button
+								onClick={() => {
+									actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link);
+								}}>
+								<i className="fa fa-heart" />
+							</button>
+						</div>
 					</div>
 
 					<div className="mt-5 mb-5">

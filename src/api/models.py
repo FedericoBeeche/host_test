@@ -60,7 +60,8 @@ class Favorites(db.Model):
 
         return {
             "id": self.id,
-            "tutorial_title": self.tutorial_title
+            "tutorial_title": self.tutorial_title,
+            "tutorial_link": self.tutorial_link
         }
 
     def getAllFavorites(id):

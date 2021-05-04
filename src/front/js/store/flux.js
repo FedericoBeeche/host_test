@@ -21,10 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			theme: "light",
 			favorites: [],
 
-			title1: "Transferencias SINPE BAC",
-			title2: "Videollamadas por WhatsApp",
-			title3: "Mi primer videollamada en Zoom (para celular)",
-			url: "https://3001-copper-locust-ag1ttdql.ws-us04.gitpod.io" // change this! do NOT add slash '/' at the end
+			url: "https://3001-coral-bear-2qu9ixmh.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
@@ -135,9 +132,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 			//favorites
-			addFavorite: item => {
+			addFavorite: (item, link) => {
 				const store = getStore();
-
 				const token = sessionStorage.getItem("token");
 
 				const URL = `${store.url}/api/favorites`;
@@ -149,7 +145,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					},
 					body: JSON.stringify({
 						title: item,
-						link: " "
+						link: link
 					})
 				};
 
@@ -160,29 +156,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						console.log("Favorite added to DB: ", data);
+						getActions().getFavorites();
 					})
 					.catch(error => {
 						console.error("CREATE Token error: ", error);
-					});
-
-				fetch(`${store.url}/api/favorites/`, {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: "Bearer " + store.token
-					}
-				})
-					.then(resp => {
-						//console.log("respuesta", resp.json());
-						return resp.json();
-					})
-					.then(data => {
-						setStore({ favorites: data });
-						console.log("dataresult", store);
-					})
-
-					.catch(err => {
-						console.log("error", err);
 					});
 			},
 
@@ -203,7 +180,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						setStore({ favorites: data });
-						console.log("dataresult", store);
+						console.log("Get Favorites", store);
 					})
 
 					.catch(err => {

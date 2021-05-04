@@ -27,15 +27,12 @@ export const FavoritesSmall = () => {
 					<a className="dropdown-item text-center">(empty)</a>
 				) : (
 					store.favorites.map((item, index) => {
-						let filteredResults = store.favorites_raw.filter(function(currentElement) {
-							return currentElement.item_id == item.id && currentElement.item_type == item.item_type;
-						});
-
 						// filter returns an array, so we have to specify the position to get the id value from filteredResults
 
 						return (
 							<a className="dropdown-item" key={index}>
-								<span onClick={() => actions.removeFavorite(filteredResults[0].id)}>
+								{item.tutorial_title}
+								<span onClick={() => actions.deleteFavorites(index)}>
 									<i className="fas fa-trash-alt float-right" />
 								</span>
 							</a>

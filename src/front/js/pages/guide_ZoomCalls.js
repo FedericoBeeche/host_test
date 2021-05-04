@@ -19,18 +19,6 @@ export const ZoomCalls = () => {
 		<div className="container">
 			<div className="d-flex justify-content-center">
 				<div className="col-sm-7 col-12">
-					{/* <div className="container mb-2">
-						<div className="row justify-content-center">
-							<h1 className="Zoom_Toph1Guide">MI PRIMER</h1>
-						</div>
-						<div className="row justify-content-center">
-							<h1 className="Zoom_Bottomh1Guide">LLAMADA EN ZOOM</h1>
-						</div>
-						<div className="row justify-content-center">
-							<h5 className="Zoom_h5Guide">EN EL APP DE TU TELÉFONO</h5>
-						</div>
-					</div> */}
-
 					<div className="row justify-content-center">
 						<div className="title">
 							<div className="">MI PRIMER LLAMADA EN</div>
@@ -39,14 +27,14 @@ export const ZoomCalls = () => {
 						<div className="row justify-content-center ml-1 mr-1">
 							<div className="subtitle">EN EL APP DE TU TELÉFONO</div>
 						</div>
-                        <div className="row justify-content-center">
-                            <button
-                                onClick={() => {
-                                    actions.addFavorite(store.title3);
-                                }}>
-                                <i className="fa fa-heart" />
-                            </button>
-                        </div>
+						<div className="row justify-content-center">
+							<button
+								onClick={() => {
+									actions.addFavorite(store.tutorials[2].title, store.tutorials[2].link);
+								}}>
+								<i className="fa fa-heart" />
+							</button>
+						</div>
 					</div>
 
 					{/*Cada paso debe estar encerrado en un div*/}
