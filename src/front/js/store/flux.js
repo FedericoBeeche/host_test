@@ -24,7 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: [],
 			current_username: "",
 
-			url: "https://3001-coral-bear-2qu9ixmh.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
+			url: "https://3001-coffee-goldfish-9abudip6.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
@@ -81,7 +81,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						title: "¡Hola!",
 						text: "Has iniciado sesión",
 						icon: "success",
-						timer: "3000"
+						timer: "2000"
 					});
 					setStore({ token: data.access_token });
 					return true;
@@ -107,6 +107,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//sessionStorage.removeItem("current_username");
 				//setStore({ token: null, favorites: [], current_username: "" });
 				setStore({ token: null });
+				swal({
+					title: "¡Hasta pronto!",
+					text: "Has cerrado sesión",
+					icon: "success",
+					timer: "2000"
+				});
 			},
 
 			getTutorials: () => {
@@ -166,35 +172,62 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 			//favorites
-			addFavorite: (item, link) => {
+			addFavorite: (title, link) => {
 				const store = getStore();
-				const token = sessionStorage.getItem("token");
+				let favoriteTitleArray = store.favorites.map(obj => obj.tutorial_title); // turn favorites object into name array because includes method only works with arrays
+				let isFavorite = favoriteTitleArray.includes(title);
 
-				const URL = `${store.url}/api/favorites`;
-				const CONFIG = {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: "Bearer " + store.token
-					},
-					body: JSON.stringify({
-						title: item,
-						link: link
-					})
-				};
-
-				fetch(URL, CONFIG)
-					.then(resp => {
-						if (resp.status === 200) return resp.json();
-						else alert("There was some error while adding the favorite");
-					})
-					.then(data => {
-						console.log("Favorite added to DB: ", data);
-						getActions().getFavorites();
-					})
-					.catch(error => {
-						console.error("CREATE Token error: ", error);
+				if (isFavorite) {
+					//alert("El item ya fue agregado a Favoritos");
+					swal({
+						//title: "Good job!",
+						text: "El item ya fue agregado a Favoritos",
+						icon: "info",
+						timer: "4000",
+						button: {
+							visible: true,
+							text: "ok"
+						}
 					});
+					return false;
+				} else {
+					const URL = `${store.url}/api/favorites`;
+					const CONFIG = {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+							Authorization: "Bearer " + store.token
+						},
+						body: JSON.stringify({
+							title: title,
+							link: link
+						})
+					};
+
+					fetch(URL, CONFIG)
+						.then(resp => {
+							if (resp.status === 200) return resp.json();
+							else {
+								swal({
+									//title: "Good job!",
+									text: "Hubo un error al agregar a favoritos",
+									icon: "error",
+									timer: "4000",
+									button: {
+										visible: true,
+										text: "ok"
+									}
+								});
+							}
+						})
+						.then(data => {
+							console.log("Favorite added to DB: ", data);
+							getActions().getFavorites();
+						})
+						.catch(error => {
+							console.error("CREATE Token error: ", error);
+						});
+				}
 			},
 
 			getFavorites: () => {
@@ -214,7 +247,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						})
 						.then(data => {
 							setStore({ favorites: data });
-							console.log("Get Favorites", store);
+							console.log("Get Favorites", store.favorites);
 						})
 						.catch(err => {
 							console.log("error", err);

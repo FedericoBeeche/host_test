@@ -12,10 +12,10 @@ import ZOOMseventhImg from "../../img/img_ZoomCalls/zoom7.jpg";
 import ZOOMeighthImg from "../../img/img_ZoomCalls/zoom8.jpg";
 import "../../styles/home.scss";
 import QRCode from "react-qr-code";
-const URL = "https://3000-green-thrush-yduojqeb.ws-us03.gitpod.io/guide_ZoomCalls"; //reemplazar con el URL de la pagina
 
 export const ZoomCalls = () => {
 	const { store, actions } = useContext(Context);
+	const URL = "https://3000-green-thrush-yduojqeb.ws-us03.gitpod.io/guide_ZoomCalls"; //reemplazar con el URL de la pagina
 
 	return (
 		<div className="container">
@@ -38,7 +38,7 @@ export const ZoomCalls = () => {
 							</button>
 						</div> */}
 					</div>
-					<div className="row justify-content-center ml-1 mr-1 py-4 guideFavBtn">
+					<div className="row justify-content-center ml-1 mr-1 py-2 guideFavBtn">
 						<div className="d-flex align-items-center">
 							<button
 								className="darkModeBtn"

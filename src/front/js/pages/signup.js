@@ -14,6 +14,7 @@ export const SignUp = () => {
 	const [lastname, setLastname] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [confirmpassword, setConfirmPassword] = useState("");
 	const [agree, setAgree] = useState(false);
 	const history = useHistory();
 
@@ -42,19 +43,58 @@ export const SignUp = () => {
 		fetch(URL, CONFIG)
 			.then(resp => {
 				if (resp.status === 409) {
-					alert("Este correo electrónico ya está registrado");
+					//alert("Este correo electrónico ya está registrado");
+					swal({
+						//title: "Good job!",
+						text: "Este correo electrónico ya está registrado",
+						icon: "error",
+						timer: "3000",
+						button: {
+							visible: true,
+							text: "ok"
+						}
+					});
 					throw new Error("Status Code 409: email already registered"); // throw to handle error when email is already registered
 				}
 				if (resp.status !== 200 && resp.status !== 409) {
-					alert("Todos los campos del formulario son requeridos");
+					//alert("Todos los campos del formulario son requeridos");
+					swal({
+						//title: "Good job!",
+						text: "Todos los campos del formulario son requeridos",
+						icon: "error",
+						timer: "3000",
+						button: {
+							visible: true,
+							text: "ok"
+						}
+					});
 					throw new Error("There was some error during registration");
+				}
+				if (password !== confirmpassword) {
+					swal({
+						//title: "Good job!",
+						text: "Verifica que ambas contraseñas sean iguales",
+						icon: "error",
+						timer: "4500",
+						button: {
+							visible: true,
+							text: "Entendido"
+						}
+					});
+					throw new Error("Hubo un error al resetear la contraseña");
 				} else return resp.json();
 			})
 			.then(data => {
 				console.log("User added to DB: ", data);
-				alert("Thank you for registration");
+				//alert("Thank you for registration");
+				swal({
+					title: "¡Gracias por registrarse!",
+					text: "Inicia sesión con tu nueva cuenta",
+					icon: "success",
+					timer: "3500"
+				});
 			})
-			.then(() => actions.login(email, password))
+			.then(() => history.push("/login"))
 			.catch(error => {
 				console.error("REGISTER User error: ", error);
 			});
@@ -71,7 +111,7 @@ export const SignUp = () => {
 			) : (
 				<div className="m-auto col-8 col-sm-3">
 					<form>
-						<div className="row mb-3 d-block">
+						<div className="row mb-2 d-block">
 							<label htmlFor="firstname_input" className="form-label">
 								Nombre
 							</label>
@@ -85,7 +125,7 @@ export const SignUp = () => {
 							/>
 						</div>
 
-						<div className="row mb-3 d-block">
+						<div className="row mb-2 d-block">
 							<label htmlFor="lastname_input" className="form-label">
 								Apellidos
 							</label>
@@ -98,7 +138,7 @@ export const SignUp = () => {
 								onChange={e => setLastname(e.target.value)}
 							/>
 						</div>
-						<div className="row mb-3 d-block">
+						<div className="row mb-2 d-block">
 							<label htmlFor="email_input" className="form-label">
 								Correo electrónico
 							</label>
@@ -112,7 +152,7 @@ export const SignUp = () => {
 							/>
 						</div>
 
-						<div className="row mb-0 d-block">
+						<div className="row mb-2 d-block">
 							<label htmlFor="password_input" className="form-label">
 								Contraseña
 							</label>
@@ -125,7 +165,20 @@ export const SignUp = () => {
 								onChange={e => setPassword(e.target.value)}
 							/>
 						</div>
-						<div className="row my-3 d-flex justify-content-center">
+						<div className="row mb-0 d-block">
+							<label htmlFor="password_input" className="form-label">
+								Confirmar contraseña
+							</label>
+							<input
+								className="d-block w-100 p-2 signUpBox"
+								type="password"
+								id="password_input"
+								placeholder="Confirmar contraseña"
+								value={confirmpassword}
+								onChange={e => setConfirmPassword(e.target.value)}
+							/>
+						</div>
+						<div className="row my-1 d-flex justify-content-center">
 							<p>
 								<div>
 									<input type="checkbox" id="agree" onChange={checkboxHandler} />
@@ -285,7 +338,7 @@ export const SignUp = () => {
 								</div>
 							</p>
 						</div>
-						<div className="row my-4">
+						<div className="row my-2">
 							<button
 								type="button"
 								disabled={!agree}

@@ -31,16 +31,15 @@ export const BAC_SINPE = () => {
 							<div className="">SINPE MÓVIL</div>
 						</div>
 						<div className="row justify-content-center ml-1 mr-1">
-							<div className="subtitle mb-1">EN BANCA MÓVIL DEL BAC</div>
+							<div className="subtitle mb-2">EN BANCA MÓVIL DEL BAC</div>
 						</div>
 					</div>
-					<div className="row justify-content-center ml-1 mr-1 py-4 guideFavBtn">
+					<div className="row justify-content-center ml-1 mr-1 py-2 guideFavBtn">
 						<div className="d-flex align-items-center">
 							<button
 								className="darkModeBtn"
 								onClick={() => {
-									actions.addFavorite(store.tutorials[1].title, store.tutorials[1].link);
-									console.log(store.tutorials[1].link, "Tu link!");
+									actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link);
 								}}>
 								<span>Agregar a favoritos</span>
 								<i className="far fa-heart ml-2" />
@@ -61,12 +60,11 @@ export const BAC_SINPE = () => {
 							Primero, buscaremos la aplicación de Banca Móvil en nuestro teléfono y abriremos la
 							aplicación presionando con nuestro dedo encima de la aplicación
 						</p>
-
 						<button
 							onClick={() =>
 								responsiveVoice.speak(
 									"Primero, buscaremos la aplicación de Banca Móvil en nuestro teléfono y abriremos la aplicación presionando con nuestro dedo encima de la aplicación",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -98,7 +96,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Una vez que abre la aplicación, la misma nos va solicitar un usuario y contraseña, esta información debió haber sido brindada por el asesor del BAC. Si no tiene esta información tendrá que ir personalmente a una sucursal y solicitarla.",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -128,7 +126,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Después de agregar la información de usuario y contraseña, se presiona con el dedo el botón de ingresar.",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -158,7 +156,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Después de presionar el botón de ingresar, la aplicación nos va dirigir al inicio, en donde mostraran las cuentas, tarjetas y prestamos que estén a registradas a su nombre.",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -187,7 +185,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Luego, seleccione con el dedo en el menú inferior la opción de transferencias.",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -219,7 +217,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"La aplicación nos redirigirá a la sección de transferencias, donde se muestran las diferentes opciones que tiene el banco para realizar una transferencia. En este ejemplo vamos a seleccionar a sinpe Móvil presione con su dedo sobre la opción a sinpe Móvil",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -250,7 +248,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Luego, la aplicación nos va a mostrar las cuentas que se pueden utilizar para la transferencia, y se tendrá que seleccionar la que se quiere usar para la transferencia, presione con su dedo sobre la cuenta que quiere utilizar.",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -285,7 +283,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Una vez que seleccionamos la cuenta, la aplicación nos va mostrar el siguiente paso, el cual es digitar el número de celular de la persona o institución a la que vamos a enviar la Transferencia sinpe Móvil. Presionamos sobre el espacio donde dice Digite el numero, e ingresamos el numero correspondiente. También se puede guardar el numero en favoritos solo presionando en el cuadrado a la par de “Guardar como favorito, esto para evitar que, cuando se vaya a hacer la transferencia el sistema le pida el código BAC o Token, esto es opcional.",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -317,7 +315,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Una vez la información es ingresada, podremos ver el nombre de la persona o institución a la que se le va a enviar el dinero, por medio de esto podemos confirmar si se le esta enviando a la persona o institución correcta. Una vez confirmada la información, presionamos el botón de continuar para ir al siguiente paso.",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -349,7 +347,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Después de presionar continuar, la aplicación nos va solicitar el monto que vamos a enviar y la descripción, la cual es opcional, donde escribimos la razón de la transferencia, una vez seleccionado todo, presionamos continuar.",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -386,7 +384,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Luego veremos el resumen de la transferencia, y el sistema solicitando el código BAC o Token, app del celular, para completar la transferencia. Ingresamos el token, presionamos transferir.",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"
@@ -417,7 +415,7 @@ export const BAC_SINPE = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Una vez que presionamos transferir el sistema realizara la transferencia, y luego nos mostrara el resumen con el comprobante de la transferencia. Y lo logramos nuestra primera transferencia con sinpe móvil.",
-									"Spanish Latin American Female"
+									"Spanish Female"
 								)
 							}
 							type="button"

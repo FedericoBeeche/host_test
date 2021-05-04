@@ -36,7 +36,7 @@ export const FavReact = () => {
 								</Link>
 							</div>
 						</Dropdown.Item>
-					) : store.favorites ? (
+					) : (
 						store.favorites.map((item, index) => {
 							return (
 								<Dropdown.Item key={index}>
@@ -55,8 +55,6 @@ export const FavReact = () => {
 								</Dropdown.Item>
 							);
 						})
-					) : (
-						""
 					)}
 				</Dropdown.Menu>
 			</Dropdown>

@@ -24,16 +24,8 @@ export const WhatsAppCalls = () => {
 						<div className="row justify-content-center ml-1 mr-1">
 							<div className="subtitle mb-1">¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</div>
 						</div>
-						{/* <div className="row justify-content-center">
-							<button
-								onClick={() => {
-									actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link);
-								}}>
-								<i className="fa fa-heart" />
-							</button>
-						</div> */}
 					</div>
-					<div className="row justify-content-center ml-1 mr-1 py-4 guideFavBtn">
+					<div className="row justify-content-center ml-1 mr-1 py-2 guideFavBtn">
 						<div className="d-flex align-items-center">
 							<button
 								className="darkModeBtn"
