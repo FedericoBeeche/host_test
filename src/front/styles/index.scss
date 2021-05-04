@@ -115,22 +115,23 @@ input[type=button], .btn {
 // GENERAL GUIDE STYLES //
 
 .logotext { // propiedades tomadas de la clase .BAC_Middleh1Guide de Fede
-    font-size: 30px; 
-    font-weight: 900;
-    text-align: center;
-    margin: 6px 0;
-    line-height: 100%;
-    color: #f28181;
+    // font-size: 30px; 
+    // font-weight: 900;
+    // text-align: center;
+    // margin: 6px 0;
+    // line-height: 100%;
+    // color: #f28181;
     transition: 0.2s;
+    height: 70px;
 }
 
 .logotext:hover { // propiedades tomadas de la clase .BAC_Middleh1Guide de Fede
-    font-size: 30px; 
-    font-weight: 900;
-    text-align: center;
-    margin: 6px 0;
-    line-height: 100%;
-    color: #f28181;
+    // font-size: 30px; 
+    // font-weight: 900;
+    // text-align: center;
+    // margin: 6px 0;
+    // line-height: 100%;
+    // color: #f28181;
     transition: 0.2s;
     transform: scale(1.05);
 }

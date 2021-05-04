@@ -6,6 +6,7 @@ import { Favorites } from "./favorites";
 import { FavoritesSmall } from "./favoritessmall";
 import { FavReact } from "./favreact";
 import { FavReactSmall } from "./favreactsmall";
+import { Logo } from "../../img/logo2.png";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
@@ -14,11 +15,8 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light navbar-expand-md mb-3 navbarStyle d-flex align-items-center bg-darkcoral px-sm-5">
 			<div className="navbar-brand m-0 p-0" href="#">
 				<Link style={{ textDecoration: "none" }} to="/">
-					{/* <img className="logoClass p-0 m-0" src="Logo.png" alt="¿Cómo hago?" /> */}
-					{/* <span className="navbar-brand mb-0 h1">¿Cómo hago?</span> */}
-					<div className="logotext">
-						<div>¿CÓMO</div>
-						<div>HAGO?</div>
+					<div>
+						<img className="logotext py-2" src="logo2.png" />
 					</div>
 				</Link>
 			</div>
