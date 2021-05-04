@@ -173,7 +173,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let isFavorite = favoriteTitleArray.includes(store.tutorials.title);
 
 				if (isFavorite) {
-					alert("El item ya fue agregado a Favoritos");
+					//alert("El item ya fue agregado a Favoritos");
+					swal({
+						//title: "Good job!",
+						text: "El item ya fue agregado a Favoritos",
+						icon: "error",
+						timer: "3000",
+						button: {
+							visible: true,
+							text: "ok"
+						}
+					});
+					return false;
 				} else {
 					const URL = `${store.url}/api/favorites`;
 					const CONFIG = {
