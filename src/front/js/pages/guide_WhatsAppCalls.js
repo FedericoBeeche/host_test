@@ -9,6 +9,7 @@ import "../../styles/home.scss";
 import QRCode from "react-qr-code";
 import { WhatsappShareButton, WhatsappIcon } from "react-share"; // $ npm install react-share --save
 import { FacebookShareButton, FacebookIcon } from "react-share"; // $ npm install react-share --save
+import { Scroll } from "../component/scroll";
 
 export const WhatsAppCalls = () => {
 	const { store, actions } = useContext(Context);
@@ -18,6 +19,7 @@ export const WhatsAppCalls = () => {
 		<div className="container">
 			<div className="d-flex justify-content-center">
 				<div className="col-sm-7 col-12">
+					<Scroll showBelow={200} />
 					<div className="row justify-content-center mb-4">
 						<div className="title">
 							<div className="">VIDEO LLAMADA POR</div>
