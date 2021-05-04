@@ -30,9 +30,15 @@ export const Navbar = () => {
 						</button>
 					</li>
 					<li className="nav-item d-block d-sm-none m-1">
-						<div className="text-coral p-0" onClick={() => actions.themeToggler()}>
-							Modo Oscuro
-						</div>
+						{store.theme == "light" ? (
+							<div className="text-coral p-0" onClick={() => actions.themeToggler()}>
+								Modo Oscuro
+							</div>
+						) : (
+							<div className="text-coral p-0" onClick={() => actions.themeToggler()}>
+								Modo Claro
+							</div>
+						)}
 					</li>
 
 					{/*Responsive FAVORITES button*/}
