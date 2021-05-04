@@ -24,7 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: [],
 			current_username: "",
 
-			url: "https://3001-coral-bear-2qu9ixmh.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
+			url: "https://3001-coffee-goldfish-9abudip6.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {
@@ -81,7 +81,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						title: "¡Hola!",
 						text: "Has iniciado sesión",
 						icon: "success",
-						timer: "3000"
+						timer: "3500"
 					});
 					setStore({ token: data.access_token });
 					return true;
@@ -107,6 +107,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//sessionStorage.removeItem("current_username");
 				//setStore({ token: null, favorites: [], current_username: "" });
 				setStore({ token: null });
+				swal({
+					title: "¡Hasta pronto!",
+					text: "Has cerrado sesión",
+					icon: "success",
+					timer: "3000"
+				});
 			},
 
 			getTutorials: () => {
@@ -178,7 +184,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						//title: "Good job!",
 						text: "El item ya fue agregado a Favoritos",
 						icon: "error",
-						timer: "3000",
+						timer: "4000",
 						button: {
 							visible: true,
 							text: "ok"

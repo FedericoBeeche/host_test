@@ -42,19 +42,45 @@ export const SignUp = () => {
 		fetch(URL, CONFIG)
 			.then(resp => {
 				if (resp.status === 409) {
-					alert("Este correo electrónico ya está registrado");
+					//alert("Este correo electrónico ya está registrado");
+					swal({
+						//title: "Good job!",
+						text: "Este correo electrónico ya está registrado",
+						icon: "error",
+						timer: "3000",
+						button: {
+							visible: true,
+							text: "ok"
+						}
+					});
 					throw new Error("Status Code 409: email already registered"); // throw to handle error when email is already registered
 				}
 				if (resp.status !== 200 && resp.status !== 409) {
-					alert("Todos los campos del formulario son requeridos");
+					//alert("Todos los campos del formulario son requeridos");
+					swal({
+						//title: "Good job!",
+						text: "Todos los campos del formulario son requeridos",
+						icon: "error",
+						timer: "3000",
+						button: {
+							visible: true,
+							text: "ok"
+						}
+					});
 					throw new Error("There was some error during registration");
 				} else return resp.json();
 			})
 			.then(data => {
 				console.log("User added to DB: ", data);
-				alert("Thank you for registration");
+				//alert("Thank you for registration");
+				swal({
+					title: "¡Gracias por registrarse!",
+					text: "Inicia sesión con tu nueva cuenta",
+					icon: "success",
+					timer: "3500"
+				});
 			})
-			.then(() => actions.login(email, password))
+			.then(() => history.push("/login"))
 			.catch(error => {
 				console.error("REGISTER User error: ", error);
 			});
