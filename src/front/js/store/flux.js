@@ -105,9 +105,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			logout: () => {
 				sessionStorage.removeItem("token");
-				//sessionStorage.removeItem("current_username");
-				//setStore({ token: null, favorites: [], current_username: "" });
-				setStore({ token: null });
+				sessionStorage.removeItem("current_username");
+				setStore({ token: null, favorites: [], current_username: "" });
+
 				swal({
 					title: "¡Hasta pronto!",
 					text: "Has cerrado sesión",

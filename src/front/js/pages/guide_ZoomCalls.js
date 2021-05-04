@@ -20,6 +20,9 @@ export const ZoomCalls = () => {
 	const { store, actions } = useContext(Context);
 	const URL = `${store.frontend_url}guide_ZoomCalls`;
 
+	let favoriteTitleArray = store.favorites.map(obj => obj.tutorial_title); // turn favorites object into name array because includes method only works with arrays
+	let isFavorite = favoriteTitleArray.includes("Mi primer videollamada en Zoom (para celular)"); // store.tutorials[1].title does not work
+
 	return (
 		<div className="container">
 			<div className="d-flex justify-content-center">
@@ -47,13 +50,13 @@ export const ZoomCalls = () => {
 							<button
 								className="darkModeBtn buttonhover"
 								onClick={() => {
-									//actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link);
+									//actions.addFavorite(store.tutorials[2].title, store.tutorials[2].link);
 									store.token
-										? actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link)
+										? actions.addFavorite(store.tutorials[2].title, store.tutorials[2].link)
 										: actions.alertLoginToFavorite();
 								}}>
-								<span>Favorito</span>
-								<i className="far fa-heart ml-2" />
+								<span>{isFavorite ? "Es Favorito" : "¿Favorito?"}</span>
+								<i className={isFavorite ? "fas fa-heart ml-2" : "far fa-heart ml-2"} />
 							</button>
 						</div>
 						<div className="row mx-0">

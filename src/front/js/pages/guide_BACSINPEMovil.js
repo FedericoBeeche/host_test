@@ -24,6 +24,9 @@ export const BAC_SINPE = () => {
 	const { store, actions } = useContext(Context);
 	const URL = `${store.frontend_url}guide_BACSINPEMovil`;
 
+	let favoriteTitleArray = store.favorites.map(obj => obj.tutorial_title); // turn favorites object into name array because includes method only works with arrays
+	let isFavorite = favoriteTitleArray.includes("Transferencias SINPE BAC"); // store.tutorials[1].title does not work
+
 	return (
 		<div className="container">
 			<div className="d-flex justify-content-center">
@@ -41,15 +44,15 @@ export const BAC_SINPE = () => {
 					<div className="d-flex justify-content-between py-3 guideFavBtn">
 						<div className="">
 							<button
-								className="darkModeBtn buttonhover"
+								className="darkModeBtn buttonhover bg-coral"
 								onClick={() => {
-									//actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link);
+									//actions.addFavorite(store.tutorials[1].title, store.tutorials[1].link);
 									store.token
-										? actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link)
+										? actions.addFavorite(store.tutorials[1].title, store.tutorials[1].link)
 										: actions.alertLoginToFavorite();
 								}}>
-								<span>Favorito</span>
-								<i className="far fa-heart ml-2" />
+								<span>{isFavorite ? "Es Favorito" : "¿Favorito?"}</span>
+								<i className={isFavorite ? "fas fa-heart ml-2" : "far fa-heart ml-2"} />
 							</button>
 						</div>
 						<div className="row mx-0">
