@@ -6,9 +6,11 @@ import WA_firstImg from "../../img/img_WhatsAppCalls/WA1.jpg";
 import WA_secondImg from "../../img/img_WhatsAppCalls/WA2.png";
 import WA_thirdImg from "../../img/img_WhatsAppCalls/WA3.jpg";
 import "../../styles/home.scss";
+import QRCode from "react-qr-code";
 
 export const WhatsAppCalls = () => {
 	const { store, actions } = useContext(Context);
+	const URL = "https://3000-green-thrush-yduojqeb.ws-us03.gitpod.io/guide_WhatsAppCalls"; //reemplazar con el URL de la pagina
 
 	return (
 		<div className="container">
@@ -20,18 +22,34 @@ export const WhatsAppCalls = () => {
 							<div className="">WHATSAPP</div>
 						</div>
 						<div className="row justify-content-center ml-1 mr-1">
-							<div className="subtitle">¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</div>
+							<div className="subtitle mb-1">¿¡QUÉ!?¿¡SE HACEN VIDEOLLAMADAS EN WHATSAPP!?</div>
 						</div>
-						<div className="row justify-content-center">
+						{/* <div className="row justify-content-center">
 							<button
 								onClick={() => {
 									actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link);
 								}}>
 								<i className="fa fa-heart" />
 							</button>
+						</div> */}
+					</div>
+					<div className="row justify-content-center ml-1 mr-1 py-4 guideFavBtn">
+						<div className="d-flex align-items-center">
+							<button
+								className="darkModeBtn"
+								onClick={() => {
+									actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link);
+								}}>
+								<span>Agregar a favoritos</span>
+								<i className="far fa-heart ml-2" />
+							</button>
+						</div>
+						<div>
+							<div className="row justify-content-center">
+								<QRCode className="ml-5" value={URL} size={75} level={"H"} includeMargin={true} />
+							</div>
 						</div>
 					</div>
-
 					<div className="mt-5 mb-5">
 						<h3 className="h3GuidesStep">Paso 1</h3>
 						<p>
@@ -43,7 +61,7 @@ export const WhatsAppCalls = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Primero necesitamos abrir la aplicación en nuestro celular, entonces tienen que buscar el icono de WhatsApp en su celular y presionar con su dedo sobre la aplicación para que se abra.",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"
@@ -75,7 +93,7 @@ export const WhatsAppCalls = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Una vez que abrimos la aplicación, vamos a poder ver los chats que tenemos abiertos, donde tendremos que seleccionar presionando con el dedo sobre la persona con la que se quiere realizar la video llamada.",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"
@@ -105,7 +123,7 @@ export const WhatsAppCalls = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Cuando abrimos el chat correspondiente, tendrá que presionar con el dedo sobre el icono que parece una video cámara, y esta hará que la aplicación genere la video llamada.",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"
@@ -136,7 +154,7 @@ export const WhatsAppCalls = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Una vez generada la llamada podremos agregar otra persona a la llamada, presionando con el dedo sobre el icono señalado en la imagen abajo, después de presionarlo la aplicación va solicitar que seleccione a la persona que quiere agregar a la llamada.",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"

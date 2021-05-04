@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { LogoPagina } from "../../img/Logo.png";
-import { Favorites } from "./favorites";
-import { FavoritesSmall } from "./favoritessmall";
 import { FavReact } from "./favreact";
 import { FavReactSmall } from "./favreactsmall";
 import { Logo } from "../../img/logo2.png";
@@ -39,11 +37,9 @@ export const Navbar = () => {
 
 					{/*Responsive FAVORITES button*/}
 					<li className="nav-item ml-3 d-none d-md-block">
-						{/* <Favorites /> */}
 						<FavReact />
 					</li>
 					<li className="nav-item ml-3 d-block d-sm-none m-1">
-						{/* <FavoritesSmall /> */}
 						<FavReactSmall />
 					</li>
 

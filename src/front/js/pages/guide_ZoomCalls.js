@@ -11,6 +11,8 @@ import ZOOMsixthImg from "../../img/img_ZoomCalls/zoom6.png";
 import ZOOMseventhImg from "../../img/img_ZoomCalls/zoom7.jpg";
 import ZOOMeighthImg from "../../img/img_ZoomCalls/zoom8.jpg";
 import "../../styles/home.scss";
+import QRCode from "react-qr-code";
+const URL = "https://3000-green-thrush-yduojqeb.ws-us03.gitpod.io/guide_ZoomCalls"; //reemplazar con el URL de la pagina
 
 export const ZoomCalls = () => {
 	const { store, actions } = useContext(Context);
@@ -25,18 +27,34 @@ export const ZoomCalls = () => {
 							<div className="">ZOOM</div>
 						</div>
 						<div className="row justify-content-center ml-1 mr-1">
-							<div className="subtitle">EN EL APP DE TU TELÉFONO</div>
+							<div className="subtitle mb-1">EN EL APP DE TU TELÉFONO</div>
 						</div>
-						<div className="row justify-content-center">
+						{/* <div className="row justify-content-center">
 							<button
 								onClick={() => {
 									actions.addFavorite(store.tutorials[2].title, store.tutorials[2].link);
 								}}>
 								<i className="fa fa-heart" />
 							</button>
+						</div> */}
+					</div>
+					<div className="row justify-content-center ml-1 mr-1 py-4 guideFavBtn">
+						<div className="d-flex align-items-center">
+							<button
+								className="darkModeBtn"
+								onClick={() => {
+									actions.addFavorite(store.tutorials[2].title, store.tutorials[2].link);
+								}}>
+								<span>Agregar a favoritos</span>
+								<i className="far fa-heart ml-2" />
+							</button>
+						</div>
+						<div>
+							<div className="row justify-content-center">
+								<QRCode className="ml-5" value={URL} size={75} level={"H"} includeMargin={true} />
+							</div>
 						</div>
 					</div>
-
 					{/*Cada paso debe estar encerrado en un div*/}
 
 					<div className="mt-5 mb-5">
@@ -46,15 +64,14 @@ export const ZoomCalls = () => {
 							cuenta favor crear una en{" "}
 							<a href="https://zoom.us/signin" target="_blank" rel="noopener noreferrer">
 								<i>este enlace</i>.
-							</a>
-							Y luego regrese a esta guía. Si ya tiene cuenta favor seguir al paso{" "}
-							<a href="#paso2">número 2</a>.
+							</a>{" "}
+							Y luego regrese a esta guía. Si ya tiene cuenta favor seguir al paso número 2.
 						</p>
 						<button
 							onClick={() =>
 								responsiveVoice.speak(
 									"Para poder seguir los pasos de esta guía, necesita tener una cuenta de Zoom, si no tiene cuenta favor crear una en este enlace. Y luego regrese a esta guía. Si ya tiene cuenta favor seguir al paso numero dos.",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"
@@ -81,7 +98,7 @@ export const ZoomCalls = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Abrimos la aplicación en nuestro celular, presionando con nuestro dedo sobre el icono de Zoom.",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"
@@ -117,7 +134,7 @@ export const ZoomCalls = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Cuando termine de abrir la aplicación vamos a poder ver la pantalla inicio de Zoom, donde podremos ver las diferentes opciones disponibles de la app, para crear la video llamada necesita presionar con su dedo nueva reunión",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"
@@ -150,7 +167,7 @@ export const ZoomCalls = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"La siguiente pantalla, presione el botón iniciar una reunión”",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"
@@ -185,7 +202,7 @@ export const ZoomCalls = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Cuando inicie la video llamada, nos va mostrar un panel donde podremos activar o desactivar presionando sobre el icono audio y video, para invitar a personas a la reunión, tendremos que presionar sobre",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"
@@ -226,7 +243,7 @@ export const ZoomCalls = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"En la ventanilla de participantes, vamos a presionar sobre la opción invitar, nos mostrara las opciones para compartir la invitación, en este ejemplo vamos a utilizar copiar vinculo”",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"
@@ -267,7 +284,7 @@ export const ZoomCalls = () => {
 							onClick={() =>
 								responsiveVoice.speak(
 									"Esta opción nos permite compartir en link o url de acceso en cualquier aplicación, para este ejemplo utilizaremos WhatsApp, al ingresar en un chat, mantenemos presionado nuestro dedo sobre la sección donde se escribe el mensaje, y elegimos la opción de pegar, esto mostrara el vínculo de la reunión, y presionamos el icono de enviar para compartir el vínculo. Con esto ya habremos compartido la reunión con la persona que queríamos.",
-									"Spanish Female"
+									"Spanish Latin American Female"
 								)
 							}
 							type="button"

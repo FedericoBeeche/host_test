@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { ReactSearchAutocomplete } from "react-search-autocomplete"; // run $ npm install react-search-autocomplete
+import QRCode from "react-qr-code";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -11,6 +12,8 @@ export const Home = () => {
 	const handleOnSearch = (string, results) => {
 		console.log(string, results);
 	};
+
+	const URL = "https://3000-green-thrush-yduojqeb.ws-us03.gitpod.io/"; //reemplazar con el URL de la pagina
 
 	return (
 		<div className="container">
@@ -67,7 +70,9 @@ export const Home = () => {
 					);
 				})}
 			</div>
-
+			<div className="row justify-content-center">
+				<QRCode value={URL} size={75} level={"H"} includeMargin={true} />
+			</div>
 			<div className="d-flex justify-content-center">
 				<img src="https://svgshare.com/i/WVA.svg" className="leerSVG text-center" />
 			</div>

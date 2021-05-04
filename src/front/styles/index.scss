@@ -136,6 +136,11 @@ input[type=button], .btn {
     transform: scale(1.05);
 }
 
+.guideFavBtn {
+    border-top: 2px solid #ffe2e2;
+    border-bottom: 2px solid #ffe2e2;
+}
+
 .title { // propiedades tomadas de la clase .BAC_Middleh1Guide de Fede
     font-size: 5.3vH; 
     font-weight: 900;
