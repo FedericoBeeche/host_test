@@ -24,14 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: [],
 			current_username: "",
 
-<<<<<<< HEAD
 			url: "https://3001-coral-bear-2qu9ixmh.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
-=======
-			title1: "Videollamadas por WhatsApp",
-			title2: "Transferencias SINPE BAC",
-			title3: "Mi primer videollamada en Zoom (para celular)",
-			url: "https://3001-plum-boar-bfxyg7xw.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
->>>>>>> 58dffca98db112c6bcdf5153492184c32ca71c84
 		},
 		actions: {
 			login: async (email, password) => {
@@ -206,27 +199,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getFavorites: () => {
 				const store = getStore();
-                const token = sessionStorage.getItem("token");
-                if (store.token && store.token != "" && store.token != undefined) {
-
-                    fetch(`${store.url}/api/favorites/`, {
-                        method: "GET",
-                        headers: {
-                            "Content-Type": "application/json",
-                            Authorization: "Bearer " + store.token
-                        }
-                    })
-                        .then(resp => {
-                            //console.log("respuesta", resp.json());
-                            return resp.json();
-                        })
-                        .then(data => {
-                            setStore({ favorites: data });
-                            console.log("Get Favorites", store);})
-                        .catch(err => {
+				const token = sessionStorage.getItem("token");
+				if (store.token && store.token != "" && store.token != undefined) {
+					fetch(`${store.url}/api/favorites/`, {
+						method: "GET",
+						headers: {
+							"Content-Type": "application/json",
+							Authorization: "Bearer " + store.token
+						}
+					})
+						.then(resp => {
+							//console.log("respuesta", resp.json());
+							return resp.json();
+						})
+						.then(data => {
+							setStore({ favorites: data });
+							console.log("Get Favorites", store);
+						})
+						.catch(err => {
 							console.log("error", err);
 						});
-				}		
+				}
 			},
 
 			deleteFavorites: index => {

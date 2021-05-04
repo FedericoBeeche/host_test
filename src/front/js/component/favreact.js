@@ -43,14 +43,14 @@ export const FavReact = () => {
 									<div className="d-flex justify-content-between">
 										<Link
 											style={{ textDecoration: "none", color: "#2b2d4a" }}
-											to={item.tutorial_link}
-										/>
-										<a className="dropdown-item" key={index}>
+											to={item.tutorial_link}>
 											{item.tutorial_title}
-											<span onClick={() => actions.deleteFavorites(index)}>
-												<i className="fas fa-trash-alt float-right" />
-											</span>
-										</a>
+										</Link>
+										<span
+											className="float-end ml-3 text-darkblue"
+											onClick={() => actions.deleteFavorites(index)}>
+											<i className="fas fa-trash-alt" />
+										</span>
 									</div>
 								</Dropdown.Item>
 							);
