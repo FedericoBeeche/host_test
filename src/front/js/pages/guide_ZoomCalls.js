@@ -12,16 +12,18 @@ import ZOOMseventhImg from "../../img/img_ZoomCalls/zoom7.jpg";
 import ZOOMeighthImg from "../../img/img_ZoomCalls/zoom8.jpg";
 import "../../styles/home.scss";
 import QRCode from "react-qr-code";
+import { WhatsappShareButton, WhatsappIcon } from "react-share"; // $ npm install react-share --save
+import { FacebookShareButton, FacebookIcon } from "react-share"; // $ npm install react-share --save
 
 export const ZoomCalls = () => {
 	const { store, actions } = useContext(Context);
-	const URL = store.frontend_url;
+	const URL = `${store.frontend_url}guide_ZoomCalls`;
 
 	return (
 		<div className="container">
 			<div className="d-flex justify-content-center">
 				<div className="col-sm-7 col-12">
-					<div className="row justify-content-center">
+					<div className="row justify-content-center mb-4">
 						<div className="title">
 							<div className="">MI PRIMER LLAMADA EN</div>
 							<div className="">ZOOM</div>
@@ -38,26 +40,35 @@ export const ZoomCalls = () => {
 							</button>
 						</div> */}
 					</div>
-					<div className="row justify-content-center ml-1 mr-1 py-2 guideFavBtn">
-						<div className="d-flex align-items-center">
+					<div className="d-flex justify-content-between py-3 guideFavBtn">
+						<div className="">
 							<button
-								className="darkModeBtn"
+								className="darkModeBtn buttonhover"
 								onClick={() => {
-									//actions.addFavorite(store.tutorials[2].title, store.tutorials[2].link);
+									//actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link);
 									store.token
-										? actions.addFavorite(store.tutorials[2].title, store.tutorials[2].link)
+										? actions.addFavorite(store.tutorials[0].title, store.tutorials[0].link)
 										: actions.alertLoginToFavorite();
 								}}>
-								<span>Agregar a favoritos</span>
+								<span>Favorito</span>
 								<i className="far fa-heart ml-2" />
 							</button>
 						</div>
-						<div>
-							<div className="row justify-content-center">
-								<QRCode className="ml-5" value={URL} size={75} level={"H"} includeMargin={true} />
+						<div className="row mx-0">
+							<div className="sharetext align-self-center">Compartir:</div>
+							<div className="mx-sm-3 mx-2 buttonhover">
+								<WhatsappShareButton title="Guia para videollamadas por Zoom" url={URL}>
+									<WhatsappIcon size={30} round={true} />
+								</WhatsappShareButton>
+							</div>
+							<div className="buttonhover">
+								<FacebookShareButton qupte="Guia para videollamadas por Zoom" url={URL}>
+									<FacebookIcon size={30} round={true} />
+								</FacebookShareButton>
 							</div>
 						</div>
 					</div>
+
 					{/*Cada paso debe estar encerrado en un div*/}
 
 					<div className="mt-5 mb-5">
@@ -310,8 +321,12 @@ export const ZoomCalls = () => {
 
 					<div className="divisionGuiaYBotones" />
 
+					<div className="row justify-content-center m-4">
+						<QRCode className="" value={URL} size={130} level={"H"} includeMargin={true} />
+					</div>
+
 					<Link to="/">
-						<button className="btn btn-dark mt-4 mb-4">Volver al menú principal</button>
+						<button className="btn btn-dark mb-4">Volver al menú principal</button>
 					</Link>
 				</div>
 			</div>

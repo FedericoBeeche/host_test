@@ -84,7 +84,7 @@ def forgot_mail(email):
     msg = Message('Resetear contraseña', recipients=[email])
 
     # link = url_for('reset_password', token=token, _external=True) # External true because it is a link outside of my application
-    link = 'https://3000-peach-parrotfish-p0lyne0w.ws-us03.gitpod.io/'+'changepass/'+token
+    link = 'https://3000-rose-caterpillar-2hbdduit.ws-us03.gitpod.io/'+'changepass/'+token
 
     # msg.body = 'Resetear su contraseña en el siguiente link {}'.format(link)
     msg.html = '<p>Hola,</p><p>Resetea tu contraseña haciendo click en este <a href={}>link</a></>'.format(link)
