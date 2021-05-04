@@ -10,7 +10,7 @@ import QRCode from "react-qr-code";
 
 export const WhatsAppCalls = () => {
 	const { store, actions } = useContext(Context);
-	const URL = "https://3000-green-thrush-yduojqeb.ws-us03.gitpod.io/guide_WhatsAppCalls"; //reemplazar con el URL de la pagina
+	const URL = store.frontend_url;
 
 	return (
 		<div className="container">

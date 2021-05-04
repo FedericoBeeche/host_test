@@ -13,7 +13,7 @@ export const Home = () => {
 		console.log(string, results);
 	};
 
-	const URL = "https://3000-green-thrush-yduojqeb.ws-us03.gitpod.io/"; //reemplazar con el URL de la pagina
+	const URL = store.frontend_url;
 
 	return (
 		<div className="container">
