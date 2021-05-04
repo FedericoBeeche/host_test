@@ -19,6 +19,7 @@ import QRCode from "react-qr-code";
 import { WhatsappShareButton, WhatsappIcon } from "react-share"; // $ npm install react-share --save
 import { FacebookShareButton, FacebookIcon } from "react-share"; // $ npm install react-share --save
 import { Scroll } from "../component/scroll";
+import { BackToHome } from "../component/backToHome";
 
 export const BAC_SINPE = () => {
 	const { store, actions } = useContext(Context);
@@ -31,7 +32,10 @@ export const BAC_SINPE = () => {
 		<div className="container">
 			<div className="d-flex justify-content-center">
 				<div className="col-sm-7 col-12">
-					<Scroll showBelow={200} />
+					<Scroll showBelow={180} />
+					<div className="d-none d-sm-block">
+						<BackToHome showBelow={180} />
+					</div>
 					<div className="row justify-content-center mb-4">
 						<div className="title">
 							<div className="">MI PRIMER TRANSFERENCIA</div>
@@ -460,7 +464,9 @@ export const BAC_SINPE = () => {
 					</div>
 
 					<Link to="/">
-						<button className="btn btn-dark mb-4">Volver al menú principal</button>
+						<button className="mx-auto btn btn-dark mb-4 d-block d-sm-none">
+							Volver al menú principal
+						</button>
 					</Link>
 				</div>
 			</div>

@@ -8,13 +8,13 @@ const useStyles = makeStyles(theme => ({
 	toTop: {
 		zIndex: 2,
 		position: "fixed",
-		bottom: "5.8vh",
+		bottom: "90px",
 		backgroundColor: "#f2818150", //last two digits of hex define transparency --> 50% in this case
 		color: "8f3749",
 		"&:hover, &.Mui-focusVisible": {
 			transition: "0.4s",
-			color: "#8f3749",
-			backgroundColor: "#DCDCDC"
+			color: "#fcfff8",
+			backgroundColor: "#8f3749"
 		},
 		right: "5%"
 	}
