@@ -99,14 +99,14 @@ export const ZoomCalls = () => {
 							}
 							type="button"
 							value="Play"
-							className="btn btn-dark">
+							className="btn btn-dark buttonhover">
 							Leer
 						</button>
 						<button
 							onClick={() => responsiveVoice.cancel()}
 							type="button"
 							value="Detener"
-							className="btn btn-dark ml-2">
+							className="btn btn-dark buttonhover ml-2">
 							Detener lectura
 						</button>
 					</div>
@@ -126,14 +126,14 @@ export const ZoomCalls = () => {
 							}
 							type="button"
 							value="Play"
-							className="btn btn-dark">
+							className="btn btn-dark buttonhover">
 							Leer
 						</button>
 						<button
 							onClick={() => responsiveVoice.cancel()}
 							type="button"
 							value="Detener"
-							className="btn btn-dark ml-2">
+							className="btn btn-dark buttonhover ml-2">
 							Detener lectura
 						</button>
 						{/* la clase de esta img es la unica diferente porque es la unica con dimensiones diferentes al resto */}
@@ -162,14 +162,14 @@ export const ZoomCalls = () => {
 							}
 							type="button"
 							value="Play"
-							className="btn btn-dark">
+							className="btn btn-dark buttonhover">
 							Leer
 						</button>
 						<button
 							onClick={() => responsiveVoice.cancel()}
 							type="button"
 							value="Detener"
-							className="btn btn-dark ml-2">
+							className="btn btn-dark buttonhover ml-2">
 							Detener lectura
 						</button>
 						<div className="row justify-content-center">
@@ -195,14 +195,14 @@ export const ZoomCalls = () => {
 							}
 							type="button"
 							value="Play"
-							className="btn btn-dark">
+							className="btn btn-dark buttonhover">
 							Leer
 						</button>
 						<button
 							onClick={() => responsiveVoice.cancel()}
 							type="button"
 							value="Detener"
-							className="btn btn-dark ml-2">
+							className="btn btn-dark buttonhover ml-2">
 							Detener lectura
 						</button>
 						<div className="row justify-content-center">
@@ -230,14 +230,14 @@ export const ZoomCalls = () => {
 							}
 							type="button"
 							value="Play"
-							className="btn btn-dark">
+							className="btn btn-dark buttonhover">
 							Leer
 						</button>
 						<button
 							onClick={() => responsiveVoice.cancel()}
 							type="button"
 							value="Detener"
-							className="btn btn-dark ml-2">
+							className="btn btn-dark buttonhover ml-2">
 							Detener lectura
 						</button>
 						<div className="row justify-content-center">
@@ -271,14 +271,14 @@ export const ZoomCalls = () => {
 							}
 							type="button"
 							value="Play"
-							className="btn btn-dark">
+							className="btn btn-dark buttonhover">
 							Leer
 						</button>
 						<button
 							onClick={() => responsiveVoice.cancel()}
 							type="button"
 							value="Detener"
-							className="btn btn-dark ml-2">
+							className="btn btn-dark buttonhover ml-2">
 							Detener lectura
 						</button>
 						<div className="row justify-content-center">
@@ -312,14 +312,14 @@ export const ZoomCalls = () => {
 							}
 							type="button"
 							value="Play"
-							className="btn btn-dark">
+							className="btn btn-dark buttonhover">
 							Leer
 						</button>
 						<button
 							onClick={() => responsiveVoice.cancel()}
 							type="button"
 							value="Detener"
-							className="btn btn-dark ml-2">
+							className="btn btn-dark buttonhover ml-2">
 							Detener lectura
 						</button>
 						<div className="row justify-content-center">
@@ -331,13 +331,14 @@ export const ZoomCalls = () => {
 					<div className="divisionGuiaYBotones" />
 
 					<div className="row justify-content-center m-4">
-						<QRCode className="" value={URL} size={130} level={"H"} includeMargin={true} />
+						<div classNme="text-dark">También puedes compartir el Código QR de esta guía:</div>
+					</div>
+					<div className="row justify-content-center m-4">
+						<QRCode className="" value={URL} size={150} level={"H"} includeMargin={true} />
 					</div>
 
 					<Link to="/">
-						<button className="mx-auto btn btn-dark mb-4 d-block d-sm-none">
-							Volver al menú principal
-						</button>
+						<button className="mx-auto btn btn-dark m-4 d-block d-sm-none">Volver al menú principal</button>
 					</Link>
 				</div>
 			</div>
