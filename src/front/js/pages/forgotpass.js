@@ -94,6 +94,13 @@ export const ForgotPass = () => {
 						</button>
 					</Link>
 				</div>
+				<div className="text-center mb-5">
+					<Link to={"/"}>
+						<button type="button" className="buttonhover btn btn-light custom-btn btn-sm">
+							Volver al menú principal
+						</button>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);

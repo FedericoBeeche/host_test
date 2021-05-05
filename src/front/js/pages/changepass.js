@@ -2,6 +2,11 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom"; // hook used to redirect to another route
 import { Link, useParams } from "react-router-dom";
+import { logo2 } from "../../img/logo2.png";
+import { modoOscuro } from "../../img/navbarBtn/modoOscuro.png";
+import { modoClaro } from "../../img/navbarBtn/modoClaro.png";
+import { iniciarSesion } from "../../img/navbarBtn/iniciarSesion.png";
+import { cerrarSesion } from "../../img/navbarBtn/cerrarSesion.png";
 
 import "../../styles/home.scss";
 import { Login } from "./login";
@@ -125,7 +130,7 @@ export const ChangePass = () => {
 					<div className="row justify-content-center mb-5 ">
 						<h2 className="text-center form-title">contraseña</h2>
 					</div>
-					<div className="m-auto col-8 col-sm-3">
+					<div className="m-auto col-10 col-sm-3">
 						<form>
 							<div className="row mb-3 d-block">
 								<label htmlFor="password" className="form-label">
@@ -171,10 +176,26 @@ export const ChangePass = () => {
 								</button>
 							</Link>
 						</div>
+						<div className="text-center mb-5">
+							<Link to={"/"}>
+								<button type="button" className="buttonhover btn btn-light custom-btn btn-sm">
+									Volver al menú principal
+								</button>
+							</Link>
+						</div>
 					</div>
 				</>
 			) : (
-				<h2 className="text-center m-5">El link para reestablecer su contraseña ha expirado</h2>
+				<>
+					<h2 className="text-center m-5">El link para reestablecer su contraseña ha expirado</h2>
+					<div className="text-center m-5">
+						<Link to={"/"}>
+							<button type="button" className="buttonhover btn btn-light custom-btn btn-sm">
+								Volver al menú principal
+							</button>
+						</Link>
+					</div>
+				</>
 			)}
 		</div>
 	);

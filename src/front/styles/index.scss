@@ -22,6 +22,10 @@ p {
     color: #f28181;
 }
 
+.text-darkcoral {
+    color: #8f3749;
+}
+
 .bg-lightcoral {
     background-color: #fcdada;
 }
@@ -65,6 +69,12 @@ p {
 .buttonhover:hover {
     transition: 0.2s;
     transform: scale(1.05);
+}
+
+.btn-light.custom-btn {
+	background-color: #fcdada;
+    border-color: #f28181;
+    color: #2b2d4a80;
 }
 
 .buscador {

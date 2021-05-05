@@ -48,7 +48,7 @@ export const BAC_SINPE = () => {
 					<div className="d-flex justify-content-between py-3 guideFavBtn">
 						<div className="">
 							<button
-								className="darkModeBtn buttonhover bg-coral"
+								className="darkModeBtn buttonhover"
 								onClick={() => {
 									//actions.addFavorite(store.tutorials[1].title, store.tutorials[1].link);
 									store.token
