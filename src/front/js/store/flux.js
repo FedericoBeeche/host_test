@@ -23,9 +23,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			theme: "light",
 			favorites: [],
 			current_username: "",
-			frontend_url: "https://3000-rose-caterpillar-2hbdduit.ws-us03.gitpod.io/", // change this! Use current frontend url
+			frontend_url: "https://3000-pink-mite-q1hkw28c.ws-us03.gitpod.io/", // change this! Use current frontend url INCLUDE slash
 
-			url: "https://3001-rose-caterpillar-2hbdduit.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
+			url: "https://3001-pink-mite-q1hkw28c.ws-us03.gitpod.io" // change this! do NOT add slash '/' at the end
 		},
 		actions: {
 			login: async (email, password) => {

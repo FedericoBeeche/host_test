@@ -71,7 +71,7 @@ export const ZoomCalls = () => {
 								</WhatsappShareButton>
 							</div>
 							<div className="buttonhover">
-								<FacebookShareButton qupte="Guia para videollamadas por Zoom" url={URL}>
+								<FacebookShareButton quote="Guia para videollamadas por Zoom" url={URL}>
 									<FacebookIcon size={30} round={true} />
 								</FacebookShareButton>
 							</div>

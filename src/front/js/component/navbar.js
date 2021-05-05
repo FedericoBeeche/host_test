@@ -4,7 +4,11 @@ import { Context } from "../store/appContext";
 import { LogoPagina } from "../../img/Logo.png";
 import { FavReact } from "./favreact";
 import { FavReactSmall } from "./favreactsmall";
-import { Logo } from "../../img/logo2.png";
+import { logo2 } from "../../img/logo2.png";
+import { modoOscuro } from "../../img/navbarBtn/modoOscuro.png";
+import { modoClaro } from "../../img/navbarBtn/modoClaro.png";
+import { iniciarSesion } from "../../img/navbarBtn/iniciarSesion.png";
+import { cerrarSesion } from "../../img/navbarBtn/cerrarSesion.png";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
@@ -25,9 +29,15 @@ export const Navbar = () => {
 				<ul className="navbar-nav w-100 justify-content-end">
 					{/*Responsive DARKMODE button*/}
 					<li className="nav-item d-none d-md-block">
-						<button className="darkModeBtn" onClick={() => actions.themeToggler()}>
-							Modo Oscuro
-						</button>
+						{store.theme == "light" ? (
+							<div className="" onClick={() => actions.themeToggler()}>
+								<img className="navbar-icon buttonhover" src="modoOscuro.png" />
+							</div>
+						) : (
+							<div className="" onClick={() => actions.themeToggler()}>
+								<img className="navbar-icon buttonhover" src="modoClaro.png" />
+							</div>
+						)}
 					</li>
 					<li className="nav-item d-block d-sm-none m-1">
 						{store.theme == "light" ? (
@@ -52,14 +62,18 @@ export const Navbar = () => {
 					{/*Responsive LOGIN/LOGOUT button*/}
 					<li className="nav-item ml-3 d-none d-md-block">
 						{store.token ? (
-							<Link to="/">
-								<div onClick={() => actions.logout()} className="text-coral">
+							<Link style={{ textDecoration: "none" }} to="/">
+								<div
+									onClick={() => actions.logout()}
+									className="text-coral font-weight-bold pt-2 buttonhover">
 									Cerrar Sesión
 								</div>
 							</Link>
 						) : (
 							<Link to="/login">
-								<i className=" far fa-user-circle userProfileIcon" />
+								<div className="">
+									<i className=" far fa-user-circle buttonhover userProfileIcon" />
+								</div>
 							</Link>
 						)}
 					</li>

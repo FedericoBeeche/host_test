@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
+import { misFavoritos } from "../../img/navbarBtn/misFavoritos.png";
 
 import "../../styles/demo.scss";
 
@@ -19,7 +20,7 @@ export const FavReact = () => {
 						boxShadow: "none"
 					}}
 					bsPrefix="p-0">
-					{<i className=" far fa-heart userProfileIcon" />}
+					<img className="navbar-icon buttonhover" src="misFavoritos.png" />
 				</Dropdown.Toggle>
 				<Dropdown.Menu
 					style={{

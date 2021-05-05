@@ -59,7 +59,7 @@ export const WhatsAppCalls = () => {
 								</WhatsappShareButton>
 							</div>
 							<div className="buttonhover">
-								<FacebookShareButton qupte="Guia para videollamadas por WhatsApp" url={URL}>
+								<FacebookShareButton quote="Guia para videollamadas por WhatsApp" url={URL}>
 									<FacebookIcon size={30} round={true} />
 								</FacebookShareButton>
 							</div>

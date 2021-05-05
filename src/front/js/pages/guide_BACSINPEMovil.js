@@ -67,7 +67,7 @@ export const BAC_SINPE = () => {
 								</WhatsappShareButton>
 							</div>
 							<div className="buttonhover">
-								<FacebookShareButton qupte="Guia para transferencias SinpeMóvil en el BAC" url={URL}>
+								<FacebookShareButton quote="Guia para transferencias SinpeMóvil en el BAC" url={URL}>
 									<FacebookIcon size={30} round={true} />
 								</FacebookShareButton>
 							</div>
