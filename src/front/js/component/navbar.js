@@ -28,7 +28,8 @@ export const Navbar = () => {
 			<div className="navbar-collapse collapse text-right" id="collapsingNavbarSm">
 				<ul className="navbar-nav w-100 justify-content-end">
 					{/*Responsive DARKMODE button*/}
-					<li className="nav-item d-none d-md-block">
+					{/*Visible only on md and lg*/}
+					<li className="nav-item d-none d-md-block d-lg-block">
 						{store.theme == "light" ? (
 							<div className="" onClick={() => actions.themeToggler()}>
 								<img className="navbar-icon buttonhover" src="modoOscuro.png" />
@@ -39,7 +40,20 @@ export const Navbar = () => {
 							</div>
 						)}
 					</li>
+					{/*Visible only on xs*/}
 					<li className="nav-item d-block d-sm-none m-1">
+						{store.theme == "light" ? (
+							<div className="text-coral p-0" onClick={() => actions.themeToggler()}>
+								Modo Oscuro
+							</div>
+						) : (
+							<div className="text-coral p-0" onClick={() => actions.themeToggler()}>
+								Modo Claro
+							</div>
+						)}
+					</li>
+					{/*Visible only on sm*/}
+					<li className="nav-item d-none d-sm-block d-md-none m-1">
 						{store.theme == "light" ? (
 							<div className="text-coral p-0" onClick={() => actions.themeToggler()}>
 								Modo Oscuro
@@ -52,15 +66,22 @@ export const Navbar = () => {
 					</li>
 
 					{/*Responsive FAVORITES button*/}
-					<li className="nav-item ml-3 d-none d-md-block">
+					{/*Visible only on md and lg*/}
+					<li className="nav-item ml-3 d-none d-md-block d-lg-block">
 						<FavReact />
 					</li>
+					{/*Visible only on xs*/}
 					<li className="nav-item ml-3 d-block d-sm-none m-1">
+						<FavReactSmall />
+					</li>
+					{/*Visible only on sm*/}
+					<li className="nav-item ml-3 d-none d-sm-block d-md-none m-1">
 						<FavReactSmall />
 					</li>
 
 					{/*Responsive LOGIN/LOGOUT button*/}
-					<li className="nav-item ml-3 d-none d-md-block">
+					{/*Visible only on md and lg*/}
+					<li className="nav-item ml-3 d-none d-md-block d-lg-block">
 						{store.token ? (
 							<Link style={{ textDecoration: "none" }} to="/">
 								<div
@@ -77,7 +98,22 @@ export const Navbar = () => {
 							</Link>
 						)}
 					</li>
+					{/*Visible only on xs*/}
 					<li className="nav-item ml-3 d-block d-sm-none m-1">
+						{store.token ? (
+							<Link style={{ textDecoration: "none" }} to="/">
+								<div onClick={() => actions.logout()} className="text-coral">
+									Cerrar Sesión
+								</div>
+							</Link>
+						) : (
+							<Link style={{ textDecoration: "none" }} to="/login">
+								<div className="text-coral">Iniciar Sesión</div>
+							</Link>
+						)}
+					</li>
+					{/*Visible only on sm*/}
+					<li className="nav-item ml-3 d-none d-sm-block d-md-none m-1">
 						{store.token ? (
 							<Link style={{ textDecoration: "none" }} to="/">
 								<div onClick={() => actions.logout()} className="text-coral">
