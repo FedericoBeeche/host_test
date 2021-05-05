@@ -70,8 +70,8 @@ export const Home = () => {
 					);
 				})}
 			</div>
-			<div className="row justify-content-center">
-				<QRCode value={URL} size={75} level={"H"} includeMargin={true} />
+			<div className="row justify-content-center m-4">
+				<QRCode value={URL} size={150} level={"H"} includeMargin={true} />
 			</div>
 			<div className="d-flex justify-content-center">
 				<img src="https://svgshare.com/i/WVA.svg" className="leerSVG text-center" />
