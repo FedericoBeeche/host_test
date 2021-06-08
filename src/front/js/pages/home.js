@@ -5,6 +5,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { ReactSearchAutocomplete } from "react-search-autocomplete"; // run $ npm install react-search-autocomplete
 import QRCode from "react-qr-code";
+import { Scroll } from "../component/scroll";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -17,6 +18,7 @@ export const Home = () => {
 
 	return (
 		<div className="container">
+			<Scroll showBelow={180} />
 			<div className="d-flex justify-content-center">
 				<div className="col-sm-10 col-12">
 					<h1 className="home_menuH1">Menú de guías</h1>
