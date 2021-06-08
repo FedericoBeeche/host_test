@@ -1,3 +1,521 @@
 /* 
     General Styles
 */
+
+// BODY STYLES //
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fcfff8;
+    color: #2b2d4a;
+}
+
+p {
+    font-size: 19px;
+}
+
+.text-darkblue {
+    color: #2b2d4a;
+}
+
+.text-coral {
+    color: #f28181;
+}
+
+.text-darkcoral {
+    color: #8f3749;
+}
+
+.bg-lightcoral {
+    background-color: #fcdada;
+}
+
+.bg-lightgrey {
+    background-color: #eeeeee;
+}
+
+.bg-coral {
+    background-color: #f28181;
+}
+
+.bg-darkcoral {
+    background-color: #8f3749;
+}
+
+// GENERAL STYLES // 
+
+.divisionGuiaYBotones {
+    border-bottom: 1px solid #f28181;
+}
+
+.card {
+    //border: 3.5px solid #2b2d4a;
+    transition: 0.2s;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+}
+
+.card:hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.buttonhover {
+    transition: 0.2s;
+}
+
+.buttonhover:hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+
+.btn-light.custom-btn {
+	background-color: #fcdada;
+    border-color: #f28181;
+    color: #2b2d4a80;
+}
+
+.buscador {
+    border: #f28181 solid 2px;
+    border-radius: 5px;
+    color: #f28181;
+    width: 200px;
+    transition: 0.7s;
+}
+
+.buscador:focus {
+    transition: 0.7s;
+    width: 300px;
+}
+
+.botonRegistro {
+    cursor: pointer;
+}
+
+input[type=button], .btn {
+    color: #fcfff8;
+}
+
+.leerSVG {
+    width: 75px;
+    height: 75px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.home_menuH1 {
+    font-weight: 900;
+    font-size: 9.5vmin;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+}
+
+.home_menuH4 {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 3vh;
+}
+
+.menu_h5GuideTitle {
+    font-weight: 700;
+}
+
+// GENERAL GUIDE STYLES //
+
+.logotext { // propiedades tomadas de la clase .BAC_Middleh1Guide de Fede
+    // font-size: 30px; 
+    // font-weight: 900;
+    // text-align: center;
+    // margin: 6px 0;
+    // line-height: 100%;
+    // color: #f28181;
+    transition: 0.2s;
+    height: 70px;
+}
+
+.logotext:hover { // propiedades tomadas de la clase .BAC_Middleh1Guide de Fede
+    // font-size: 30px; 
+    // font-weight: 900;
+    // text-align: center;
+    // margin: 6px 0;
+    // line-height: 100%;
+    // color: #f28181;
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+
+.guideFavBtn {
+    border-top: 2px solid #ffe2e2;
+    border-bottom: 2px solid #ffe2e2;
+}
+
+.title { // propiedades tomadas de la clase .BAC_Middleh1Guide de Fede
+    font-size: 5.3vH; 
+    font-weight: 900;
+    text-align: center;
+    margin: 3vh 0 1vh;
+    line-height: 120%;
+}
+
+.subtitle { // propiedades tomadas de la clase .BAC_h5Guide de Fede
+    font-size: 2.5vh;
+    font-weight: lighter; 
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 0.3vh;
+    padding-bottom: 0;
+    line-height: 120%;
+}
+
+.sharetext { // propiedades tomadas de la clase .BAC_h5Guide de Fede
+    font-size: 15px;
+    font-weight: lighter; 
+    font-style: italic;
+    line-height: 120%;
+}
+
+.image {
+    //border: 3.5px solid #2b2d4a;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 300px;
+    height: 600px;
+    margin: 3vh;
+}
+
+.imageIcon {
+    height: 100px;
+    width: 100px;
+}
+
+.imgGuia {
+    border: 3.5px solid #2b2d4a;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.h3GuidesStep {
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.container {
+    max-width: 1500px;
+}
+
+// test class to check container size
+// .guideContainer {
+//     border: 2px red solid;
+// }
+
+// LOGIN STYLE //
+
+.form-title { // .loginH2 Change name for good practices, we need to use general styling (Atte: Litzy)
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.infoBox {
+    border: #f28181 solid 2px;
+    border-radius: 5px;
+    color: #f28181;
+    transition: 0.7s;
+}
+
+.infoBox:focus {
+    transition: 0.7s;
+    border: #2b2d4a solid 2px;
+    color: #2b2d4a;
+}
+
+// PASSWORD RESET STYLES // 
+
+#pwResetBtn {
+    color: #dc3545;
+}
+
+#pwResetBtn:hover {
+    color: #fcfff8;
+}
+
+#pwResetBtn:focus {
+    color: #fcfff8;
+}
+
+.pwResetTopH2 {
+    font-size: 35px;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 100px;
+    padding-bottom: 0;
+    line-height: 2%;
+}
+
+.pwResetBottomH2 {
+    font-weight: 900;
+    font-size: 35px;
+    margin-top: 0;
+    padding-bottom: 0;
+    line-height: 100%;
+}
+
+.infoBox {
+    border: #f28181 solid 2px;
+    border-radius: 5px;
+    color: #f28181;
+    transition: 0.7s;
+}
+
+.infoBox:focus {
+    transition: 0.7s;
+    border: #2b2d4a solid 2px;
+    color: #2b2d4a;
+}
+
+// SIGN UP STYLES //
+
+.signUpBox {
+    border: #f28181 solid 2px;
+    border-radius: 5px;
+    color: #f28181;
+    transition: 0.7s;    
+}
+
+.signUpBox:focus {
+    transition: 0.7s;
+    border: #2b2d4a solid 2px;
+    color: #2b2d4a;
+}
+
+.signUpH2 {
+    font-size: 45px;
+    font-weight: 900;
+}
+
+// ZOOM GUIDE STYLES //
+
+.Zoom_Toph1Guide {
+    font-size: 100px;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 30px;
+    padding-bottom: 0;
+    line-height: 65%;
+}
+
+.Zoom_Bottomh1Guide {
+    font-weight: 900;
+    font-size: 53px;
+    margin-top: 0;
+    padding-bottom: 0;
+    line-height: 100%;
+}
+
+.Zoom_h5Guide {
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 11.5px;
+    line-height: 20%;
+}
+
+// BAC GUIDE STYLES //
+
+.BAC_Toph1Guide {
+    font-size: 120px; //60px o crear imagen de los 3 juntos
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 30px;
+    padding-bottom: 0;
+    line-height: 50%;
+}
+
+.BAC_Middleh1Guide {
+    font-size: 75px; //37.5px o crear imagen de los 3 juntos
+    font-weight: 900;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.BAC_Bottomh1Guide {
+    font-size: 50px; //25px o crear imagen de los 3 juntos
+    font-weight: 700;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 50%;
+}
+
+.BAC_h5Guide {
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 11.5px;
+    margin-top: 10px;
+}
+
+// WHATSAPP GUIDE STYLES //
+
+.WA_Toph1Guide {
+    font-size: 120px;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 30px;
+    padding-bottom: 0;
+    line-height: 50%;
+}
+
+.WA_Middleh1Guide {
+    font-size: 74px;
+    font-weight: 900;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    
+}
+
+.WA_Bottomh1Guide {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 50%;
+}
+
+.WA_h5Guide {
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 2.7px;
+    margin-top: 10px;
+}
+
+// NAVBAR STYLES //
+
+.navbar {
+    padding: 0rem 1rem;
+}
+
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline-color: #f28181;
+    //box-shadow: none;
+}
+
+.userProfileIcon {
+    font-size: 30px;
+    color: #f28181;
+    padding-top: 6px;
+}
+
+.logoClass {
+    width: 153.6px;
+    height: 86.4px;
+    transition: 0.2s;
+}
+
+.logoClass:hover {
+    transform: scale(0.90);
+    transition: 0.2s;
+}
+
+.darkModeBtn {
+    border: #f28181 2px solid;
+    border-radius: 5px;
+    background-color: #fcfff8;
+    color: #f28181;
+    //margin-right: 10px;
+}
+
+.navbar-icon {
+    height: 40px;
+}
+
+// FOOTER STYLES //
+
+.page-container { // add this class in layout.js to fix at bottom
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap { // add this class in layout.js to fix at bottom
+  padding-bottom: 70px;    /* Footer height */
+}
+
+.footer { // add this class in footer.js to fix at bottom
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;            /* Footer height */
+}
+
+.footerStyle {
+    border-top: #f28181 3px solid;
+    font-size: 40px;
+    background-color: #8f3749;
+}
+
+.socialMediaIcon {
+    margin: 5px;
+    color: #f28181;
+    transition: 0.7s;
+}
+
+.socialMediaIcon:hover {
+    text-shadow: 0 0 6px rgb(0, 0, 0);
+    transition: 0.7s;
+}
+
+// BAC GUIDES STYLES //
+
+.bacTutorialImg1 {
+    height: 100px;
+    width: 100px;
+}
+
+.bacTutorialImg {
+    height: 600px;
+    width: 300px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// ZOOM GUIDE STYLES // 
+
+.zoomTutorialImg {
+    height: 600px;
+    width: 300px;
+}
+
+.zoomTutorialImg1 {
+    height: 100px;
+    width: 75px;
+}
+
+.zoomTutorialImg4 {
+    height: 150px;
+    width: 300px;
+}
+
+// WHATSAPP GUIDE STYLES // 
+
+.WATutorialImg {
+    height: 600px;
+    width: 300px;
+}
+
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #f28181;
+  font-size: 16px;
+  border: 1px solid #8f3749;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.navbarStyle {
+    border-bottom: #f28181 3px solid;
+    color: #f28181;
+    //background-color: #fcfff8;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1500' height='180' preserveAspectRatio='none' viewBox='0 0 1500 180'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1063%26quot%3b)' fill='none'%3e%3crect width='1500' height='180' x='0' y='0' fill='rgba(143%2c 55%2c 73%2c 1)'%3e%3c/rect%3e%3cpath d='M34 180L214 0L283 0L103 180z' fill='url(%23SvgjsLinearGradient1064)'%3e%3c/path%3e%3cpath d='M252.5 180L432.5 0L746 0L566 180z' fill='url(%23SvgjsLinearGradient1064)'%3e%3c/path%3e%3cpath d='M510 180L690 0L843 0L663 180z' fill='url(%23SvgjsLinearGradient1064)'%3e%3c/path%3e%3cpath d='M770.5 180L950.5 0L1316.5 0L1136.5 180z' fill='url(%23SvgjsLinearGradient1064)'%3e%3c/path%3e%3cpath d='M1474 180L1294 0L1148.5 0L1328.5 180z' fill='url(%23SvgjsLinearGradient1065)'%3e%3c/path%3e%3cpath d='M1212.5 180L1032.5 0L701 0L881 180z' fill='url(%23SvgjsLinearGradient1065)'%3e%3c/path%3e%3cpath d='M961 180L781 0L664 0L844 180z' fill='url(%23SvgjsLinearGradient1065)'%3e%3c/path%3e%3cpath d='M721.5 180L541.5 0L466.5 0L646.5 180z' fill='url(%23SvgjsLinearGradient1065)'%3e%3c/path%3e%3cpath d='M1408.139515904428 180L1500 88.13951590442794L1500 180z' fill='url(%23SvgjsLinearGradient1064)'%3e%3c/path%3e%3cpath d='M0 180L91.86048409557206 180L 0 88.13951590442794z' fill='url(%23SvgjsLinearGradient1065)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1063'%3e%3crect width='1500' height='180' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient1064'%3e%3cstop stop-color='rgba(188%2c 89%2c 108%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(188%2c 89%2c 108%2c 1)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient1065'%3e%3cstop stop-color='rgba(188%2c 89%2c 108%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(188%2c 89%2c 108%2c 1)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+}
