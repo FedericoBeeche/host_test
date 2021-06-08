@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { ReactSearchAutocomplete } from "react-search-autocomplete"; // run $ npm install react-search-autocomplete
 import QRCode from "react-qr-code";

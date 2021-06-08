@@ -4,8 +4,6 @@ import ScrollToTop from "./component/scrollToTop";
 import styled, { ThemeProvider } from "styled-components";
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import { Login } from "./pages/login";
 import { SignUp } from "./pages/signup";
 import { ChangePass } from "./pages/changepass";
@@ -30,10 +28,6 @@ const Layout = () => {
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
 	const { store, actions } = useContext(Context);
-
-	// const themeToggler = () => {
-	// 	theme === "light" ? setTheme("dark") : setTheme("light");
-	// };
 
 	return (
 		<ThemeProvider theme={store.theme === "light" ? lightTheme : darkTheme}>
@@ -68,9 +62,6 @@ const Layout = () => {
 								</Route>
 								<Route exact path="/guide_WhatsAppCalls">
 									<WhatsAppCalls />
-								</Route>
-								<Route exact path="/single/:theid">
-									<Single />
 								</Route>
 								<Route>
 									<h1>Not found!</h1>
